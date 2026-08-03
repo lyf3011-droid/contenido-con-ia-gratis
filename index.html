@@ -55,7 +55,8 @@ footer{color:var(--soft);font-size:.85rem;padding:28px 0 0;text-align:center;
   margin:22px 0;overflow:hidden;border-top:4px solid var(--c,var(--gold))}
 .ac .top{display:flex;align-items:center;gap:13px;padding:16px 20px;background:var(--sur2);flex-wrap:wrap}
 .ac .num{flex:0 0 40px;height:40px;border-radius:11px;background:var(--c,var(--gold));color:#121a26;
-  font-weight:800;font-size:1.15rem;display:grid;place-items:center}
+  font-weight:800;font-size:1.15rem;display:grid;place-items:center;line-height:1}
+.ac .num.sm{font-size:.82rem;letter-spacing:-.02em}
 .ac .ti{font-weight:800;font-size:1.16rem}
 .ac .su{color:var(--soft);font-size:.88rem;width:100%}
 .ac .bd{padding:4px 20px 20px}
@@ -75,6 +76,28 @@ footer{color:var(--soft);font-size:.85rem;padding:28px 0 0;text-align:center;
 .cpy{position:absolute;top:8px;right:8px;background:var(--gold);color:#121a26;border:0;
   border-radius:8px;padding:6px 13px;font:inherit;font-size:.78rem;font-weight:800;cursor:pointer;opacity:.92}
 .cpy:hover{opacity:1}
+/* ── esquema de pasos ── */
+.meta{background:linear-gradient(135deg,rgba(201,163,85,.14),transparent);
+  border:1px solid var(--gold);border-radius:var(--r);padding:20px 22px;margin:18px 0;text-align:center}
+.meta .big{font-family:var(--display);font-size:1.9rem;line-height:1.15;margin:4px 0 6px}
+.meta .big b{color:var(--gold)}
+.esq{margin:20px 0}
+.es{display:flex;gap:14px;align-items:flex-start;position:relative;padding-bottom:16px}
+.es:last-child{padding-bottom:0}
+.es::before{content:"";position:absolute;left:21px;top:44px;bottom:0;width:2px;
+  background:linear-gradient(var(--line),transparent)}
+.es:last-child::before{display:none}
+.es .b{flex:0 0 44px;height:44px;border-radius:13px;background:var(--c,var(--gold));color:#121a26;
+  font-weight:800;font-size:1.1rem;display:grid;place-items:center;z-index:1;box-shadow:var(--sh)}
+.es .c{flex:1;min-width:0;padding-top:2px}
+.es .t{font-weight:800;font-size:1.02rem}
+.es .d{color:var(--soft);font-size:.9rem;line-height:1.45;margin-top:2px}
+.es .o{display:inline-block;font-size:.7rem;font-weight:800;background:var(--sur2);
+  border:1px solid var(--line);border-radius:99px;padding:2px 9px;color:var(--soft);margin-left:6px}
+.bif{margin-left:58px;display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:9px}
+@media(max-width:520px){.bif{grid-template-columns:1fr}}
+.bif > div{background:var(--sur2);border:1px solid var(--line);border-radius:10px;
+  padding:9px 12px;font-size:.85rem}
 /* ── recorrido guiado ── */
 .tourbtn{background:var(--sur);color:var(--ink);border:1px solid var(--gold);border-radius:99px;
   padding:9px 20px;font:inherit;font-weight:700;font-size:.9rem;cursor:pointer;margin-top:16px}
@@ -294,6 +317,62 @@ cada publicación te cuesta minutos.</p>
 <p style="color:var(--soft);font-size:.82rem;margin:8px 0 0">Elige <b>“Guardar como PDF”</b> como destino.</p>
 </div>
 
+<h2 id="s-meta">A dónde vamos</h2>
+
+<div class="meta">
+<div style="font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700">El objetivo</div>
+<div class="big">Un calendario de <b>7 publicaciones</b></div>
+<p style="margin:0;color:var(--soft)">Con sus temas elegidos, sus guiones escritos y todo el
+material listo. Y todas con la misma llamada a la acción:<br>
+<b style="color:var(--ink)">recomendar La Semana de la Inversión Sí es para Ti</b>, de Academia de Inversión.</p>
+</div>
+
+<h3>El camino, paso a paso</h3>
+<div class="esq">
+
+<div class="es" style="--c:#c9a355"><span class="b">1</span><div class="c">
+<div class="t">Elegir los temas</div>
+<div class="d">Primero ves los temas de la guía de Celia. Después añades los tuyos y la IA te propone combinaciones. De ahí salen tus 7.</div>
+</div></div>
+
+<div class="es" style="--c:#d98cb3"><span class="b">2</span><div class="c">
+<div class="t">El calendario</div>
+<div class="d">Las 7 publicaciones con su fecha, su formato y su gancho. Listo para guardarlo en PDF y tenerlo delante.</div>
+</div></div>
+
+<div class="es" style="--c:#4c9be8"><span class="b">3</span><div class="c">
+<div class="t">El paquete de cada publicación</div>
+<div class="d">Aquí sale todo lo que necesitas para publicar una pieza:</div>
+<div class="bif">
+<div>🎥 <b>Si es vídeo</b><br><span style="color:var(--soft)">el guion entero para decirlo</span></div>
+<div>🖼️ <b>Si es carrusel</b><br><span style="color:var(--soft)">cuántas slides y el texto de cada una</span></div>
+</div>
+<div class="d" style="margin-top:9px">Y además: portada, pie de foto, primer comentario e historias de apoyo.</div>
+</div></div>
+
+<div class="es" style="--c:#3ecf8e"><span class="b">4</span><div class="c">
+<div class="t">Las imágenes</div>
+<div class="d">La portada y, si es carrusel, las diapositivas. Con tus fotos o generadas.</div>
+</div></div>
+
+<div class="es" style="--c:#e6b34c"><span class="b">5</span><div class="c">
+<div class="t">Los ecos</div>
+<div class="d">El mismo contenido, adaptado a WhatsApp, Facebook, TikTok y demás. Un mensaje y ya.</div>
+</div></div>
+
+<div class="es" style="--c:#9db1c8"><span class="b">6</span><div class="c">
+<div class="t">Tu bio <span class="o">opcional</span></div>
+<div class="d">Que quien entre a tu perfil entienda en tres segundos quién eres.</div>
+</div></div>
+
+</div>
+
+<div class="box note" style="font-size:.94rem">
+🔓 <b>Y hay un extra opcional</b> dentro del paso 3: preparar <b>lo que recibe</b> quien comente
+tu palabra clave. Suena avanzado pero se hace en diez minutos, y es lo que convierte un comentario
+en una persona apuntada.
+</div>
+
 <h2 id="s-nec">Qué necesitas antes de empezar</h2>
 
 <div class="box warn">
@@ -335,10 +414,12 @@ sin problema.
 <h2>El recorrido</h2>
 <div class="flow">
 <a class="fl" href="#p0" style="--c:#9db1c8"><div class="t">PASO 0 · El proyecto</div><div class="d">Se monta una vez</div></a>
-<a class="fl" href="#p1" style="--c:#c9a355"><div class="t">1 · El guion</div><div class="d">Qué vas a decir</div></a>
-<a class="fl" href="#p2" style="--c:#d98cb3"><div class="t">2 · El paquete</div><div class="d">Todos los textos</div></a>
-<a class="fl" href="#p3" style="--c:#4c9be8"><div class="t">3 · Montar la pieza</div><div class="d">Portada + carrusel <b>o</b> vídeo</div></a>
-<a class="fl" href="#p4" style="--c:#3ecf8e"><div class="t">4 · El eco</div><div class="d">Más sitios</div></a>
+<a class="fl" href="#pt" style="--c:#c9a355"><div class="t">1 · Los temas</div><div class="d">Los de la guía + los tuyos</div></a>
+<a class="fl" href="#pc" style="--c:#d98cb3"><div class="t">2 · El calendario</div><div class="d">Las 7, con fecha</div></a>
+<a class="fl" href="#p1" style="--c:#4c9be8"><div class="t">3 · El paquete</div><div class="d">Guion o slides + textos</div></a>
+<a class="fl" href="#p3" style="--c:#3ecf8e"><div class="t">4 · Las imágenes</div><div class="d">Portada y montaje</div></a>
+<a class="fl" href="#p4" style="--c:#e6b34c"><div class="t">5 · El eco</div><div class="d">Más sitios</div></a>
+<a class="fl" href="#s-perfil" style="--c:#9db1c8"><div class="t">6 · Tu bio</div><div class="d">Opcional</div></a>
 </div>
 
 <h2 id="s-elige">Antes del paso 1: ¿vídeo o carrusel?</h2>
@@ -500,33 +581,250 @@ Cuando te dé una idea, un tema o un guion de
 la guía, aplicas todo esto sin preguntar.
 Responde solo "listo".</code></pre>
 
+<!-- ═══════════ PASO 1 · TEMAS ═══════════ -->
+<div class="ac" id="pt" style="--c:#c9a355">
+<div class="top"><span class="num">1</span><div><div class="ti">Elegir los temas</div></div>
+<div class="su">De aquí salen tus 7 publicaciones. Se hace en tres ratos y no hay que inventar nada.</div></div>
+<div class="bd">
+
+<h3>A · Los temas que ya tienes</h3>
+<p>La guía trae <b>82 piezas ya escritas</b>: 50 guiones de reels, 20 secuencias de historias y
+12 carruseles. Aquí están todas, agrupadas por familias. <b>Lee por encima y marca las que te
+suenen a ti</b> — las que podrías contar con algo tuyo detrás.</p>
+
+<style>
+.fam{background:var(--sur2);border:1px solid var(--line);border-radius:11px;padding:13px 16px;margin:10px 0}
+.fam h4{margin:0 0 6px;color:var(--gold)}
+.fam p{margin:4px 0;font-size:.89rem;line-height:1.55}
+.fam .et{font-family:var(--mono);font-size:.78rem;color:var(--soft);font-weight:700}
+</style>
+
+<div class="fam">
+<h4>1 · Tu historia y tu testimonio</h4>
+<p><span class="et">REELS</span> 1 ¿Y a ti quién te enseñó esto? · 32 La amiga que cambió ·
+34 Un año de diferencia · 39 “Eso será para ti, que sabes” · 48 Nadie me enseñó esto en el colegio ·
+50 La semana que me cambió la vida</p>
+<p><span class="et">HISTORIAS</span> 2 Lo que me hubiera cambiado la vida · 4 Tu historia de infancia ·
+9 Tu peor error con el dinero · 13 Tu historia familiar o de trabajo · 15 Tu reinvención</p>
+<p><span class="et">CARRUSELES</span> 1 Tu historia de origen · 2 Tu peor error · 3 Tu historia familiar ·
+4 Criterio, no suerte · 5 Antes vs después</p>
+<p style="color:var(--soft)">👉 Es la familia con más plantillas para rellenar con lo tuyo. <b>Empieza por aquí.</b></p>
+</div>
+
+<div class="fam">
+<h4>2 · La inflación y el dinero parado</h4>
+<p><span class="et">REELS</span> 3 El dinero parado se encoge · 9 La libreta de la abuela ·
+16 Rebajas: ahorras 40, pierdes más · 33 Black Friday todo el año · 41 El menú del día ·
+45 El billete de 50 de 2015</p>
+<p><span class="et">HISTORIAS</span> 6 La mentira de “ahorrar más” · 8 Dinero parado en el banco</p>
+</div>
+
+<div class="fam">
+<h4>3 · El día a día: fugas, banco y deudas</h4>
+<p><span class="et">REELS</span> 2 Cobramos lo mismo · 4 La suscripción fantasma · 6 Día 25, cuenta a cero ·
+7 El banco no te va a llamar · 12 El imprevisto que no avisa · 15 El ascenso que no se nota ·
+29 El extracto de fin de año · 31 Comparas todo menos tu banco · 36 Siempre en números rojos ·
+43 Vacaciones sin tarjeta a plazos · 46 “No me llega ni para ahorrar”</p>
+<p><span class="et">HISTORIAS</span> 7 Gastos termita · 10 Tu banco no es tu socio · 12 Mirar tus números sin miedo</p>
+<p><span class="et">CARRUSELES</span> 6 El que improvisa vs el estratega · 9 Gastos termita vs hormiga</p>
+</div>
+
+<div class="fam">
+<h4>4 · Empezar a invertir</h4>
+<p><span class="et">REELS</span> 17 La bola de nieve · 20 El regalo de los 30 · 22 El primer sueldo ·
+38 Tu dinero también trabaja en vacaciones · 42 Heredé y no sé qué hacer</p>
+<p><span class="et">CARRUSELES</span> 10 Las 4 etapas del estratega financiero</p>
+</div>
+
+<div class="fam">
+<h4>5 · Excusas, mitos y estafas</h4>
+<p><span class="et">REELS</span> 5 “Invertir es de ricos” · 10 Sabes de series, no de tu dinero ·
+11 “Ya lo miraré” · 13 Cripto por un vídeo · 14 “Yo es que soy de letras” · 18 “Ya es tarde para mí” ·
+23 “Cuando gane más, ya invertiré” · 26 “¿Gratis? Aquí hay trampa” · 28 “Mi plan es la lotería” ·
+37 El consejo del cuñado</p>
+<p><span class="et">HISTORIAS</span> 11 “La vida son dos días” · 14 “Si funcionara, lo haría todo el mundo”</p>
+<p><span class="et">CARRUSELES</span> 7 Esto sí / esto no · 11 Las 4 mentiras del sistema</p>
+</div>
+
+<div class="fam">
+<h4>6 · Familia, pareja e hijos</h4>
+<p><span class="et">REELS</span> 19 Discutir por dinero · 27 Ahorrar para el bebé · 35 La hucha del niño ·
+44 Mi dinero, mis decisiones</p>
+<p style="color:var(--soft)">👉 Si puedes grabar con alguien de tu familia, hazlo: es lo que más se comparte.</p>
+</div>
+
+<div class="fam">
+<h4>7 · Mentalidad, libertad y empujón final</h4>
+<p><span class="et">REELS</span> 8 ¿Habrá pensión? · 21 Miedo a mirar la cuenta ·
+24 La cena donde todos hablaban de dinero · 25 Enero en el gimnasio · 30 “El dinero no da la felicidad” ·
+40 La reducción de jornada · 47 La mudanza al piso propio · 49 ¿Cuánto necesitas para ser libre?</p>
+<p><span class="et">HISTORIAS</span> 1 El anuncio · 3 Prueba social · 5 ¿Para quién es esto? ·
+16 Cuenta atrás · 17 Hoy empieza · 18 “Es gratis, no le des más vueltas” · 19 Teaser del primer día ·
+20 Las dos versiones de ti</p>
+<p><span class="et">CARRUSELES</span> 8 ¿Esto es para ti? · 12 Las dos versiones de ti</p>
+<p style="color:var(--soft)">👉 Las historias 16 a 20 son de <b>empuje final</b>: guárdalas para los últimos días.</p>
+</div>
+
+<h3>B · Tus temas + los suyos</h3>
+<p>Ahora pon lo tuyo encima. Escribe <b>tus ideas en bruto</b> —lo que te ha pasado, lo que te
+preguntan, lo que te indigna— y que la IA las cruce con los temas de la guía.</p>
+
+<pre><code>PASO 1 · TEMAS
+
+Estos son MIS temas, en bruto:
+- [LO QUE ME PASÓ A MÍ CON EL DINERO]
+- [LO QUE MÁS ME PREGUNTA LA GENTE]
+- [ALGO QUE ME INDIGNA O ME PARECE INJUSTO]
+- [ALGO QUE HE APRENDIDO Y ME SIRVIÓ]
+- [MI TRABAJO O MI SITUACIÓN: DE QUÉ PUEDO
+   HABLAR CON PROPIEDAD]
+
+Y estos son los temas de la guía que me han
+llamado la atención:
+- [PON LOS NÚMEROS Y NOMBRES QUE MARCASTE]
+
+Crúzalos y dame DIEZ PROPUESTAS de publicación.
+Cada una tiene que ser una de estas dos cosas:
+ (a) un tema de la guía adaptado a mi historia
+ (b) una idea mía contada con la estructura
+     de la guía
+
+De cada propuesta dame, en dos líneas:
+- El título del tema
+- El gancho (los 3 primeros segundos)
+- De dónde sale (qué pieza de la guía o qué
+  idea mía)
+- Si funcionaría mejor en VÍDEO o en CARRUSEL,
+  y por qué
+
+Ordénalas de más a menos potente para alguien
+que no me conoce de nada.
+
+Todas terminan invitando a La Semana de la
+Inversión Sí es para Ti, de Academia de
+Inversión, con la palabra CLASE.</code></pre>
+
+<h3>C · Eliges siete</h3>
+<div class="box good">
+De esas diez, <b>te quedas con siete</b>. Al elegir, mira que:
+<ul style="margin:8px 0 0">
+<li><b>Al menos dos sean tuyas de verdad</b> (tu historia). Son las que más conectan.</li>
+<li><b>No se repitan</b>: mejor una de cada familia que tres de la misma.</li>
+<li><b>Haya mezcla de vídeo y carrusel.</b> El vídeo hace que te conozcan; el carrusel, que te guarden.</li>
+<li>La última sea de <b>empuje final</b> (familia 7), para justo antes de la Semana.</li>
+</ul>
+</div>
+
+<div class="box note" style="font-size:.93rem">
+<b>Sobre la palabra clave:</b> en toda la guía es <code>CLASE</code>. Si tu automatización usa otra
+(YO, PLAZA, INFO…), <b>cámbiala en todos los sitios</b>: en el vídeo, en el pie de foto y en tu
+respuesta automática. Tiene que ser siempre la misma.
+</div>
+</div></div>
+
+<!-- ═══════════ PASO 2 · CALENDARIO ═══════════ -->
+<div class="ac" id="pc" style="--c:#d98cb3">
+<div class="top"><span class="num">2</span><div><div class="ti">El calendario</div></div>
+<div class="su">Tus 7 publicaciones con fecha y formato. Lo guardas en PDF y lo tienes delante todo el mes.</div></div>
+<div class="bd">
+
+<h4>Lo que le escribes</h4>
+<pre><code>PASO 2 · CALENDARIO
+
+De las propuestas anteriores me quedo con estas
+siete: [PON LOS NÚMEROS O LOS TÍTULOS]
+
+Móntame el calendario de publicación.
+
+Empiezo el [FECHA] y publico [1 / 2] veces por
+semana. La Semana de la Inversión es el
+[FECHA DE LA SEMANA].
+
+Dame una TABLA con una fila por publicación:
+- Nº
+- Día de la semana y fecha
+- Título del tema
+- Formato (vídeo o carrusel) y por qué ese
+- El gancho, en una frase
+- Qué necesito preparar (grabar / montar
+  imágenes / nada especial)
+
+Reglas:
+- Que las de mi historia caigan al principio:
+  son las que hacen que me conozcan.
+- Que la última sea de empuje final, justo
+  antes de que empiece la Semana.
+- Que no se repitan dos temas parecidos
+  seguidos.
+- Alterna vídeo y carrusel.
+
+Y al final, dime QUÉ GRABO TODO SEGUIDO
+el mismo día, para hacerlo en una sola sesión.</code></pre>
+
+<div class="gives"><b>📦 Lo que te devuelve</b>
+<ul>
+<li>La tabla con tus <b>7 publicaciones</b>, con fecha y formato</li>
+<li>Qué tienes que preparar para cada una</li>
+<li><b>El plan de grabación</b>: qué se graba todo del tirón</li>
+</ul></div>
+
+<div class="box good">
+<b>📄 Guárdalo en PDF y tenlo a mano</b>
+<div class="step" style="margin-top:9px"><span class="n">1</span><div class="b">Copia la tabla que te ha dado.</div></div>
+<div class="step"><span class="n">2</span><div class="b">Pégala en un documento (Word, Google Docs, o incluso en las notas del móvil).</div></div>
+<div class="step"><span class="n">3</span><div class="b"><b>Archivo → Imprimir → Guardar como PDF.</b> Ya tienes tu calendario.</div></div>
+<div class="step"><span class="n">4</span><div class="b">Y lo más importante: <b>ponle las fechas en el calendario del móvil</b>, con aviso. Lo que no está en el calendario, no se publica.</div></div>
+</div>
+</div></div>
+
 <!-- ═══════════ PASO 1 ═══════════ -->
 <div class="ac" id="p1" style="--c:#c9a355">
-<div class="top"><span class="num">1</span><div><div class="ti">El guion</div></div>
-<div class="su">Qué vas a decir delante de la cámara.</div></div>
+<div class="top"><span class="num sm">3·A</span><div><div class="ti">El contenido: guion o diapositivas</div></div>
+<div class="su">Primera parte del paquete. Si es vídeo, el guion entero para decirlo. Si es carrusel, cuántas diapositivas y qué pone en cada una.</div></div>
 <div class="bd">
 
 <h4>Lo que le escribes</h4>
 <span class="say">Idea: lo que te cuesta al año no revisar tus suscripciones.</span>
 <span class="say">Usa el guion de la inflación de la guía y adáptalo a mi historia.</span>
 
-<h4>Si quieres afinar más</h4>
-<pre><code>PASO 1 · GUION
+<h4>Si es VÍDEO</h4>
+<pre><code>PASO 3·A · GUION DE VÍDEO
 
-Idea: [TU IDEA EN UNA FRASE]
-   (o: usa el guion [X] de la guía)
+Publicación nº [X] del calendario:
+[TÍTULO DEL TEMA]
 
-Formato: reel de [35] segundos
+Formato: vídeo de [35] segundos
 Dónde grabo: [la cocina / el coche / la calle]
 Extra: [sale mi hija] · [a dos voces]
 
 Dame:
-1. TRES ÁNGULOS numerados, uno contraintuitivo.
-2. Desarrolla ENTERO el número 1:
-   - Gancho (0-3 s)
-   - Guion hablado, marcando las 4 piezas
-   - Qué texto aparece en pantalla y cuándo
-3. Duración estimada y número de palabras.</code></pre>
+1. TRES GANCHOS distintos (menos de 10
+   palabras) y cuál recomiendas.
+2. EL GUION ENTERO, palabra por palabra,
+   escrito para DECIRLO en voz alta.
+   Marca las 4 piezas: gancho, dato,
+   remate y CTA con la palabra CLASE.
+3. QUÉ TEXTO APARECE EN PANTALLA y en qué
+   momento.
+4. Duración estimada y número de palabras.</code></pre>
+
+<h4>Si es CARRUSEL</h4>
+<pre><code>PASO 3·A · DIAPOSITIVAS
+
+Publicación nº [X] del calendario:
+[TÍTULO DEL TEMA]
+
+Dime primero CUÁNTAS DIAPOSITIVAS necesita
+este tema (entre 6 y 10) y por qué esas.
+
+Y después, de CADA una:
+- El TITULAR (máximo 7 palabras)
+- El TEXTO de apoyo, si hace falta
+  (una o dos frases cortas)
+
+La primera es la portada: tiene que
+funcionar sola y dar ganas de deslizar.
+La última lleva "Comenta CLASE".</code></pre>
 
 <div class="gives"><b>📦 Lo que te devuelve</b>
 <ul>
@@ -556,8 +854,8 @@ pidiendo el paquete (paso 2) de cada una según te toque publicarla.</p>
 
 <!-- ═══════════ PASO 2 ═══════════ -->
 <div class="ac" id="p2" style="--c:#d98cb3">
-<div class="top"><span class="num">2</span><div><div class="ti">El paquete de publicación</div></div>
-<div class="su">Todo lo que se escribe alrededor del vídeo. Esto es lo que separa a un creador de alguien que solo sube vídeos.</div></div>
+<div class="top"><span class="num sm">3·B</span><div><div class="ti">Los textos de la publicación</div></div>
+<div class="su">Segunda parte del paquete: todo lo que se escribe alrededor. Esto es lo que separa a un creador de alguien que solo sube cosas.</div></div>
 <div class="bd">
 
 <h4>Lo que le escribes</h4>
@@ -619,17 +917,104 @@ la hayas comprobado o cambiado por la tuya.
 </div>
 
 <div class="box note" style="font-size:.93rem">
-<b>Dos cosas que quizá no sepas hacer:</b><br>
-· <b>Fijar el comentario:</b> publica tú ese comentario, mantén el dedo pulsado encima y elige
-<b>Fijar</b>. Se queda arriba del todo y lo ve todo el mundo.<br>
-· <b>Si aún no tienes ManyChat:</b> no pasa nada. Cuando alguien comente tu palabra, le contestas
-y le mandas el enlace <b>por privado</b> tú mismo. Es más trabajo, pero al principio conecta más.
+<b>Fijar el comentario:</b> publícalo tú, mantén el dedo pulsado encima y elige <b>Fijar</b>. Se
+queda arriba del todo y lo ve todo el mundo.
 </div>
+</div></div>
+
+<!-- ═══════════ 3·C · EL ENTREGABLE ═══════════ -->
+<div class="ac" id="pe" style="--c:#b48ad6">
+<div class="top"><span class="num sm">3·C</span><div><div class="ti">Lo que reciben cuando comentan</div></div>
+<div class="su">🔓 Opcional y suena avanzado, pero se hace en diez minutos. Es lo que convierte un comentario en una persona apuntada.</div></div>
+<div class="bd">
+
+<p>Alguien comenta <b>CLASE</b>. ¿Y ahora qué le llega? Hay dos formas de resolverlo, y las dos
+valen. <b>Elige la que te apetezca</b>: la sencilla funciona perfectamente.</p>
+
+<div class="tw"><table>
+<tr><th>&nbsp;</th><th>🟢 La sencilla</th><th>🟣 La completa</th></tr>
+<tr><td><b>Qué recibe</b></td><td>Tu enlace de inscripción a la Semana, con dos líneas tuyas</td><td>Un regalito tuyo (un PDF corto) <b>y</b> el enlace</td></tr>
+<tr><td><b>Cómo se manda</b></td><td>Tú, por privado, a mano</td><td>Automático con ManyChat (o también a mano)</td></tr>
+<tr><td><b>Trabajo</b></td><td>Cinco minutos por persona</td><td>Una tarde de preparación, luego solo</td></tr>
+<tr><td><b>Ventaja</b></td><td><b>No falla nunca</b> y conecta más: hay una persona detrás</td><td>Das más valor y trabaja mientras duermes</td></tr>
+</table></div>
+
+<div class="box good" style="font-size:.93rem">
+✅ <b>Si empiezas hoy, ve a la sencilla.</b> Contestar a mano los primeros días es lo mejor que
+puedes hacer: te enteras de qué te pregunta la gente, y eso son ideas para tus siguientes
+publicaciones.
+</div>
+
+<h3>🟢 La sencilla · el mensaje que mandas a mano</h3>
+<pre><code>PASO 3·C · MENSAJE PRIVADO
+
+Escríbeme el mensaje que le mando por privado
+a quien comenta CLASE.
+
+- Cercano y corto, como un mensaje de verdad,
+  no como un anuncio.
+- Que dé las gracias y diga qué va a recibir.
+- Con mi enlace: [PEGA TU ENLACE]
+- Que termine invitando a que me pregunten
+  cualquier duda.
+
+Dame también DOS VARIANTES más cortas por si
+tengo que mandar muchos.</code></pre>
+
+<h3>🟣 La completa · tu propio regalito</h3>
+<p>Un PDF corto tuyo (una o dos páginas) que acompaña al enlace. Da mucho más valor y te
+distingue. Se hace con ChatGPT en un rato:</p>
+
+<pre><code>Quiero crear una guía corta en PDF para
+regalar a quien me pregunte por la Semana
+de la Inversión Sí es para Ti.
+
+Sobre mí: [TU PROFESIÓN Y TU SITUACIÓN]
+Para quién es: gente que quiere ordenar su
+dinero y no sabe por dónde empezar.
+
+Quiero que sea de UNA O DOS PÁGINAS, muy
+práctica y sin tecnicismos. Tema:
+[ELIGE UNO:
+ - Los 5 primeros pasos para ordenar tu dinero
+ - Las 7 fugas de dinero que casi nadie mira
+ - Qué mirar en tu cuenta antes de invertir
+ - Los 5 mitos que te frenan]
+
+Dame:
+1. El TÍTULO (que dé ganas de abrirlo)
+2. El contenido entero, listo para copiar
+3. Una última página invitando a la Semana,
+   con mi enlace
+4. Un aviso al final de que es material
+   educativo y no asesoramiento financiero
+
+Escríbelo en español de España, cercano,
+en frases cortas. Nada de promesas de
+rentabilidad.</code></pre>
+
+<div class="box">
+<b>Y para convertirlo en PDF:</b>
+<div class="step" style="margin-top:9px"><span class="n">1</span><div class="b">Copia el texto a un documento (Word, Google Docs o Canva si lo quieres bonito).</div></div>
+<div class="step"><span class="n">2</span><div class="b"><b>Archivo → Descargar / Imprimir → PDF.</b></div></div>
+<div class="step"><span class="n">3</span><div class="b">Súbelo a Google Drive, dale a <b>compartir con enlace</b> y ese enlace es el que mandas.</div></div>
+</div>
+
+<div class="box warn" style="font-size:.93rem">
+<b>Importante:</b> el regalito <b>no sustituye al enlace de la Semana</b>, lo acompaña. Lo que
+quieres es que se apunten; el PDF es la excusa para que te escriban.
+</div>
+
+<h3>Y si quieres que se mande solo: ManyChat</h3>
+<p style="font-size:.94rem;color:var(--soft)">Es el robot que manda el mensaje automáticamente
+cuando alguien comenta tu palabra. Tiene versión de prueba gratuita y en la Guía del Estratega
+Financiero están los pasos para montarlo. <b>No corre prisa:</b> monta primero el contenido y
+añade esto cuando te empiecen a llegar comentarios.</p>
 </div></div>
 
 <!-- ═══════════ PASO 3 ═══════════ -->
 <div class="ac" id="p3" style="--c:#4c9be8">
-<div class="top"><span class="num">3</span><div><div class="ti">Montar la pieza</div></div>
+<div class="top"><span class="num">4</span><div><div class="ti">Las imágenes y el montaje</div></div>
 <div class="su">La portada siempre. Y después eliges: carrusel (B) o vídeo (C).</div></div>
 <div class="bd">
 
@@ -799,7 +1184,7 @@ publicar es darle a un botón.
 
 <!-- ═══════════ PASO 4 ═══════════ -->
 <div class="ac" id="p4" style="--c:#3ecf8e">
-<div class="top"><span class="num">4</span><div><div class="ti">Crear eco</div></div>
+<div class="top"><span class="num">5</span><div><div class="ti">Crear eco</div></div>
 <div class="su">La guía se llama “Crea contenido. Crea eco” por algo. El trabajo ya está hecho.</div></div>
 <div class="bd">
 
@@ -850,9 +1235,9 @@ Facebook ya multiplicas mucho, y son los tres que salen del mismo sitio.</p>
 </div></div>
 
 <!-- ═══════════ OPCIONAL ═══════════ -->
-<h2 id="s-perfil">Opcional · Tu perfil</h2>
+<h2 id="s-perfil">Paso 6 · Tu bio <span style="font-size:1rem;color:var(--soft)">(opcional)</span></h2>
 <div class="ac" style="--c:#9db1c8">
-<div class="top"><span class="num">+</span><div><div class="ti">Que se entienda en tres segundos</div></div>
+<div class="top"><span class="num">6</span><div><div class="ti">Tu bio: que se entienda en tres segundos</div></div>
 <div class="su">Puedes hacer el mejor reel del mundo: si quien entra no entiende quién eres, se va.</div></div>
 <div class="bd">
 <pre><code>Quiero mejorar mi perfil de Instagram.
@@ -1006,15 +1391,21 @@ var TOUR = {
      txt:'Se elige al principio, porque el guion se pide distinto. El vídeo hace que te conozcan; el carrusel hace que te guarden. Si dudas, empieza por el carrusel: no hay que grabarse.'},
     {sel:'#p0', chip:'Paso 0', tit:'Monta tu proyecto',
      txt:'Media hora y una sola vez. Creas el proyecto, subes el PDF de la guía y pegas las instrucciones. A partir de ahí la IA ya sabe quién eres y cómo escribes.'},
-    {sel:'#p1', chip:'Paso 1', tit:'El guion',
-     txt:'Le dices una idea en una frase. Te devuelve tres ángulos y desarrolla el primero entero, con lo que dices y lo que aparece en pantalla.'},
-    {sel:'#p2', chip:'Paso 2', tit:'El paquete de publicación',
-     txt:'Aquí está la diferencia entre subir un vídeo y publicar bien: texto de portada, pie de foto, primer comentario, hashtags, el mensaje del privado y tres historias de apoyo.'},
-    {sel:'#p3', chip:'Paso 3', tit:'Montar la pieza',
-     txt:'La portada siempre. Y después una de dos: las diapositivas si es carrusel, o grabar y subtitular si es vídeo. Nunca las dos para la misma idea.'},
-    {sel:'#p4', chip:'Paso 4', tit:'Crear eco',
+    {sel:'#pt', chip:'Paso 1', tit:'Elegir los temas',
+     txt:'La guía trae 82 piezas ya escritas, agrupadas por familias. Marcas las que te suenen, añades tus ideas en bruto, y la IA te cruza las dos cosas en diez propuestas. De ahí eliges siete.'},
+    {sel:'#pc', chip:'Paso 2', tit:'El calendario',
+     txt:'Las siete publicaciones con su fecha, su formato y su gancho, en una tabla. Se guarda en PDF y se pasan las fechas al calendario del móvil, que es lo que hace que de verdad se publiquen.'},
+    {sel:'#p1', chip:'Paso 3·A', tit:'El guion o las diapositivas',
+     txt:'Primera parte del paquete. Si es vídeo, el guion entero palabra por palabra. Si es carrusel, cuántas diapositivas hacen falta y qué pone en cada una.'},
+    {sel:'#p2', chip:'Paso 3·B', tit:'Los textos de la publicación',
+     txt:'La diferencia entre subir algo y publicar bien: texto de portada, pie de foto, primer comentario, hashtags y tres historias de apoyo.'},
+    {sel:'#pe', chip:'Paso 3·C', tit:'Lo que reciben al comentar',
+     txt:'Opcional. Cuando alguien comenta tu palabra, ¿qué le llega? Hay dos formas: la sencilla, que contestas tú a mano y nunca falla, o la completa, con tu propio regalito en PDF.'},
+    {sel:'#p3', chip:'Paso 4', tit:'Las imágenes y el montaje',
+     txt:'La portada siempre. Y después una de dos: las diapositivas si es carrusel, o grabar y subtitular si es vídeo.'},
+    {sel:'#p4', chip:'Paso 5', tit:'Crear eco',
      txt:'Lo más rentable y casi nadie lo hace: al subir a Instagram, con dos toques va también a Facebook y a tu estado de WhatsApp. Y hay versiones para TikTok, Shorts y LinkedIn.'},
-    {sel:'#s-perfil', chip:'Opcional', tit:'Tu perfil',
+    {sel:'#s-perfil', chip:'Paso 6', tit:'Tu bio',
      txt:'Si quien entra a tu perfil no entiende quién eres en tres segundos, se va. Esto se revisa de tarde en tarde.'},
     {sel:'#s-ej', chip:'Ejemplo', tit:'De principio a fin',
      txt:'Una idea real convertida en publicación completa, para ver cómo encaja todo. Unos veinte minutos, casi todos grabando.'},
@@ -1122,5 +1513,7 @@ document.querySelectorAll('pre').forEach(function(p){
 });
 </script>
 </body></html>
+
+
 
 
