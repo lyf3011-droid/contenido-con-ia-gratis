@@ -76,6 +76,36 @@ footer{color:var(--soft);font-size:.85rem;padding:28px 0 0;text-align:center;
 .cpy{position:absolute;top:8px;right:8px;background:var(--gold);color:#121a26;border:0;
   border-radius:8px;padding:6px 13px;font:inherit;font-size:.78rem;font-weight:800;cursor:pointer;opacity:.92}
 .cpy:hover{opacity:1}
+/* ── índice lateral (solo en PC) ── */
+.side{display:none}
+@media(min-width:1120px){
+  body{padding-left:268px}
+  .w{max-width:860px}
+  .side{display:block;position:fixed;left:0;top:0;width:268px;height:100vh;overflow-y:auto;
+    background:var(--sur);border-right:1px solid var(--line);padding:24px 18px 40px;z-index:50}
+  .side .marca{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--gold);font-weight:700;margin-bottom:14px}
+  .side .obj{background:var(--sur2);border:1px solid var(--line);border-radius:10px;
+    padding:10px 12px;font-size:.82rem;color:var(--soft);margin-bottom:16px;line-height:1.4}
+  .side .obj b{color:var(--ink)}
+  .side a{display:block;color:var(--soft);text-decoration:none;font-size:.88rem;
+    padding:7px 10px;border-radius:8px;border-left:3px solid transparent;line-height:1.35}
+  .side a:hover{color:var(--ink);background:var(--sur2)}
+  .side a.act{color:var(--ink);background:var(--sur2);border-left-color:var(--gold);font-weight:700}
+  .side a .p{font-family:var(--mono);font-size:.76rem;color:var(--gold);margin-right:6px}
+  .side .sep{height:1px;background:var(--line);margin:12px 4px}
+  .side .sub{padding-left:20px;font-size:.83rem}
+  .side .tit{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--soft);
+    margin:14px 6px 5px;font-weight:700}
+}
+/* ── plegables ── */
+details.plg{background:var(--sur2);border:1px solid var(--line);border-radius:11px;margin:12px 0}
+details.plg > summary{cursor:pointer;padding:13px 16px;font-weight:700;list-style:none}
+details.plg > summary::-webkit-details-marker{display:none}
+details.plg > summary::before{content:"▸ ";color:var(--gold);font-weight:800}
+details.plg[open] > summary::before{content:"▾ "}
+details.plg > summary span{color:var(--soft);font-weight:400;font-size:.88rem}
+details.plg .cnt{padding:0 16px 14px}
 /* ── esquema de pasos ── */
 .meta{background:linear-gradient(135deg,rgba(201,163,85,.14),transparent);
   border:1px solid var(--gold);border-radius:var(--r);padding:20px 22px;margin:18px 0;text-align:center}
@@ -137,7 +167,39 @@ footer{color:var(--soft);font-size:.85rem;padding:28px 0 0;text-align:center;
   pre code,code{color:#111!important}
   h2{page-break-after:avoid}
 }
-</style></head><body><div class="w">
+@media print{.side{display:none!important}body{padding-left:0!important}}
+</style></head><body>
+
+<nav class="side" id="side">
+  <div class="marca">Tu Fábrica de Contenido</div>
+  <div class="obj">🎯 El objetivo:<br><b>7 publicaciones</b> con el CTA de La Semana de la Inversión</div>
+
+  <a href="#eco"><span class="p">▶</span>Ruta rápida: tu vídeo hoy</a>
+  <div class="sep"></div>
+
+  <div class="tit">Antes de empezar</div>
+  <a href="#s-meta"><span class="p">·</span>A dónde vamos</a>
+  <a href="#s-nec"><span class="p">·</span>Qué necesitas</a>
+  <a href="#s-glo"><span class="p">·</span>Cuatro palabras</a>
+  <a href="#s-elige"><span class="p">·</span>¿Vídeo o carrusel?</a>
+
+  <div class="tit">Los pasos</div>
+  <a href="#p0"><span class="p">0</span>Monta tu proyecto</a>
+  <a href="#pt"><span class="p">1</span>Elegir los temas</a>
+  <a href="#pc"><span class="p">2</span>El calendario</a>
+  <a href="#p1"><span class="p">3A</span>Guion o diapositivas</a>
+  <a href="#p2"><span class="p">3B</span>Los textos</a>
+  <a href="#pe"><span class="p">3C</span>Lo que reciben</a>
+  <a href="#p3"><span class="p">4</span>Imágenes y montaje</a>
+  <a href="#p4"><span class="p">5</span>Crear eco</a>
+  <a href="#s-perfil"><span class="p">6</span>Tu bio</a>
+
+  <div class="tit">Al final</div>
+  <a href="#s-ej"><span class="p">·</span>Un ejemplo completo</a>
+  <a href="#s-fin"><span class="p">·</span>Lo que conviene saber</a>
+</nav>
+
+<div class="w">
 
 <header>
   <div class="eb">Complemento práctico</div>
@@ -599,6 +661,10 @@ suenen a ti</b> — las que podrías contar con algo tuyo detrás.</p>
 .fam .et{font-family:var(--mono);font-size:.78rem;color:var(--soft);font-weight:700}
 </style>
 
+<details class="plg" open>
+<summary>Ver las 82 piezas de la guía <span>· agrupadas por familias</span></summary>
+<div class="cnt">
+
 <div class="fam">
 <h4>1 · Tu historia y tu testimonio</h4>
 <p><span class="et">REELS</span> 1 ¿Y a ti quién te enseñó esto? · 32 La amiga que cambió ·
@@ -664,6 +730,9 @@ suenen a ti</b> — las que podrías contar con algo tuyo detrás.</p>
 <p><span class="et">CARRUSELES</span> 8 ¿Esto es para ti? · 12 Las dos versiones de ti</p>
 <p style="color:var(--soft)">👉 Las historias 16 a 20 son de <b>empuje final</b>: guárdalas para los últimos días.</p>
 </div>
+
+</div>
+</details>
 
 <h3>B · Tus temas + los suyos</h3>
 <p>Ahora pon lo tuyo encima. Escribe <b>tus ideas en bruto</b> —lo que te ha pasado, lo que te
@@ -1128,8 +1197,11 @@ La portada, con la frase grande.
 La última, con "Comenta CLASE".
 Solo colores y texto, sin imágenes.
 
-Lo abro en el navegador y hago una captura
-de cada diapositiva.</code></pre>
+IMPORTANTE: añade estilos de impresión para
+que al darle a "Imprimir" cada diapositiva
+salga en UNA PÁGINA entera, sin márgenes
+blancos ni cabeceras. Así puedo guardarlo
+como PDF directamente.</code></pre>
 
 <div class="box good" style="font-size:.93rem">
 ✅ <b>Por qué este atajo es el más práctico:</b> el texto lo escribe Claude como <b>texto de
@@ -1137,7 +1209,22 @@ verdad</b>, así que sale perfecto (sin tildes comidas). Y <b>te queda de planti
 siguiente carrusel es solo cambiar las palabras.
 </div>
 
-<h4>Y ahora, cómo convertirlo en imágenes (paso a paso)</h4>
+<h4>⭐ La forma más fácil: guardarlo en PDF</h4>
+<div class="box good">
+<div class="step" style="margin-top:6px"><span class="n">1</span><div class="b">Abre el carrusel (dale a <b>descargar</b> en la ventana de vista previa y luego doble clic al archivo).</div></div>
+<div class="step"><span class="n">2</span><div class="b">Pulsa <b>Ctrl + P</b> (en Mac, <b>Cmd + P</b>).</div></div>
+<div class="step"><span class="n">3</span><div class="b">En “Destino” elige <b>Guardar como PDF</b>. En <b>Márgenes</b> pon <b>Ninguno</b> y marca <b>Gráficos de fondo</b>.</div></div>
+<div class="step"><span class="n">4</span><div class="b">Guardar. <b>Ya tienes tu carrusel en PDF</b>, una diapositiva por página.</div></div>
+</div>
+
+<div class="box note" style="font-size:.93rem">
+<b>¿Y para qué sirve ese PDF?</b><br>
+· <b>LinkedIn:</b> se sube tal cual, y allí se pasa como un carrusel. <b>Sin hacer nada más.</b><br>
+· <b>Instagram:</b> ábrelo en el móvil y haz una captura de cada página. Sale más limpio que capturar la web, porque no hay ni navegador ni barras.<br>
+· <b>Y te queda guardado</b>, por si quieres reutilizarlo o enseñárselo a alguien.
+</div>
+
+<h4>La otra forma: capturar desde el navegador</h4>
 <div class="box">
 <div class="step"><span class="n">1</span><div class="b">Claude te enseña el carrusel <b>en una ventana de vista previa</b>, ya dibujado. Puedes ir bajando y verlo entero ahí mismo.</div></div>
 <div class="step"><span class="n">2</span><div class="b">Si quieres verlo más grande, arriba de esa ventana hay un botón para <b>descargar</b> el archivo. Se guarda en tu carpeta de <b>Descargas</b>; haz <b>doble clic</b> y se abre en el navegador (Chrome, Edge… el que uses).</div></div>
@@ -1490,6 +1577,23 @@ document.addEventListener('keydown', function(e){
 });
 /* si se abre con ?auto=1, arranca solo */
 if (location.search.indexOf('auto=1') > -1) setTimeout(function(){ TOUR.arrancar(); }, 900);
+
+/* ── índice lateral: marca dónde estás ── */
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('.side a'));
+  if (!links.length) return;
+  var mapa = links.map(function(a){
+    var el = document.querySelector(a.getAttribute('href'));
+    return el ? {a:a, el:el} : null;
+  }).filter(Boolean);
+  function marcar(){
+    var y = window.scrollY + 140, act = null;
+    mapa.forEach(function(m){ if (m.el.offsetTop <= y) act = m.a; });
+    links.forEach(function(a){ a.classList.toggle('act', a === act); });
+  }
+  window.addEventListener('scroll', marcar, {passive:true});
+  marcar();
+})();
 
 document.querySelectorAll('pre').forEach(function(p){
   var c = p.querySelector('code'); if(!c) return;
