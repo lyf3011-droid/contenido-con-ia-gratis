@@ -75,8 +75,40 @@ footer{color:var(--soft);font-size:.85rem;padding:28px 0 0;text-align:center;
 .cpy{position:absolute;top:8px;right:8px;background:var(--gold);color:#121a26;border:0;
   border-radius:8px;padding:6px 13px;font:inherit;font-size:.78rem;font-weight:800;cursor:pointer;opacity:.92}
 .cpy:hover{opacity:1}
+/* ── recorrido guiado ── */
+.tourbtn{background:var(--sur);color:var(--ink);border:1px solid var(--gold);border-radius:99px;
+  padding:9px 20px;font:inherit;font-weight:700;font-size:.9rem;cursor:pointer;margin-top:16px}
+.tourbtn:hover{background:var(--gold);color:#121a26}
+.w.leyendo > *:not(.mirando){opacity:.28;transition:opacity .4s}
+.mirando{position:relative;transition:opacity .4s}
+.mirando::after{content:"";position:absolute;inset:-12px -14px;border:2px solid var(--gold);
+  border-radius:14px;pointer-events:none;box-shadow:0 0 0 6px rgba(201,163,85,.10)}
+.nar{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(150%);
+  width:min(560px,calc(100% - 32px));background:var(--sur);border:1px solid var(--gold);
+  border-radius:16px;padding:18px 20px;z-index:99;opacity:0;
+  box-shadow:0 18px 50px rgba(0,0,0,.45);transition:transform .45s ease,opacity .35s}
+.nar.on{transform:translateX(-50%) translateY(0);opacity:1}
+.nar .barra{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.nar .chip{font-size:10.5px;text-transform:uppercase;letter-spacing:.09em;font-weight:800;
+  color:#121a26;background:var(--gold);border-radius:99px;padding:3px 10px}
+.nar .paso{margin-left:auto;color:var(--soft);font-size:12px;font-family:var(--mono)}
+.nar .x{background:none;border:0;color:var(--soft);cursor:pointer;font-size:20px;line-height:1;padding:0 2px}
+.nar .x:hover{color:var(--ink)}
+.nar h3{margin:0 0 5px;font-size:1.05rem}
+.nar p{margin:0;color:var(--soft);font-size:.93rem;line-height:1.5}
+.nar .pts{display:flex;gap:5px;margin-top:12px;flex-wrap:wrap}
+.nar .pts i{width:7px;height:7px;border-radius:50%;background:var(--line);transition:.3s}
+.nar .pts i.act{background:var(--gold);transform:scale(1.4)}
+.nar .nav{display:flex;gap:8px;margin-top:13px}
+.nar .nav button{flex:1;background:var(--sur2);color:var(--soft);border:1px solid var(--line);
+  border-radius:9px;padding:9px 10px;font:inherit;font-size:.86rem;font-weight:600;cursor:pointer}
+.nar .nav button:hover{color:var(--ink);border-color:var(--gold)}
+.nar .nav button.pri{background:var(--gold);color:#121a26;border-color:transparent;font-weight:800}
+@media (prefers-reduced-motion:reduce){.nar,.w.leyendo > *,.mirando{transition:none}}
 @media print{
-  button,.cpy{display:none!important}
+  button,.cpy,.nar,.tourbtn{display:none!important}
+  .w.leyendo > *{opacity:1!important}
+  .mirando::after{display:none}
   body{background:#fff!important;color:#111!important;padding:0}
   .box,.ac,pre,table,.gives,.ej{break-inside:avoid;page-break-inside:avoid;background:#fafafa!important}
   pre code,code{color:#111!important}
@@ -91,6 +123,7 @@ footer{color:var(--soft);font-size:.85rem;padding:28px 0 0;text-align:center;
   Después le dices una idea y te devuelve <b>la publicación entera</b>: guion, portada,
   textos y difusión.</p>
   <div class="rule"></div>
+  <button class="tourbtn" id="tour-go">▶ Ver el recorrido guiado</button>
 </header>
 
 <div class="box good">
@@ -116,7 +149,7 @@ de una IA</b> para que trabaje con ella. La guía manda; la IA solo ahorra tiemp
 <p style="color:var(--soft);font-size:.82rem;margin:8px 0 0">Elige <b>“Guardar como PDF”</b> como destino.</p>
 </div>
 
-<h2>Qué necesitas antes de empezar</h2>
+<h2 id="s-nec">Qué necesitas antes de empezar</h2>
 
 <div class="box warn">
 💻 <b>El paso 0 hazlo en el ordenador</b>, no en el móvil: hay que subir un archivo y pegar
@@ -143,7 +176,7 @@ sin problema.
 <tr><td><b>ManyChat</b></td><td>El robot que manda tu enlace por privado a quien comente tu palabra clave. <b>Se puede empezar sin él</b>: al principio contestas tú a mano, que además queda más cercano.</td></tr>
 </table></div>
 
-<h2>Cuatro palabras que vas a leer mucho</h2>
+<h2 id="s-glo">Cuatro palabras que vas a leer mucho</h2>
 <div class="tw"><table>
 <tr><th>Palabra</th><th>Qué significa</th></tr>
 <tr><td><b>Prompt</b></td><td>Lo que le escribes a la IA. Nada más. Como el mensaje que le mandarías a un ayudante.</td></tr>
@@ -163,7 +196,7 @@ sin problema.
 <a class="fl" href="#p4" style="--c:#3ecf8e"><div class="t">4 · El eco</div><div class="d">Más sitios</div></a>
 </div>
 
-<h2>Antes del paso 1: ¿vídeo o carrusel?</h2>
+<h2 id="s-elige">Antes del paso 1: ¿vídeo o carrusel?</h2>
 <p>Esto se decide <b>al principio</b>, porque el guion se pide de una forma o de otra. Elige uno
 —nunca los dos para la misma idea— y sigue ese camino hasta el final.</p>
 
@@ -654,7 +687,7 @@ Facebook ya multiplicas mucho, y son los tres que salen del mismo sitio.</p>
 </div></div>
 
 <!-- ═══════════ OPCIONAL ═══════════ -->
-<h2>Opcional · Tu perfil</h2>
+<h2 id="s-perfil">Opcional · Tu perfil</h2>
 <div class="ac" style="--c:#9db1c8">
 <div class="top"><span class="num">+</span><div><div class="ti">Que se entienda en tres segundos</div></div>
 <div class="su">Puedes hacer el mejor reel del mundo: si quien entra no entiende quién eres, se va.</div></div>
@@ -679,7 +712,7 @@ Dame:
 </div></div>
 
 <!-- ═══════════ EJEMPLO ═══════════ -->
-<h2>Un ejemplo de principio a fin</h2>
+<h2 id="s-ej">Un ejemplo de principio a fin</h2>
 <p>Para que veas cómo encaja todo. Esto es lo que sale de los pasos 1, 2 y 3 con una sola idea:</p>
 
 <div class="ej"><b>Le escribes:</b><br>
@@ -707,7 +740,7 @@ a Facebook y a tu estado de WhatsApp.</div>
 <p style="color:var(--soft)">Tiempo real: unos <b>20 minutos</b>, casi todos grabando.</p>
 
 <!-- ═══════════ CIERRE ═══════════ -->
-<h2>Lo que conviene saber</h2>
+<h2 id="s-fin">Lo que conviene saber</h2>
 
 <h3>Todo lo que lleva una publicación</h3>
 <p>Para que no se te olvide nada:</p>
@@ -772,7 +805,132 @@ No sustituye a la guía: solo explica cómo apoyarte en una IA gratuita para apl
 </footer>
 
 </div>
+
+<div class="nar" id="nar" role="status" aria-live="polite">
+  <div class="barra">
+    <span class="chip" id="nar-chip">Recorrido</span>
+    <span class="paso" id="nar-paso">1 / 1</span>
+    <button class="x" id="nar-x" title="Salir del recorrido" aria-label="Salir">×</button>
+  </div>
+  <h3 id="nar-tit"></h3>
+  <p id="nar-txt"></p>
+  <div class="pts" id="nar-pts"></div>
+  <div class="nav">
+    <button id="nar-ant">← Anterior</button>
+    <button id="nar-pausa">⏸ Pausa</button>
+    <button id="nar-sig" class="pri">Siguiente →</button>
+  </div>
+</div>
+
 <script>
+/* ══ RECORRIDO GUIADO ══
+   Avanza solo. El botón de pausa lo detiene para poder explicar con calma. */
+var TOUR = {
+  paradas: [
+    {sel:'header', chip:'Bienvenida', tit:'Qué es esto',
+     txt:'Una guía para montar tu contenido con Claude gratis, apoyándote en la Guía del Estratega Financiero. No sustituye a la guía: la pone a trabajar.'},
+    {sel:'#s-nec', chip:'Antes de nada', tit:'Lo que necesitas',
+     txt:'El PDF de la guía, tu enlace de registro y una cuenta gratis. El paso 0 se hace en el ordenador; el resto, desde el móvil. Las demás herramientas son opcionales.'},
+    {sel:'#s-glo', chip:'Vocabulario', tit:'Cuatro palabras',
+     txt:'Prompt, proyecto, portada y pie de foto. Con entender estas cuatro, ya puedes seguir toda la guía.'},
+    {sel:'#s-elige', chip:'Decisión', tit:'¿Vídeo o carrusel?',
+     txt:'Se elige al principio, porque el guion se pide distinto. El vídeo hace que te conozcan; el carrusel hace que te guarden. Si dudas, empieza por el carrusel: no hay que grabarse.'},
+    {sel:'#p0', chip:'Paso 0', tit:'Monta tu proyecto',
+     txt:'Media hora y una sola vez. Creas el proyecto, subes el PDF de la guía y pegas las instrucciones. A partir de ahí la IA ya sabe quién eres y cómo escribes.'},
+    {sel:'#p1', chip:'Paso 1', tit:'El guion',
+     txt:'Le dices una idea en una frase. Te devuelve tres ángulos y desarrolla el primero entero, con lo que dices y lo que aparece en pantalla.'},
+    {sel:'#p2', chip:'Paso 2', tit:'El paquete de publicación',
+     txt:'Aquí está la diferencia entre subir un vídeo y publicar bien: texto de portada, pie de foto, primer comentario, hashtags, el mensaje del privado y tres historias de apoyo.'},
+    {sel:'#p3', chip:'Paso 3', tit:'Montar la pieza',
+     txt:'La portada siempre. Y después una de dos: las diapositivas si es carrusel, o grabar y subtitular si es vídeo. Nunca las dos para la misma idea.'},
+    {sel:'#p4', chip:'Paso 4', tit:'Crear eco',
+     txt:'Lo más rentable y casi nadie lo hace: al subir a Instagram, con dos toques va también a Facebook y a tu estado de WhatsApp. Y hay versiones para TikTok, Shorts y LinkedIn.'},
+    {sel:'#s-perfil', chip:'Opcional', tit:'Tu perfil',
+     txt:'Si quien entra a tu perfil no entiende quién eres en tres segundos, se va. Esto se revisa de tarde en tarde.'},
+    {sel:'#s-ej', chip:'Ejemplo', tit:'De principio a fin',
+     txt:'Una idea real convertida en publicación completa, para ver cómo encaja todo. Unos veinte minutos, casi todos grabando.'},
+    {sel:'#s-fin', chip:'Cierre', tit:'Lo que conviene saber',
+     txt:'Dónde se equivoca la IA, qué decirle si responde flojo y cómo repartir la semana. Y la regla que lo resume: hecho es mejor que perfecto.'}
+  ],
+  i: -1, auto: true, t: null, wrap: null,
+
+  arrancar: function(){
+    this.wrap = document.querySelector('.w');
+    this.i = -1; this.auto = true;
+    document.getElementById('nar').classList.add('on');
+    this.pintarPts();
+    this.ir(0);
+  },
+  ir: function(n){
+    if (n < 0) n = 0;
+    if (n >= this.paradas.length) { this.terminar(); return; }
+    this.i = n;
+    var p = this.paradas[n];
+    var el = document.querySelector(p.sel);
+    if (!el) { this.ir(n + 1); return; }
+
+    this.wrap.classList.add('leyendo');
+    document.querySelectorAll('.mirando').forEach(function(e){ e.classList.remove('mirando'); });
+    var destaca = el;
+    if (el.tagName === 'H2') { destaca = el; }
+    destaca.classList.add('mirando');
+    el.scrollIntoView({behavior:'smooth', block:'center'});
+
+    document.getElementById('nar-chip').textContent = p.chip;
+    document.getElementById('nar-tit').textContent = p.tit;
+    document.getElementById('nar-txt').textContent = p.txt;
+    document.getElementById('nar-paso').textContent = (n+1) + ' / ' + this.paradas.length;
+    document.getElementById('nar-ant').style.visibility = n === 0 ? 'hidden' : '';
+    document.getElementById('nar-sig').textContent =
+      n === this.paradas.length - 1 ? 'Terminar ✓' : 'Siguiente →';
+    this.marcarPt(n);
+    this.programar(p);
+  },
+  programar: function(p){
+    clearTimeout(this.t);
+    if (!this.auto) return;
+    var espera = Math.max(5000, 1800 + p.txt.length * 42);
+    var self = this;
+    this.t = setTimeout(function(){ self.ir(self.i + 1); }, espera);
+  },
+  pausa: function(){
+    this.auto = !this.auto;
+    var b = document.getElementById('nar-pausa');
+    if (this.auto) { b.textContent = '⏸ Pausa'; this.programar(this.paradas[this.i]); }
+    else { b.textContent = '▶ Seguir'; clearTimeout(this.t); }
+  },
+  marcarPt: function(n){
+    document.querySelectorAll('#nar-pts i').forEach(function(d, j){
+      d.classList.toggle('act', j === n);
+    });
+  },
+  pintarPts: function(){
+    var c = document.getElementById('nar-pts'); c.textContent = '';
+    this.paradas.forEach(function(){ c.appendChild(document.createElement('i')); });
+  },
+  terminar: function(){
+    clearTimeout(this.t);
+    document.getElementById('nar').classList.remove('on');
+    if (this.wrap) this.wrap.classList.remove('leyendo');
+    document.querySelectorAll('.mirando').forEach(function(e){ e.classList.remove('mirando'); });
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+};
+document.getElementById('tour-go').addEventListener('click', function(){ TOUR.arrancar(); });
+document.getElementById('nar-sig').addEventListener('click', function(){ TOUR.ir(TOUR.i + 1); });
+document.getElementById('nar-ant').addEventListener('click', function(){ TOUR.ir(TOUR.i - 1); });
+document.getElementById('nar-pausa').addEventListener('click', function(){ TOUR.pausa(); });
+document.getElementById('nar-x').addEventListener('click', function(){ TOUR.terminar(); });
+document.addEventListener('keydown', function(e){
+  if (!document.getElementById('nar').classList.contains('on')) return;
+  if (e.key === 'Escape') TOUR.terminar();
+  if (e.key === 'ArrowRight') TOUR.ir(TOUR.i + 1);
+  if (e.key === 'ArrowLeft') TOUR.ir(TOUR.i - 1);
+  if (e.key === ' ') { e.preventDefault(); TOUR.pausa(); }
+});
+/* si se abre con ?auto=1, arranca solo */
+if (location.search.indexOf('auto=1') > -1) setTimeout(function(){ TOUR.arrancar(); }, 900);
+
 document.querySelectorAll('pre').forEach(function(p){
   var c = p.querySelector('code'); if(!c) return;
   p.style.position = 'relative';
@@ -795,4 +953,5 @@ document.querySelectorAll('pre').forEach(function(p){
 });
 </script>
 </body></html>
+
 
