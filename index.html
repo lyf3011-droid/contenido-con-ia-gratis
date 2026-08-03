@@ -72,8 +72,11 @@ footer{color:var(--soft);font-size:.85rem;padding:28px 0 0;text-align:center;
 .ej{background:var(--sur2);border:1px solid var(--line);border-left:4px solid var(--pink);
   border-radius:11px;padding:14px 17px;margin:11px 0;font-size:.94rem}
 .ej b{color:var(--pink)}
+.cpy{position:absolute;top:8px;right:8px;background:var(--gold);color:#121a26;border:0;
+  border-radius:8px;padding:6px 13px;font:inherit;font-size:.78rem;font-weight:800;cursor:pointer;opacity:.92}
+.cpy:hover{opacity:1}
 @media print{
-  button{display:none!important}
+  button,.cpy{display:none!important}
   body{background:#fff!important;color:#111!important;padding:0}
   .box,.ac,pre,table,.gives,.ej{break-inside:avoid;page-break-inside:avoid;background:#fafafa!important}
   pre code,code{color:#111!important}
@@ -113,6 +116,33 @@ de una IA</b> para que trabaje con ella. La guía manda; la IA solo ahorra tiemp
 <p style="color:var(--soft);font-size:.82rem;margin:8px 0 0">Elige <b>“Guardar como PDF”</b> como destino.</p>
 </div>
 
+<h2>Qué necesitas antes de empezar</h2>
+
+<div class="box warn">
+💻 <b>El paso 0 hazlo en el ordenador</b>, no en el móvil: hay que subir un archivo y pegar
+textos largos, y en el móvil es una pelea. Los pasos 1 a 4 ya los puedes hacer desde el móvil
+sin problema.
+</div>
+
+<h3>Lo imprescindible</h3>
+<div class="tw"><table>
+<tr><th>Qué</th><th>Dónde se consigue</th></tr>
+<tr><td><b>El PDF de la Guía del Estratega Financiero</b></td><td>Te lo dieron con la formación. Descárgalo al ordenador antes de empezar: sin él, el proyecto no sirve de mucho.</td></tr>
+<tr><td><b>Tu enlace de registro</b></td><td>El enlace que mandas a quien te pide información (el de la formación gratuita). Ténlo copiado a mano.</td></tr>
+<tr><td><b>Cuenta en claude.ai</b></td><td>Gratis. Con el correo basta.</td></tr>
+<tr><td><b>Instagram en cuenta profesional</b></td><td>Gratis, en Ajustes → Tipo de cuenta. <b>Hace falta</b> para poder compartir a Facebook y para usar respuestas automáticas.</td></tr>
+</table></div>
+
+<h3>Herramientas que aparecerán por el camino</h3>
+<p>Todas <b>gratis</b>. No hace falta tenerlas ya: te las nombro para que no te pillen por sorpresa.</p>
+<div class="tw"><table>
+<tr><th>Herramienta</th><th>Para qué y cuándo</th></tr>
+<tr><td><b>ChatGPT</b></td><td>Solo si quieres <b>dibujos generados</b> para el carrusel. Claude escribe muy bien pero no dibuja. Cuenta gratis en <code>chatgpt.com</code>. <b>Es opcional:</b> puedes usar fotos tuyas y saltártelo.</td></tr>
+<tr><td><b>CapCut</b></td><td>App gratuita del móvil para cortar el vídeo y ponerle subtítulos. <b>También es opcional:</b> Instagram pone subtítulos sola.</td></tr>
+<tr><td><b>Canva</b></td><td>Gratis, para poner texto encima de una foto (la portada). También vale el editor de fotos del móvil.</td></tr>
+<tr><td><b>ManyChat</b></td><td>El robot que manda tu enlace por privado a quien comente tu palabra clave. <b>Se puede empezar sin él</b>: al principio contestas tú a mano, que además queda más cercano.</td></tr>
+</table></div>
+
 <h2>Cuatro palabras que vas a leer mucho</h2>
 <div class="tw"><table>
 <tr><th>Palabra</th><th>Qué significa</th></tr>
@@ -133,10 +163,22 @@ de una IA</b> para que trabaje con ella. La guía manda; la IA solo ahorra tiemp
 <a class="fl" href="#p4" style="--c:#3ecf8e"><div class="t">4 · El eco</div><div class="d">Más sitios</div></a>
 </div>
 
-<div class="box note" style="font-size:.94rem">
-🔀 <b>En el paso 3 se bifurca el camino:</b> primero la <b>portada</b> (que hace falta siempre) y
-después eliges <b>una de las dos</b> — o montas un <b>carrusel</b>, o grabas un <b>vídeo</b>.
-Nunca las dos cosas para la misma pieza.
+<h2>Antes del paso 1: ¿vídeo o carrusel?</h2>
+<p>Esto se decide <b>al principio</b>, porque el guion se pide de una forma o de otra. Elige uno
+—nunca los dos para la misma idea— y sigue ese camino hasta el final.</p>
+
+<div class="tw"><table>
+<tr><th>&nbsp;</th><th>🎥 Vídeo (reel)</th><th>🖼️ Carrusel</th></tr>
+<tr><td><b>Sirve para</b></td><td>Que te <b>conozcan</b>. Llega a gente nueva.</td><td>Que te <b>guarden</b>. Es lo que hace crecer la cuenta.</td></tr>
+<tr><td><b>Elígelo si…</b></td><td>Lo tuyo es una historia, una anécdota, algo con emoción.</td><td>Lo tuyo se explica por pasos, con datos o con una lista.</td></tr>
+<tr><td><b>Te toca a ti</b></td><td>Ponerte delante de la cámara</td><td>Nada: lo monta la IA y tú capturas</td></tr>
+<tr><td><b>Tiempo</b></td><td>~20 min (grabar es lo que más cuesta)</td><td>~15 min</td></tr>
+<tr><td><b>El camino</b></td><td>Paso 1 → 2 → <b>3-A</b> y <b>3-C</b> → 4</td><td>Paso 1 → 2 → <b>3-A</b> y <b>3-B</b> → 4</td></tr>
+</table></div>
+
+<div class="box good" style="font-size:.94rem">
+💡 <b>Si dudas, empieza por el carrusel:</b> no tienes que grabarte y se monta casi solo. Y lo
+ideal a la larga es <b>alternar</b>: una semana vídeo, otra carrusel.
 </div>
 
 <!-- ═══════════ PASO 0 ═══════════ -->
@@ -162,8 +204,30 @@ publicación.</code></pre>
 
 <div class="box">
 <div class="step"><span class="n">4</span><div class="b"><b>Sube la guía.</b> En los archivos del proyecto, arrastra el PDF de la <b>Guía del Estratega Financiero</b>. Si tienes tu historia escrita o tus mejores publicaciones, súbelas también.</div></div>
-<div class="step"><span class="n">5</span><div class="b"><b>Pega las instrucciones:</b> el bloque grande de aquí abajo, en el apartado de <b>instrucciones</b>. Rellena los corchetes con tus datos.</div></div>
+<div class="step"><span class="n">5</span><div class="b"><b>Pega las instrucciones:</b> el bloque grande de aquí abajo (dale a <b>Copiar</b> arriba a la derecha del recuadro), en el apartado de <b>instrucciones</b> del proyecto.<br>
+Después <b>cambia solo estas cinco líneas</b>, que son las que llevan corchetes EN MAYÚSCULAS:<br>
+<code>[ESCRÍBELA]</code> · <code>[TIEMPO]</code> · <code>[PEGA TU ENLACE]</code> · y la palabra <code>CLASE</code> si usas otra.<br>
+<span style="color:var(--soft)">El resto de corchetes que veas <b>no se tocan</b>: son órdenes para la IA.</span></div></div>
 <div class="step"><span class="n">6</span><div class="b">Guarda. <b>Ya no lo vuelves a tocar.</b></div></div>
+</div>
+
+<div class="box good">
+<h3 style="margin-top:0">▶️ Y ahora, ¿dónde escribo?</h3>
+<p style="margin-bottom:6px"><b>Dentro del proyecto</b>, no en un chat cualquiera. Es el error
+más típico: si escribes fuera, la IA no se acuerda de nada y todo esto no habrá servido.</p>
+<ul style="margin-bottom:6px">
+<li>Entra en tu proyecto <b>Mi Fábrica de Contenido</b>.</li>
+<li>Verás un cuadro para escribir, como en cualquier chat. <b>Ese es el sitio.</b></li>
+<li>Cada pieza nueva, un chat nuevo dentro del proyecto. Así no se mezclan.</li>
+</ul>
+<p style="margin-bottom:0">Para probar que funciona, escribe ahí <code>hola</code>. Si te contesta
+<b>“listo”</b>, está todo bien puesto.</p>
+</div>
+
+<div class="box warn" style="font-size:.93rem">
+📱 <b>Sobre el cupo:</b> la versión gratuita deja un número limitado de mensajes cada pocas horas.
+Por eso cada paso está pensado para <b>un solo mensaje</b>. Si se te acaba, espera un rato y sigue
+donde lo dejaste: el proyecto no se borra.
 </div>
 
 <div class="box note" style="font-size:.93rem">
@@ -354,8 +418,16 @@ para copiar y pegar:
 
 <div class="box warn" style="font-size:.93rem">
 <b>Antes de publicar, repasa dos cosas:</b> que la <b>palabra clave</b> sea la misma en el vídeo,
-en el pie de foto y en tu ManyChat; y que cualquier cifra marcada con <code>[verifica]</code>
+en el pie de foto y en tus respuestas; y que cualquier cifra marcada con <code>[verifica]</code>
 la hayas comprobado o cambiado por la tuya.
+</div>
+
+<div class="box note" style="font-size:.93rem">
+<b>Dos cosas que quizá no sepas hacer:</b><br>
+· <b>Fijar el comentario:</b> publica tú ese comentario, mantén el dedo pulsado encima y elige
+<b>Fijar</b>. Se queda arriba del todo y lo ve todo el mundo.<br>
+· <b>Si aún no tienes ManyChat:</b> no pasa nada. Cuando alguien comente tu palabra, le contestas
+y le mandas el enlace <b>por privado</b> tú mismo. Es más trabajo, pero al principio conecta más.
 </div>
 </div></div>
 
@@ -480,8 +552,28 @@ de cada diapositiva.</code></pre>
 
 <div class="box good" style="font-size:.93rem">
 ✅ <b>Por qué este atajo es el más práctico:</b> el texto lo escribe Claude como <b>texto de
-verdad</b>, así que sale perfecto (sin tildes comidas). Lo abres, capturas cada diapositiva y a
-publicar. Y <b>te queda de plantilla</b>: el siguiente carrusel es solo cambiar las palabras.
+verdad</b>, así que sale perfecto (sin tildes comidas). Y <b>te queda de plantilla</b>: el
+siguiente carrusel es solo cambiar las palabras.
+</div>
+
+<h4>Y ahora, cómo convertirlo en imágenes (paso a paso)</h4>
+<div class="box">
+<div class="step"><span class="n">1</span><div class="b">Claude te enseña el carrusel <b>en una ventana de vista previa</b>, ya dibujado. Puedes ir bajando y verlo entero ahí mismo.</div></div>
+<div class="step"><span class="n">2</span><div class="b">Si quieres verlo más grande, arriba de esa ventana hay un botón para <b>descargar</b> el archivo. Se guarda en tu carpeta de <b>Descargas</b>; haz <b>doble clic</b> y se abre en el navegador (Chrome, Edge… el que uses).</div></div>
+<div class="step"><span class="n">3</span><div class="b"><b>Captura cada diapositiva.</b> En Windows pulsa <code>Windows + Mayúsculas + S</code>: la pantalla se oscurece y <b>arrastras un recuadro</b> justo por el borde de la diapositiva. En Mac es <code>Cmd + Mayúsculas + 4</code>. Así ya recortas al capturar y no sale ni el navegador ni el reloj.</div></div>
+<div class="step"><span class="n">4</span><div class="b">Repite con todas. Te quedan 8 imágenes sueltas. <b>Ponles nombre por orden</b> (1, 2, 3…) para no liarte al subirlas.</div></div>
+<div class="step"><span class="n">5</span><div class="b">En Instagram: <b>+ → Publicación → selecciona varias</b> y tócalas <b>en orden</b>. Ese orden es el que verá la gente.</div></div>
+</div>
+
+<div class="box note" style="font-size:.93rem">
+<b>¿Y si la captura sale pequeña o cortada?</b> Pon el navegador a pantalla completa y ajusta el
+zoom con <code>Ctrl</code> y la rueda del ratón hasta que la diapositiva se vea entera y lo más
+grande posible. Luego captura. No hace falta que sea exacta: Instagram la ajusta.
+</div>
+
+<div class="box warn" style="font-size:.93rem">
+<b>Sobre la portada del carrusel:</b> la primera diapositiva <b>ya es la portada</b>, así que no
+tienes que hacer otra. El apartado A te sirve igual para elegir <b>qué texto</b> poner en ella.
 </div>
 
 <p style="color:var(--soft);font-size:.93rem">Los <b>prompts de imagen</b> del punto 3 los
@@ -498,8 +590,8 @@ diapositivas.</p>
 · <b>CapCut</b> — Texto → Subtítulos automáticos → español → exportar en 1080p.<br>
 · <b>La propia Instagram</b> — al subir el reel, actívalos en la pantalla de edición. Más rápido si no quieres instalar nada.</div></div>
 <div class="step"><span class="n">4</span><div class="b"><b>Repásalos antes de publicar.</b> Sobre todo <b>las cifras</b> y los nombres propios: es donde fallan.</div></div>
-<div class="step"><span class="n">5</span><div class="b"><b>Los textos en pantalla:</b> el gancho escrito desde el segundo cero, y el dato en grande justo cuando lo dices.</div></div>
-<div class="step"><span class="n">6</span><div class="b"><b>La portada:</b> elige el fotograma —una imagen congelada del vídeo, donde se te vea bien la cara— o la imagen del apartado A, y ponle encima el texto que te dio el paso 2.</div></div>
+<div class="step"><span class="n">5</span><div class="b"><b>Los textos en pantalla:</b> el gancho escrito desde el segundo cero, y el dato en grande justo cuando lo dices. Se escriben con el botón de <b>Texto</b>, en CapCut o en la propia Instagram al subir el vídeo.</div></div>
+<div class="step"><span class="n">6</span><div class="b"><b>La portada:</b> elige el fotograma —una imagen congelada del vídeo, donde se te vea bien la cara— o la imagen del apartado A, y ponle encima el texto que te dio el paso 2. El texto se lo pones en <b>Canva</b> (o en el editor de fotos del móvil) y luego subes esa imagen como portada al publicar el reel.</div></div>
 </div>
 
 <div class="box good" style="font-size:.93rem">
@@ -554,7 +646,7 @@ subir nada. Y vale igual para un vídeo que para un carrusel.
 <tr><td><b>WhatsApp</b></td><td>Solo la portada como imagen, con la frase corta debajo</td></tr>
 <tr><td><b>Facebook</b></td><td>Igual que en Instagram (sale con la misma casilla)</td></tr>
 <tr><td><b>TikTok</b></td><td>Admite carruseles de fotos: súbelo tal cual, con música</td></tr>
-<tr><td><b>LinkedIn</b></td><td>Junta las imágenes en un PDF y súbelo como documento: allí se pasan igual</td></tr>
+<tr><td><b>LinkedIn</b></td><td>Súbelas como documento PDF y allí se pasan igual. Para juntarlas: en Canva créalo con las imágenes y descarga como PDF, o en el móvil selecciona las fotos → <i>Imprimir</i> → <i>Guardar como PDF</i>.</td></tr>
 <tr><td><b>YouTube</b></td><td>Este no aplica: es solo para vídeo</td></tr>
 </table></div>
 <p style="color:var(--soft);font-size:.92rem">Si no quieres complicarte, con Instagram, WhatsApp y
@@ -679,5 +771,28 @@ Complemento práctico de la <b>Guía del Estratega Financiero</b>.<br>
 No sustituye a la guía: solo explica cómo apoyarte en una IA gratuita para aplicarla.
 </footer>
 
-</div></body></html>
+</div>
+<script>
+document.querySelectorAll('pre').forEach(function(p){
+  var c = p.querySelector('code'); if(!c) return;
+  p.style.position = 'relative';
+  var b = document.createElement('button');
+  b.className = 'cpy'; b.type = 'button'; b.textContent = 'Copiar';
+  b.addEventListener('click', function(){
+    var t = c.innerText;
+    var ok = function(){ b.textContent = '¡Copiado!'; setTimeout(function(){ b.textContent = 'Copiar'; }, 1800); };
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(t).then(ok);
+    } else {
+      var a = document.createElement('textarea');
+      a.value = t; a.style.position = 'fixed'; a.style.opacity = '0';
+      document.body.appendChild(a); a.select();
+      try { document.execCommand('copy'); ok(); } catch(e){}
+      document.body.removeChild(a);
+    }
+  });
+  p.appendChild(b);
+});
+</script>
+</body></html>
 
