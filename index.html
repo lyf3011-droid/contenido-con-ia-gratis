@@ -2,7 +2,7 @@
 <html lang="es"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tu Fábrica de Contenido · Complemento de la Guía del Estratega Financiero</title>
-<meta name="description" content="Monta un Proyecto en Claude gratis con la Guía del Estratega Financiero dentro. Cinco acciones, cinco prompts, y tienes la publicación entera lista.">
+<meta name="description" content="Monta un proyecto en Claude gratis con la Guía del Estratega Financiero dentro. Cinco pasos y tienes la publicación entera lista para subir.">
 <style>
 :root{
   --bg:#0e1520; --sur:#16202e; --sur2:#1c2836; --ink:#eef2f7; --soft:#9db1c8; --line:#27394f;
@@ -19,9 +19,9 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line
 .w{max-width:780px;margin:0 auto}
 h1{font-family:var(--display);font-size:2.45rem;line-height:1.1;margin:14px 0 10px;text-wrap:balance}
 h1 em{font-style:normal;color:var(--gold)}
-h2{font-family:var(--display);font-size:1.7rem;margin:40px 0 8px;line-height:1.2}
-h3{font-size:1.05rem;margin:20px 0 5px}
-h4{font-size:.82rem;margin:18px 0 4px;color:var(--gold);text-transform:uppercase;letter-spacing:.07em}
+h2{font-family:var(--display);font-size:1.7rem;margin:42px 0 8px;line-height:1.2}
+h3{font-size:1.06rem;margin:22px 0 5px}
+h4{font-size:.8rem;margin:18px 0 4px;color:var(--gold);text-transform:uppercase;letter-spacing:.07em}
 p{margin:11px 0}
 header{text-align:center;padding:46px 0 6px}
 .eb{font-family:var(--mono);color:var(--gold);letter-spacing:.24em;font-size:11.5px;
@@ -51,7 +51,6 @@ ul,ol{padding-left:21px}li{margin:6px 0}
   font:inherit;font-weight:800;font-size:1rem;cursor:pointer}
 footer{color:var(--soft);font-size:.85rem;padding:28px 0 0;text-align:center;
   border-top:1px solid var(--line);margin-top:36px}
-/* --- bloque de accion --- */
 .ac{background:var(--sur);border:1px solid var(--line);border-radius:var(--r);
   margin:22px 0;overflow:hidden;border-top:4px solid var(--c,var(--gold))}
 .ac .top{display:flex;align-items:center;gap:13px;padding:16px 20px;background:var(--sur2);flex-wrap:wrap}
@@ -65,15 +64,18 @@ footer{color:var(--soft);font-size:.85rem;padding:28px 0 0;text-align:center;
 .gives li{margin:4px 0;font-size:.93rem}
 .say{background:transparent;border:1px dashed var(--gold);border-radius:9px;
   padding:10px 14px;font-family:var(--mono);font-size:.9rem;margin:10px 0;display:block;color:var(--ink)}
-.mapa{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:10px;margin:16px 0}
-.mp{background:var(--sur);border:1px solid var(--line);border-radius:11px;padding:13px 14px;
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:10px;margin:16px 0}
+.fl{background:var(--sur);border:1px solid var(--line);border-radius:11px;padding:13px 14px;
   text-decoration:none;color:inherit;display:block;border-left:3px solid var(--c,var(--gold))}
-.mp .t{font-weight:700;font-size:.94rem;margin-bottom:2px}
-.mp .d{color:var(--soft);font-size:.82rem;line-height:1.4}
+.fl .t{font-weight:700;font-size:.94rem;margin-bottom:2px}
+.fl .d{color:var(--soft);font-size:.82rem;line-height:1.4}
+.ej{background:var(--sur2);border:1px solid var(--line);border-left:4px solid var(--pink);
+  border-radius:11px;padding:14px 17px;margin:11px 0;font-size:.94rem}
+.ej b{color:var(--pink)}
 @media print{
   button{display:none!important}
   body{background:#fff!important;color:#111!important;padding:0}
-  .box,.ac,pre,table,.gives{break-inside:avoid;page-break-inside:avoid;background:#fafafa!important}
+  .box,.ac,pre,table,.gives,.ej{break-inside:avoid;page-break-inside:avoid;background:#fafafa!important}
   pre code,code{color:#111!important}
   h2{page-break-after:avoid}
 }
@@ -82,11 +84,23 @@ footer{color:var(--soft);font-size:.85rem;padding:28px 0 0;text-align:center;
 <header>
   <div class="eb">Complemento práctico</div>
   <h1>Tu <em>Fábrica de Contenido</em><br>en Claude gratis</h1>
-  <p class="lead">Montas el proyecto una vez, con la <b>Guía del Estratega Financiero</b> dentro.
-  Después, <b>cinco acciones</b> y tienes la publicación entera: guion, portada, pie de foto,
-  primer comentario, historias y difusión.</p>
+  <p class="lead">Lo montas una vez, con la <b>Guía del Estratega Financiero</b> dentro.
+  Después le dices una idea y te devuelve <b>la publicación entera</b>: guion, portada,
+  textos y difusión.</p>
   <div class="rule"></div>
 </header>
+
+<div class="box good">
+<h3 style="margin-top:0">👋 Empieza aquí</h3>
+<p style="margin-bottom:6px">Si solo lees esto, ya puedes empezar:</p>
+<ol>
+<li>Creas una cuenta gratis en <b>claude.ai</b> y montas un <b>proyecto</b> (paso 0). Media hora, una sola vez.</li>
+<li>Le dices una idea. Te da <b>el guion</b>.</li>
+<li>Le pides <b>el paquete</b>: portada, textos y las historias de apoyo.</li>
+<li><b>Grabas con el móvil</b> y subes.</li>
+</ol>
+<p style="margin-bottom:0">Ya está. Lo demás de esta guía son <b>extras</b> para cuando quieras más.</p>
+</div>
 
 <div class="box note">
 <b>Esto no es un método nuevo.</b> La identidad, la receta y la palabra clave son las de la
@@ -99,28 +113,37 @@ de una IA</b> para que trabaje con ella. La guía manda; la IA solo ahorra tiemp
 <p style="color:var(--soft);font-size:.82rem;margin:8px 0 0">Elige <b>“Guardar como PDF”</b> como destino.</p>
 </div>
 
-<h2>El recorrido de un vistazo</h2>
-<div class="mapa">
-<a class="mp" href="#p0" style="--c:#9db1c8"><div class="t">PASO 0 · El proyecto</div><div class="d">Se monta una vez y ya está</div></a>
-<a class="mp" href="#a1" style="--c:#c9a355"><div class="t">1 · El guion</div><div class="d">Qué vas a decir</div></a>
-<a class="mp" href="#a2" style="--c:#d98cb3"><div class="t">2 · El paquete</div><div class="d">Portada, pie de foto, comentario, historias</div></a>
-<a class="mp" href="#a3" style="--c:#4c9be8"><div class="t">3 · Las imágenes</div><div class="d">Carrusel: fotos tuyas o de IA</div></a>
-<a class="mp" href="#a4" style="--c:#e6b34c"><div class="t">4 · El vídeo</div><div class="d">Grabar y subtitular</div></a>
-<a class="mp" href="#a5" style="--c:#3ecf8e"><div class="t">5 · El eco</div><div class="d">Que se oiga en más sitios</div></a>
+<h2>Cuatro palabras que vas a leer mucho</h2>
+<div class="tw"><table>
+<tr><th>Palabra</th><th>Qué significa</th></tr>
+<tr><td><b>Prompt</b></td><td>Lo que le escribes a la IA. Nada más. Como el mensaje que le mandarías a un ayudante.</td></tr>
+<tr><td><b>Proyecto</b></td><td>Un chat con memoria. Le explicas quién eres <b>una vez</b> y se acuerda para siempre. La diferencia entre un asesor nuevo cada día y uno que ya te conoce.</td></tr>
+<tr><td><b>Portada</b></td><td>La foto que se ve de tu vídeo en tu perfil, antes de darle al play.</td></tr>
+<tr><td><b>Pie de foto</b></td><td>El texto que va debajo de la publicación (algunos lo llaman <i>caption</i>).</td></tr>
+</table></div>
+
+<h2>El recorrido</h2>
+<div class="flow">
+<a class="fl" href="#p0" style="--c:#9db1c8"><div class="t">PASO 0 · El proyecto</div><div class="d">Se monta una vez</div></a>
+<a class="fl" href="#p1" style="--c:#c9a355"><div class="t">1 · El guion</div><div class="d">Qué vas a decir</div></a>
+<a class="fl" href="#p2" style="--c:#d98cb3"><div class="t">2 · El paquete</div><div class="d">Todos los textos</div></a>
+<a class="fl" href="#p3" style="--c:#4c9be8"><div class="t">3 · Las imágenes</div><div class="d">Portada y carrusel</div></a>
+<a class="fl" href="#p4" style="--c:#e6b34c"><div class="t">4 · El vídeo</div><div class="d">Grabar y subtitular</div></a>
+<a class="fl" href="#p5" style="--c:#3ecf8e"><div class="t">5 · El eco</div><div class="d">Más sitios</div></a>
 </div>
 
 <!-- ═══════════ PASO 0 ═══════════ -->
-<h2 id="p0">Paso 0 · Monta tu proyecto <span style="font-size:1rem;color:var(--soft)">(30 min, una sola vez)</span></h2>
+<h2 id="p0">Paso 0 · Monta tu proyecto <span style="font-size:1rem;color:var(--soft)">(media hora, una sola vez)</span></h2>
 
-<p>Un chat normal se olvida de todo cada vez. Un <b>Proyecto</b> es un chat con la memoria puesta:
-lo configuras hoy y a partir de mañana solo le dices lo que quieres. <b>La versión gratuita de
-Claude permite proyectos</b> (hasta 5).</p>
+<p>Un chat normal se olvida de todo cada vez que lo cierras. Un <b>proyecto</b> se acuerda.
+Se lo explicas hoy y mañana solo le dices lo que quieres. <b>La versión gratuita de Claude
+permite proyectos</b> (hasta cinco).</p>
 
 <div class="box">
-<div class="step"><span class="n">1</span><div class="b">Entra en <code>claude.ai</code> y crea tu cuenta gratis.</div></div>
-<div class="step"><span class="n">2</span><div class="b"><b>Proyectos → Crear proyecto.</b><br>
-<b>Nombre:</b> <code>Mi Fábrica de Contenido</code><br>
-<b>Descripción:</b> es el campo pequeño de debajo del nombre. Copia esto:</div></div>
+<div class="step"><span class="n">1</span><div class="b">Entra en <code>claude.ai</code> y crea tu cuenta <b>gratis</b>.</div></div>
+<div class="step"><span class="n">2</span><div class="b">En el menú de la izquierda busca <b>Proyectos</b> y pulsa <b>Crear proyecto</b>.<br>
+<b>Nombre:</b> <code>Mi Fábrica de Contenido</code></div></div>
+<div class="step"><span class="n">3</span><div class="b">En <b>Descripción</b> (el campo pequeño de debajo del nombre), copia esto:</div></div>
 </div>
 
 <pre><code>Creo contenido de educación financiera para
@@ -130,10 +153,10 @@ proyecto. Aquí preparo guiones de reels,
 carruseles, historias y todo el texto de cada
 publicación.</code></pre>
 
-<div class="box" style="margin-top:14px">
-<div class="step"><span class="n">3</span><div class="b"><b>Sube las fuentes:</b> arrastra el PDF de la <b>Guía del Estratega Financiero</b> a los archivos del proyecto. Si tienes tu historia escrita o tus mejores publicaciones, súbelas también.</div></div>
-<div class="step"><span class="n">4</span><div class="b"><b>Pega las instrucciones</b> (el bloque grande de abajo) en el apartado de <b>instrucciones</b> del proyecto, y rellena los corchetes con tus datos.</div></div>
-<div class="step"><span class="n">5</span><div class="b">Guarda. <b>Ya no lo tocas más.</b></div></div>
+<div class="box">
+<div class="step"><span class="n">4</span><div class="b"><b>Sube la guía.</b> En los archivos del proyecto, arrastra el PDF de la <b>Guía del Estratega Financiero</b>. Si tienes tu historia escrita o tus mejores publicaciones, súbelas también.</div></div>
+<div class="step"><span class="n">5</span><div class="b"><b>Pega las instrucciones:</b> el bloque grande de aquí abajo, en el apartado de <b>instrucciones</b>. Rellena los corchetes con tus datos.</div></div>
+<div class="step"><span class="n">6</span><div class="b">Guarda. <b>Ya no lo vuelves a tocar.</b></div></div>
 </div>
 
 <div class="box note" style="font-size:.93rem">
@@ -144,7 +167,7 @@ reconocer el proyecto entre los demás. Las <b>instrucciones</b> son las órdene
 
 <div class="box good" style="font-size:.94rem">
 ✅ Al subir el PDF, la IA conoce los <b>50 guiones</b>, las <b>20 secuencias de historias</b> y los
-<b>12 carruseles</b>. Podrás decirle <i>“usa el guion de la inflación”</i> y sabrá cuál es.
+<b>12 carruseles</b> de la guía. Podrás decirle <i>“usa el guion de la inflación”</i> y sabrá cuál es.
 </div>
 
 <h4>Copia esto en las instrucciones del proyecto</h4>
@@ -228,18 +251,18 @@ Cuando te dé una idea, un tema o un guion de
 la guía, aplicas todo esto sin preguntar.
 Responde solo "listo".</code></pre>
 
-<!-- ═══════════ ACCIÓN 1 ═══════════ -->
-<div class="ac" id="a1" style="--c:#c9a355">
+<!-- ═══════════ PASO 1 ═══════════ -->
+<div class="ac" id="p1" style="--c:#c9a355">
 <div class="top"><span class="num">1</span><div><div class="ti">El guion</div></div>
 <div class="su">Qué vas a decir delante de la cámara.</div></div>
 <div class="bd">
 
-<h4>Lo que le dices (versión corta)</h4>
+<h4>Lo que le escribes</h4>
 <span class="say">Idea: lo que te cuesta al año no revisar tus suscripciones.</span>
 <span class="say">Usa el guion de la inflación de la guía y adáptalo a mi historia.</span>
 
-<h4>El prompt completo (si quieres más control)</h4>
-<pre><code>ACCIÓN 1 · GUION
+<h4>Si quieres afinar más</h4>
+<pre><code>PASO 1 · GUION
 
 Idea: [TU IDEA EN UNA FRASE]
    (o: usa el guion [X] de la guía)
@@ -253,40 +276,38 @@ Dame:
 2. Desarrolla ENTERO el número 1:
    - Gancho (0-3 s)
    - Guion hablado, marcando las 4 piezas
-   - Qué se ve y qué rótulo aparece en cada
-     momento
+   - Qué texto aparece en pantalla y cuándo
 3. Duración estimada y número de palabras.</code></pre>
 
 <div class="gives"><b>📦 Lo que te devuelve</b>
 <ul>
 <li>3 ángulos para elegir</li>
 <li>El guion completo, escrito para decirlo en voz alta</li>
-<li>Los rótulos: qué texto aparece en pantalla y cuándo</li>
+<li>Los textos que van en pantalla y en qué momento</li>
 </ul></div>
 </div></div>
 
-<!-- ═══════════ ACCIÓN 2 ═══════════ -->
-<div class="ac" id="a2" style="--c:#d98cb3">
+<!-- ═══════════ PASO 2 ═══════════ -->
+<div class="ac" id="p2" style="--c:#d98cb3">
 <div class="top"><span class="num">2</span><div><div class="ti">El paquete de publicación</div></div>
 <div class="su">Todo lo que se escribe alrededor del vídeo. Esto es lo que separa a un creador de alguien que solo sube vídeos.</div></div>
 <div class="bd">
 
-<h4>Lo que le dices (versión corta)</h4>
+<h4>Lo que le escribes</h4>
 <span class="say">Dame el paquete de publicación completo.</span>
 
-<h4>El prompt completo</h4>
-<pre><code>ACCIÓN 2 · PAQUETE DE PUBLICACIÓN
+<h4>Si quieres afinar más</h4>
+<pre><code>PASO 2 · PAQUETE DE PUBLICACIÓN
 
 De la pieza anterior, dame todo esto listo
 para copiar y pegar:
 
 1. TEXTO DE LA PORTADA
    4-6 palabras que irán escritas encima de
-   la miniatura del reel. Que se entiendan
-   solas y den ganas de entrar.
-   Dame 3 opciones.
+   la portada. Que se entiendan solas y den
+   ganas de entrar. Dame 3 opciones.
 
-2. PIE DE FOTO (caption)
+2. PIE DE FOTO
    - Primera línea que enganche (es lo que se
      ve antes del "ver más")
    - 3 o 4 bloques cortos, separados
@@ -331,70 +352,58 @@ la hayas comprobado o cambiado por la tuya.
 </div>
 </div></div>
 
-<!-- ═══════════ ACCIÓN 3 ═══════════ -->
-<div class="ac" id="a3" style="--c:#4c9be8">
+<!-- ═══════════ PASO 3 ═══════════ -->
+<div class="ac" id="p3" style="--c:#4c9be8">
 <div class="top"><span class="num">3</span><div><div class="ti">Las imágenes</div></div>
-<div class="su">La portada del reel, las imágenes de apoyo y las diapositivas del carrusel. Con fotos tuyas o generadas con IA.</div></div>
+<div class="su">Dos cosas, y solo dos: la portada, y las diapositivas si haces carrusel.</div></div>
 <div class="bd">
 
-<h3>A · Las imágenes del reel (portada y apoyo)</h3>
-<p>Aunque el reel sea un vídeo tuyo hablando, necesitas <b>la portada</b> —lo que se ve en tu
-perfil— y a veces alguna imagen para insertar mientras hablas.</p>
+<h3>A · La portada</h3>
+<p>Es la foto que se ve en tu perfil antes de darle al play. Vale tanto para un reel como para un
+carrusel.</p>
 
-<h4>Lo que le dices (versión corta)</h4>
-<span class="say">Dame los prompts de imagen de este guion.</span>
+<h4>Lo que le escribes</h4>
+<span class="say">Dame las opciones de portada de esta pieza.</span>
 
-<h4>El prompt completo</h4>
-<pre><code>ACCIÓN 3-A · IMÁGENES DEL REEL
+<h4>Si quieres afinar más</h4>
+<pre><code>PASO 3-A · PORTADA
 
-Del guion anterior, dame:
+De la pieza anterior, dame la portada
+(vertical, 1080 x 1350 píxeles):
 
-1. LA PORTADA
-   - Opción A: qué FOTO MÍA usar (qué
-     fotograma del vídeo o qué foto aparte)
-     y qué texto va encima.
-   - Opción B: el prompt EN INGLÉS para
-     generar la imagen de fondo con IA.
-     Vertical 1080x1350, con la mitad
-     inferior despejada para poner mi foto
-     o el texto encima.
+OPCIÓN 1 · CON FOTO MÍA
+- Qué fotograma del vídeo o qué foto aparte
+  funcionaría mejor.
+- Dónde colocar el texto para que no me tape
+  la cara.
 
-2. TRES IMÁGENES DE APOYO
-   Para insertar mientras hablo, una por
-   cada idea fuerte del guion.
-   De cada una dame:
-   - En qué segundo del guion entra
-   - El prompt EN INGLÉS para generarla
-   - Y qué foto mía o qué objeto real podría
-     usar en su lugar si no quiero generarla
+OPCIÓN 2 · IMAGEN GENERADA
+- El prompt EN INGLÉS para crear la imagen
+  de fondo.
+- SIN TEXTO dentro de la imagen: el texto lo
+  pongo yo encima.
+- Deja la parte de abajo despejada.
 
-ESTILO para todos los prompts de imagen:
-[DESCRIBE TU ESTILO. Ej: fotografía real,
-luz natural, tonos cálidos, gente española
-de a pie, nada de gente de catálogo]
-Sin texto dentro de la imagen: el texto lo
-pongo yo encima.</code></pre>
+Estilo: [DESCRÍBELO. Ej: fotografía real,
+luz natural, tonos cálidos, gente normal,
+nada de gente de catálogo]
+
+Y recuérdame el texto que va encima.</code></pre>
 
 <div class="gives"><b>📦 Lo que te devuelve</b>
 <ul>
-<li><b>El prompt de la portada</b>, listo para pegar en ChatGPT</li>
-<li><b>3 prompts de imágenes de apoyo</b>, con el segundo en que entra cada una</li>
-<li>La alternativa con fotos tuyas, por si no quieres generar nada</li>
+<li>Qué foto tuya usar y dónde poner el texto</li>
+<li><b>El prompt de imagen</b>, listo para pegar en ChatGPT</li>
 </ul></div>
 
-<div class="box warn" style="font-size:.93rem">
-<b>Ojo:</b> pide siempre <b>“sin texto dentro de la imagen”</b>. Las IA de imagen escriben fatal
-en español (se comen tildes e inventan letras). El texto lo pones tú encima, en la propia
-Instagram o en CapCut, y sale perfecto.
-</div>
+<h3>B · Las diapositivas del carrusel</h3>
+<p>Solo si la pieza es un carrusel.</p>
 
-<h3>B · El carrusel</h3>
-
-<h4>Lo que le dices (versión corta)</h4>
+<h4>Lo que le escribes</h4>
 <span class="say">Móntame el carrusel de esta pieza.</span>
 
-<h4>El prompt completo</h4>
-<pre><code>ACCIÓN 3 · CARRUSEL
+<h4>Si quieres afinar más</h4>
+<pre><code>PASO 3-B · CARRUSEL
 
 Convierte la pieza anterior en un carrusel
 de [8] diapositivas.
@@ -410,10 +419,11 @@ Para CADA diapositiva dame las tres cosas:
    un paseo, el súper) y cómo hacerla con
    el móvil.
 
-3. IMAGEN CON IA
-   El texto exacto para generarla, EN INGLÉS,
-   con el mismo estilo visual en todas las
-   diapositivas para que parezcan una serie.
+3. IMAGEN GENERADA
+   El prompt EN INGLÉS para crearla, con el
+   MISMO estilo visual en todas para que
+   parezcan una serie. Sin texto dentro de
+   la imagen.
 
 La portada tiene que funcionar sola.
 La última lleva "Comenta CLASE".</code></pre>
@@ -425,41 +435,45 @@ La última lleva "Comenta CLASE".</code></pre>
 <li><b>El prompt de imagen de cada una</b>, listo para pegar en ChatGPT</li>
 </ul></div>
 
-<div class="box note" style="font-size:.93rem">
-<b>Para tu equipo:</b> los prompts del punto 3 se pegan tal cual en ChatGPT (o en cualquier
-generador de imágenes). Como todos piden <b>el mismo estilo</b>, salen de la misma familia visual
-aunque las genere otra persona.
+<div class="box warn" style="font-size:.93rem">
+<b>La regla de oro de las imágenes:</b> pide siempre <b>“sin texto dentro de la imagen”</b>. Las
+IA de imagen escriben fatal en español: se comen tildes e inventan letras. El texto lo pones tú
+encima —en Canva, en CapCut o en la propia Instagram— y sale perfecto.
 </div>
 
-<h4>Si prefieres montarlo tú, sin imágenes generadas</h4>
+<div class="box note" style="font-size:.93rem">
+<b>Si trabajas en equipo:</b> los prompts de imagen se pegan tal cual en ChatGPT. Como todos
+piden <b>el mismo estilo</b>, salen de la misma familia visual aunque los genere otra persona.
+</div>
+
+<h4>Y si prefieres montar el carrusel sin generar imágenes</h4>
 <pre><code>Diséñame ese carrusel en HTML.
 
 Un solo archivo con todas las diapositivas,
 una debajo de otra, de 1080 x 1350 píxeles.
 Estilo: [TUS DOS COLORES], una sola tipografía
 gorda y legible, mucho aire.
-Solo colores y texto, sin imágenes de internet.
+Solo colores y texto, sin imágenes.
 
 Lo abro en el navegador y capturo cada una.</code></pre>
-<p style="color:var(--soft);font-size:.92rem">Si le pides una <i>imagen</i> con texto, se come
-tildes e inventa letras. Pidiéndole el <b>HTML</b>, el texto sale perfecto — y te queda de
-plantilla para reutilizar cambiando solo las palabras.</p>
+<p style="color:var(--soft);font-size:.92rem">Ahí el texto sale perfecto, porque es texto de
+verdad y no una imagen. Y te queda de plantilla para reutilizar cambiando solo las palabras.</p>
 </div></div>
 
-<!-- ═══════════ ACCIÓN 4 ═══════════ -->
-<div class="ac" id="a4" style="--c:#e6b34c">
-<div class="top"><span class="num">4</span><div><div class="ti">Grabar y montar el vídeo</div></div>
+<!-- ═══════════ PASO 4 ═══════════ -->
+<div class="ac" id="p4" style="--c:#e6b34c">
+<div class="top"><span class="num">4</span><div><div class="ti">Grabar y subtitular</div></div>
 <div class="su">Aquí la IA ya no hace nada: esto es tuyo, y es más fácil de lo que parece.</div></div>
 <div class="bd">
 <div class="box" style="margin-top:12px">
-<div class="step"><span class="n">1</span><div class="b"><b>Graba en vertical</b>, móvil apoyado y a la altura de los ojos. Luz de frente (una ventana vale), sitio silencioso. <b>Escenario cotidiano</b>: se identifican más contigo en la cocina que en un despacho.</div></div>
-<div class="step"><span class="n">2</span><div class="b"><b>Un corte por frase.</b> Si dudas, corta. Y no te comas el remate: dilo con calma, que es lo que se comparte.</div></div>
-<div class="step"><span class="n">3</span><div class="b"><b>Subtítulos, siempre.</b> Dos caminos gratis:<br>
-· <b>CapCut</b> — Texto → Subtítulos automáticos → español → exporta en 1080p.<br>
+<div class="step"><span class="n">1</span><div class="b"><b>Graba en vertical</b>, con el móvil apoyado y a la altura de los ojos. Luz de frente (una ventana vale), sitio silencioso. <b>Escenario cotidiano</b>: se identifican más contigo en la cocina que en un despacho.</div></div>
+<div class="step"><span class="n">2</span><div class="b"><b>Un corte por frase.</b> Si dudas, corta. Y no te comas el remate: dilo con calma, que es lo que la gente comparte.</div></div>
+<div class="step"><span class="n">3</span><div class="b"><b>Subtítulos, siempre.</b> Dos caminos, los dos gratis:<br>
+· <b>CapCut</b> — Texto → Subtítulos automáticos → español → exportar en 1080p.<br>
 · <b>La propia Instagram</b> — al subir el reel, actívalos en la pantalla de edición. Más rápido si no quieres instalar nada.</div></div>
 <div class="step"><span class="n">4</span><div class="b"><b>Repásalos antes de publicar.</b> Sobre todo <b>las cifras</b> y los nombres propios: es donde fallan.</div></div>
-<div class="step"><span class="n">5</span><div class="b"><b>Los rótulos:</b> el gancho escrito desde el segundo cero, y el dato en grande justo cuando lo dices.</div></div>
-<div class="step"><span class="n">6</span><div class="b"><b>La portada:</b> elige un fotograma donde se te vea bien la cara y ponle encima el texto que te dio la Acción 2.</div></div>
+<div class="step"><span class="n">5</span><div class="b"><b>Los textos en pantalla:</b> el gancho escrito desde el segundo cero, y el dato en grande justo cuando lo dices.</div></div>
+<div class="step"><span class="n">6</span><div class="b"><b>La portada:</b> elige el fotograma (o la imagen del paso 3) y ponle encima el texto que te dio el paso 2.</div></div>
 </div>
 <div class="box good" style="font-size:.93rem">
 ⏱️ <b>El truco del lote:</b> una hora al mes. Eliges 4 piezas, te cambias de camiseta entre una y
@@ -468,17 +482,17 @@ publicar es darle a un botón.
 </div>
 </div></div>
 
-<!-- ═══════════ ACCIÓN 5 ═══════════ -->
-<div class="ac" id="a5" style="--c:#3ecf8e">
+<!-- ═══════════ PASO 5 ═══════════ -->
+<div class="ac" id="p5" style="--c:#3ecf8e">
 <div class="top"><span class="num">5</span><div><div class="ti">Crear eco</div></div>
 <div class="su">La guía se llama “Crea contenido. Crea eco” por algo. El trabajo ya está hecho.</div></div>
 <div class="bd">
 
-<h4>Lo que le dices (versión corta)</h4>
+<h4>Lo que le escribes</h4>
 <span class="say">Adáptalo para crear eco.</span>
 
-<h4>El prompt completo</h4>
-<pre><code>ACCIÓN 5 · ECO
+<h4>Si quieres afinar más</h4>
+<pre><code>PASO 5 · ECO
 
 Adapta la pieza anterior a estos sitios.
 No la copies igual en todos.
@@ -528,21 +542,50 @@ Dame:
 5. Las tres cosas que más me ayudarían.</code></pre>
 </div></div>
 
+<!-- ═══════════ EJEMPLO ═══════════ -->
+<h2>Un ejemplo de principio a fin</h2>
+<p>Para que veas cómo encaja todo. Esto es lo que sale de los pasos 1, 2 y 3 con una sola idea:</p>
+
+<div class="ej"><b>Le escribes:</b><br>
+<i>“Idea: lo que te cuesta al año no revisar tus suscripciones.”</i></div>
+
+<div class="ej"><b>Paso 1 · El guion (te da tres ángulos y desarrolla el primero)</b><br>
+Gancho: <i>“Estás pagando por cosas que no usas y ni te has enterado.”</i><br>
+Dato: <i>“De media son unos 435 € al año</i> [dato medio · verifica]<i>.”</i><br>
+Remate: <i>“Eso son unas vacaciones. Pagando por un gimnasio al que no vas.”</i><br>
+CTA: <i>“Comenta CLASE y te llega la información.”</i></div>
+
+<div class="ej"><b>Paso 2 · El paquete</b><br>
+Texto de portada: <b>“435 € AL AÑO EN LA BASURA”</b><br>
+Pie de foto, primer comentario, hashtags, el mensaje automático del privado y tres historias
+de apoyo — todo escrito y listo para copiar.</div>
+
+<div class="ej"><b>Paso 3 · La portada</b><br>
+Una foto tuya en el sofá con el móvil, y el texto grande encima. O el prompt para generar el
+fondo si prefieres no salir tú.</div>
+
+<div class="ej"><b>Pasos 4 y 5</b><br>
+Lo grabas de una toma en la cocina, subtítulos automáticos, subes… y con dos toques va también
+a Facebook y a tu estado de WhatsApp.</div>
+
+<p style="color:var(--soft)">Tiempo real: unos <b>20 minutos</b>, casi todos grabando.</p>
+
 <!-- ═══════════ CIERRE ═══════════ -->
 <h2>Lo que conviene saber</h2>
 
 <h3>Todo lo que lleva una publicación</h3>
-<p>Para que no se te olvide nada. Todo esto te lo da la <b>Acción 2</b>:</p>
+<p>Para que no se te olvide nada:</p>
 <div class="tw"><table>
-<tr><th>Pieza</th><th>Dónde va</th></tr>
-<tr><td>Guion + rótulos</td><td>En el vídeo</td></tr>
-<tr><td><b>Texto de portada</b></td><td>Encima de la miniatura del reel</td></tr>
-<tr><td><b>Pie de foto</b></td><td>Debajo de la publicación</td></tr>
-<tr><td><b>Primer comentario</b></td><td>Lo escribes y lo fijas al publicar</td></tr>
-<tr><td>Hashtags</td><td>Al final del pie de foto</td></tr>
-<tr><td><b>Mensaje automático</b></td><td>En ManyChat, para quien comente la palabra</td></tr>
-<tr><td>3 historias</td><td>El mismo día, para llevar gente al reel</td></tr>
-<tr><td>Versiones para otras redes</td><td>Acción 5</td></tr>
+<tr><th>Pieza</th><th>Dónde va</th><th>De dónde sale</th></tr>
+<tr><td>Guion y textos en pantalla</td><td>En el vídeo</td><td>Paso 1</td></tr>
+<tr><td><b>Texto de la portada</b></td><td>Encima de la portada</td><td>Paso 2</td></tr>
+<tr><td><b>Pie de foto</b></td><td>Debajo de la publicación</td><td>Paso 2</td></tr>
+<tr><td><b>Primer comentario</b></td><td>Lo escribes y lo fijas al publicar</td><td>Paso 2</td></tr>
+<tr><td>Hashtags</td><td>Al final del pie de foto</td><td>Paso 2</td></tr>
+<tr><td><b>Mensaje automático</b></td><td>En ManyChat, para quien comente la palabra</td><td>Paso 2</td></tr>
+<tr><td>3 historias</td><td>El mismo día, para llevar gente al reel</td><td>Paso 2</td></tr>
+<tr><td>La imagen de portada</td><td>Al subir el vídeo</td><td>Paso 3</td></tr>
+<tr><td>Versiones para otras redes</td><td>WhatsApp, Facebook, TikTok…</td><td>Paso 5</td></tr>
 </table></div>
 
 <h3>Dónde se equivoca la IA</h3>
@@ -563,15 +606,15 @@ Dame:
 <tr><td>El gancho es flojo</td><td><i>“Dame 5 ganchos más, todos de menos de 10 palabras”</i></td></tr>
 <tr><td>Te hace preguntas</td><td><i>“No preguntes: decide tú y márcalo entre corchetes”</i></td></tr>
 <tr><td>El pie de foto suena a anuncio</td><td><i>“Reescríbelo como si se lo contara a un amigo”</i></td></tr>
-<tr><td>Se te acabó el cupo</td><td>Espera unas horas. Por eso cada acción es un solo mensaje.</td></tr>
+<tr><td>Se te acabó el cupo</td><td>Espera unas horas. Por eso cada paso es un solo mensaje.</td></tr>
 </table></div>
 
 <h3>Tu semana</h3>
 <div class="tw"><table>
 <tr><th>Cuándo</th><th>Qué haces</th></tr>
 <tr><td><b>Una vez</b></td><td>Paso 0: montas el proyecto con la guía dentro</td></tr>
-<tr><td><b>Una hora al mes</b></td><td>Cuatro ideas → Acción 1 → las grabas seguidas</td></tr>
-<tr><td><b>Una vez por semana</b></td><td>Acción 2 (el paquete), publicas, y Acción 5 (el eco)</td></tr>
+<tr><td><b>Una hora al mes</b></td><td>Cuatro ideas → paso 1 → las grabas seguidas</td></tr>
+<tr><td><b>Una vez por semana</b></td><td>Paso 2 (el paquete), publicas, y paso 5 (el eco)</td></tr>
 <tr><td><b>El primer día</b></td><td>Respondes comentarios, sobre todo a quien escribe la palabra clave</td></tr>
 </table></div>
 
