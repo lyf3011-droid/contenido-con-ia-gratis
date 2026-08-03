@@ -1,748 +1,588 @@
 <!doctype html>
 <html lang="es"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Crea contenido que funciona sin gastar un euro · Método V.I.R.A.L.</title>
-<meta name="description" content="El método V.I.R.A.L. y los prompts para convertir una idea en guion, caption, carrusel y stories. Con cuentas gratuitas y sin editar vídeo.">
+<title>Tu Fábrica de Contenido · Complemento de la Guía del Estratega Financiero</title>
+<meta name="description" content="Monta un Proyecto en Claude gratis con la Guía del Estratega Financiero dentro. Cinco acciones, cinco prompts, y tienes la publicación entera lista.">
 <style>
-:root{--bg:#0b1826;--sur:#12233a;--sur2:#18314f;--ink:#e9eef6;--soft:#9db1c8;--line:#254365;
---tech:#4c9be8;--gold:#c9a355;--ok:#3ecf8e;--warn:#e6b34c;--bad:#e8756b;--purple:#b48ad6;
---sh:0 1px 2px rgba(0,0,0,.35),0 12px 34px rgba(0,0,0,.32);
---font:ui-sans-serif,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
---display:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,ui-serif,serif;
---mono:ui-monospace,"Cascadia Code",Consolas,Menlo,monospace;--radius:12px}
-@media (prefers-color-scheme:light){:root{--bg:#eef3f7;--sur:#fff;--sur2:#eef4fb;--ink:#14222f;
---soft:#516175;--line:#d7e2ec;--tech:#1f6fc2;--gold:#8f7327;
---sh:0 1px 2px rgba(20,30,45,.06),0 10px 26px rgba(20,30,45,.08)}}
+:root{
+  --bg:#0e1520; --sur:#16202e; --sur2:#1c2836; --ink:#eef2f7; --soft:#9db1c8; --line:#27394f;
+  --gold:#c9a355; --tech:#4c9be8; --ok:#3ecf8e; --warn:#e6b34c; --pink:#d98cb3;
+  --font:ui-sans-serif,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --display:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,ui-serif,serif;
+  --mono:ui-monospace,"Cascadia Code",Consolas,Menlo,monospace; --r:13px;
+}
+@media (prefers-color-scheme:light){:root{--bg:#f4f6f9;--sur:#fff;--sur2:#eef3f8;--ink:#152131;
+  --soft:#54677e;--line:#dae3ec;--gold:#8a6a1f;--tech:#1f6fc2}}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.62;
--webkit-font-smoothing:antialiased;padding:0 18px 80px}
-.wrap{max-width:820px;margin:0 auto}
-a{color:var(--tech)}
-header.hero{text-align:center;padding:52px 0 10px}
-.eb{font-family:var(--mono);color:var(--gold);letter-spacing:.26em;font-size:12px;
-text-transform:uppercase;font-weight:700}
-h1{font-family:var(--display);font-size:2.6rem;line-height:1.1;margin:14px 0 8px;text-wrap:balance}
+  -webkit-font-smoothing:antialiased;padding:0 18px 70px}
+.w{max-width:780px;margin:0 auto}
+h1{font-family:var(--display);font-size:2.45rem;line-height:1.1;margin:14px 0 10px;text-wrap:balance}
 h1 em{font-style:normal;color:var(--gold)}
-.sub{color:var(--soft);font-size:1.05rem;max-width:600px;margin:0 auto;text-wrap:balance}
-.chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:18px 0 0}
-.chip{background:var(--sur);border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:.85rem}
-nav.toc{position:sticky;top:0;z-index:9;background:var(--bg);display:flex;gap:6px;overflow-x:auto;
-padding:14px 0;margin:22px 0 8px;border-bottom:1px solid var(--line)}
-nav.toc a{flex:0 0 auto;background:var(--sur);border:1px solid var(--line);color:var(--soft);
-border-radius:99px;padding:8px 14px;font-size:.86rem;font-weight:600;text-decoration:none;white-space:nowrap}
-nav.toc a:hover{color:var(--ink);border-color:var(--gold)}
-nav.toc a .n{color:var(--gold);font-weight:800;margin-right:6px}
-.mod{padding:26px 0;border-bottom:1px solid var(--line)}
-h2{font-family:var(--display);font-size:1.9rem;margin:8px 0 10px;line-height:1.15}
-h3{font-size:1.12rem;margin:24px 0 6px}
+h2{font-family:var(--display);font-size:1.7rem;margin:40px 0 8px;line-height:1.2}
+h3{font-size:1.05rem;margin:20px 0 5px}
+h4{font-size:.82rem;margin:18px 0 4px;color:var(--gold);text-transform:uppercase;letter-spacing:.07em}
 p{margin:11px 0}
-blockquote{background:var(--sur);border:1px solid var(--line);border-left:4px solid var(--tech);
-border-radius:var(--radius);padding:14px 18px;margin:16px 0;color:var(--ink)}
-.tw{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);margin:14px 0}
-table{width:100%;border-collapse:collapse;font-size:.93rem}
+header{text-align:center;padding:46px 0 6px}
+.eb{font-family:var(--mono);color:var(--gold);letter-spacing:.24em;font-size:11.5px;
+  text-transform:uppercase;font-weight:700}
+.lead{color:var(--soft);font-size:1.05rem;max-width:600px;margin:0 auto;text-wrap:balance}
+.rule{width:52px;height:3px;background:var(--gold);margin:18px auto 0;border-radius:2px;opacity:.8}
+.box{background:var(--sur);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;margin:16px 0}
+.note{border-left:4px solid var(--tech)}
+.warn{border-left:4px solid var(--warn)}
+.good{border-left:4px solid var(--ok)}
+.step{display:flex;gap:15px;align-items:flex-start;margin:14px 0}
+.step .n{flex:0 0 34px;height:34px;border-radius:10px;background:var(--gold);color:#121a26;
+  font-weight:800;display:grid;place-items:center}
+.step .b{flex:1;min-width:0}
+pre{background:var(--sur2);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;
+  margin:11px 0;white-space:pre-wrap;word-break:break-word}
+pre code{font-family:var(--mono);font-size:.86rem;line-height:1.6;color:var(--ink)}
+code{background:var(--sur2);border:1px solid var(--line);border-radius:5px;padding:1px 6px;
+  font-family:var(--mono);font-size:.87em}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);margin:14px 0}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
 th,td{text-align:left;padding:10px 13px;border-bottom:1px solid var(--line);vertical-align:top}
-th{color:var(--gold);font-size:.76rem;text-transform:uppercase;letter-spacing:.05em}
+th{color:var(--gold);font-size:.75rem;text-transform:uppercase;letter-spacing:.05em}
 tr:last-child td{border-bottom:0}
-pre{background:var(--sur2);border:1px solid var(--line);border-radius:var(--radius);
-padding:15px 17px;margin:13px 0;white-space:pre-wrap;word-break:break-word}
-pre code{font-family:var(--mono);font-size:.87rem;line-height:1.65;color:var(--ink)}
-code{background:var(--sur2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;
-font-family:var(--mono);font-size:.87em}
-ul,ol{padding-left:22px}li{margin:7px 0}
-footer{color:var(--soft);font-size:.85rem;padding:26px 0;text-align:center}
-</style></head><body><div class="wrap">
-<header class="hero">
-<div class="eb">Método V.I.R.A.L. · solo con prompts</div>
-<h1>Crea contenido que <em>funciona</em><br>sin gastar un euro</h1>
-<p class="sub">Los prompts que convierten una idea en guion, caption, carrusel y stories.
-Grabas con el móvil, subes, y ya. Sin editar vídeo y sin cuentas de pago.</p>
-<div class="chips"><span class="chip">100% gratis</span><span class="chip">Sin editar vídeo</span>
-<span class="chip">Con auditor de viralidad</span></div>
+ul,ol{padding-left:21px}li{margin:6px 0}
+.btn{background:var(--gold);color:#121a26;border:0;border-radius:11px;padding:14px 26px;
+  font:inherit;font-weight:800;font-size:1rem;cursor:pointer}
+footer{color:var(--soft);font-size:.85rem;padding:28px 0 0;text-align:center;
+  border-top:1px solid var(--line);margin-top:36px}
+/* --- bloque de accion --- */
+.ac{background:var(--sur);border:1px solid var(--line);border-radius:var(--r);
+  margin:22px 0;overflow:hidden;border-top:4px solid var(--c,var(--gold))}
+.ac .top{display:flex;align-items:center;gap:13px;padding:16px 20px;background:var(--sur2);flex-wrap:wrap}
+.ac .num{flex:0 0 40px;height:40px;border-radius:11px;background:var(--c,var(--gold));color:#121a26;
+  font-weight:800;font-size:1.15rem;display:grid;place-items:center}
+.ac .ti{font-weight:800;font-size:1.16rem}
+.ac .su{color:var(--soft);font-size:.88rem;width:100%}
+.ac .bd{padding:4px 20px 20px}
+.gives{background:var(--sur2);border:1px solid var(--line);border-radius:10px;padding:13px 16px;margin:12px 0}
+.gives ul{margin:6px 0 0;padding-left:20px}
+.gives li{margin:4px 0;font-size:.93rem}
+.say{background:transparent;border:1px dashed var(--gold);border-radius:9px;
+  padding:10px 14px;font-family:var(--mono);font-size:.9rem;margin:10px 0;display:block;color:var(--ink)}
+.mapa{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:10px;margin:16px 0}
+.mp{background:var(--sur);border:1px solid var(--line);border-radius:11px;padding:13px 14px;
+  text-decoration:none;color:inherit;display:block;border-left:3px solid var(--c,var(--gold))}
+.mp .t{font-weight:700;font-size:.94rem;margin-bottom:2px}
+.mp .d{color:var(--soft);font-size:.82rem;line-height:1.4}
+@media print{
+  button{display:none!important}
+  body{background:#fff!important;color:#111!important;padding:0}
+  .box,.ac,pre,table,.gives{break-inside:avoid;page-break-inside:avoid;background:#fafafa!important}
+  pre code,code{color:#111!important}
+  h2{page-break-after:avoid}
+}
+</style></head><body><div class="w">
+
+<header>
+  <div class="eb">Complemento práctico</div>
+  <h1>Tu <em>Fábrica de Contenido</em><br>en Claude gratis</h1>
+  <p class="lead">Montas el proyecto una vez, con la <b>Guía del Estratega Financiero</b> dentro.
+  Después, <b>cinco acciones</b> y tienes la publicación entera: guion, portada, pie de foto,
+  primer comentario, historias y difusión.</p>
+  <div class="rule"></div>
 </header>
-<nav class="toc"><a href="#m01"><span class="n">01</span>Qué es</a><a href="#m02"><span class="n">02</span>Método V.I.R.A.L.</a><a href="#m03"><span class="n">03</span>Tu contexto</a><a href="#m04"><span class="n">04</span>Guion y auditoría</a><a href="#m05"><span class="n">05</span>Carruseles y portadas</a><a href="#m06"><span class="n">06</span>Multiplica el eco</a><a href="#m07"><span class="n">07</span>Tu perfil</a><a href="#m08"><span class="n">08</span>Flujo y reglas</a></nav>
-<section class="mod" id="m01"><h1>Qué es y qué vas a encontrar</h1>
-<div style="background:linear-gradient(135deg,rgba(201,163,85,.10),transparent);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;margin:6px 0 20px">
-<p style="margin:0;font-size:1.12rem;line-height:1.6"><b>Un sistema para crear contenido que funciona usando solo prompts y cuentas gratuitas.</b><br>
-Tú pones la idea y la cara. La inteligencia artificial pone la estructura, el guion y los textos.</p>
-<p style="margin:12px 0 0;color:var(--soft)">No necesitas saber editar vídeo. No necesitas pagar nada. Grabas con el móvil, subes, y ya.</p>
+
+<div class="box note">
+<b>Esto no es un método nuevo.</b> La identidad, la receta y la palabra clave son las de la
+<b>Guía del Estratega Financiero</b>. Lo único que hace este documento es <b>meter la guía dentro
+de una IA</b> para que trabaje con ella. La guía manda; la IA solo ahorra tiempo.
 </div>
 
 <div style="text-align:center;margin:22px 0">
-<button onclick="window.print()" style="background:var(--gold);color:#1a1200;border:0;border-radius:11px;padding:15px 28px;font:inherit;font-weight:800;font-size:1rem;cursor:pointer;box-shadow:var(--sh)">⬇ Descargar esta guía en PDF</button>
-<p style="color:var(--soft);font-size:.82rem;margin:9px 0 0">Se abre la ventana de impresión: elige <b>“Guardar como PDF”</b> como destino.</p>
+<button class="btn" onclick="window.print()">⬇ Descargar en PDF</button>
+<p style="color:var(--soft);font-size:.82rem;margin:8px 0 0">Elige <b>“Guardar como PDF”</b> como destino.</p>
 </div>
 
-<style>
-/* Los prompts son texto para copiar, no código: que se ajusten al ancho
-   en vez de obligar a hacer scroll lateral (y para que salgan enteros en el PDF). */
-pre{white-space:pre-wrap!important;word-break:break-word;overflow-x:visible!important}
-@media print{
-  .tabs,.tabbar,.toc,.top,.brands,.foot .nav,button,.cpy{display:none!important}
-  .tab,.view{display:block!important}
-  body{background:#fff!important;color:#111!important}
-  .card,.mod,pre,table,blockquote{break-inside:avoid;page-break-inside:avoid}
-  pre{background:#f4f4f4!important;border:1px solid #ccc!important}
-  pre code{color:#111!important}
-  a{color:#111!important;text-decoration:none}
-}
-.mapa{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;margin:16px 0}
-.mp{display:block;background:var(--sur);border:1px solid var(--line);border-radius:var(--radius);
-    padding:15px 16px;text-decoration:none;color:inherit;transition:transform .14s,border-color .15s}
-.mp:hover{transform:translateY(-3px);border-color:var(--gold)}
-.mp .n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:8px;
-    background:var(--gold);color:#1a1200;font-weight:800;font-size:.85rem}
-.mp .t{font-weight:700;margin:9px 0 3px;font-size:.98rem}
-.mp .d{color:var(--soft);font-size:.85rem;line-height:1.45}
-.mp .ic{float:right;font-size:1.3rem;opacity:.85}
-</style>
-
-<h2>🗺️ El mapa: todo lo que hay aquí</h2>
-<p>Ocho bloques, en orden. Puedes ir directo al que necesites:</p>
+<h2>El recorrido de un vistazo</h2>
 <div class="mapa">
-
-<a class="mp" href="#m02"><span class="ic">🧭</span><span class="n">2</span><div class="t">El método V.I.R.A.L.</div><div class="d">La estructura de 5 pasos que siguen todas tus publicaciones. Lo único que hay que memorizar.</div></a>
-
-<a class="mp" href="#m03"><span class="ic">📥</span><span class="n">3</span><div class="t">Cárgale tu contexto</div><div class="d">Cómo enseñarle quién eres para que no escriba genérico. Se hace una vez.</div></a>
-
-<a class="mp" href="#m04"><span class="ic">🎬</span><span class="n">4</span><div class="t">Guion y auditoría</div><div class="d">De una idea a un guion. Y el auditor que le pone <b>nota del 1 al 10</b> antes de grabar.</div></a>
-
-<a class="mp" href="#m05"><span class="ic">🖼️</span><span class="n">5</span><div class="t">Carruseles y portadas</div><div class="d">La IA te <b>diseña las slides enteras</b>, sin Canva. Más stories y cómo reciclar un viral sin copiar.</div></a>
-
-<a class="mp" href="#m06"><span class="ic">📢</span><span class="n">6</span><div class="t">Multiplica el eco</div><div class="d">La misma pieza en <b>7 sitios</b>. El único coste: registrarte, que es gratis.</div></a>
-
-<a class="mp" href="#m07"><span class="ic">👤</span><span class="n">7</span><div class="t">Audita tu perfil <span style="color:var(--soft);font-weight:400">(opcional)</span></div><div class="d">Bio y foto revisadas sin piedad. Es el embudo por el que pasa todo tu contenido.</div></a>
-
-<a class="mp" href="#m08"><span class="ic">✅</span><span class="n">8</span><div class="t">Flujo y reglas de oro</div><div class="d">El recorrido completo, cómo grabar con el móvil y las 9 reglas que lo sostienen.</div></a>
-
+<a class="mp" href="#p0" style="--c:#9db1c8"><div class="t">PASO 0 · El proyecto</div><div class="d">Se monta una vez y ya está</div></a>
+<a class="mp" href="#a1" style="--c:#c9a355"><div class="t">1 · El guion</div><div class="d">Qué vas a decir</div></a>
+<a class="mp" href="#a2" style="--c:#d98cb3"><div class="t">2 · El paquete</div><div class="d">Portada, pie de foto, comentario, historias</div></a>
+<a class="mp" href="#a3" style="--c:#4c9be8"><div class="t">3 · Las imágenes</div><div class="d">Carrusel: fotos tuyas o de IA</div></a>
+<a class="mp" href="#a4" style="--c:#e6b34c"><div class="t">4 · El vídeo</div><div class="d">Grabar y subtitular</div></a>
+<a class="mp" href="#a5" style="--c:#3ecf8e"><div class="t">5 · El eco</div><div class="d">Que se oiga en más sitios</div></a>
 </div>
 
-<h2>Para quién es</h2>
-<p>Para cualquiera que quiera publicar en redes con cabeza y no sepa por dónde empezar: alguien que
-da clases, que tiene un negocio local, que quiere construir marca personal, o que simplemente está
-aprendiendo algo y quiere contarlo.</p>
-<h2>Con qué se hace (todo gratis)</h2>
-<div class="tw"><table>
-<thead>
-<tr>
-<th>Para qué</th>
-<th>Herramienta</th>
-<th>Coste</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Guion, textos e ideas</td>
-<td><strong>ChatGPT o Claude</strong> (plan gratuito)</td>
-<td>0 €</td>
-</tr>
-<tr>
-<td>Grabar</td>
-<td><strong>Tu móvil</strong></td>
-<td>0 €</td>
-</tr>
-<tr>
-<td>Subtítulos</td>
-<td><strong>La propia red los pone sola</strong> al subir el vídeo</td>
-<td>0 €</td>
-</tr>
-<tr>
-<td>Portadas y carruseles</td>
-<td><strong>La misma IA te los diseña</strong> (no hace falta Canva)</td>
-<td>0 €</td>
-</tr>
-<tr>
-<td>Música</td>
-<td><strong>Biblioteca de la propia red</strong> (con licencia)</td>
-<td>0 €</td>
-</tr>
-<tr>
-<td>Publicar</td>
-<td><strong>Instagram, TikTok, YouTube…</strong></td>
-<td>0 €</td>
-</tr>
-</tbody>
-</table></div>
-<blockquote>
-<p><strong>Nota:</strong> la clave que lo hace posible es que <strong>las redes generan los subtítulos automáticamente</strong>.
-Eso elimina casi todo el trabajo técnico. Lo único que aporta de verdad el creador es
-<strong>estructura y mensaje</strong> — y de eso va esta guía.</p>
-</blockquote>
-<h2>En una frase</h2>
-<div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:var(--sur2);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px;margin-top:12px">
-<span style="font-size:1.5rem">💡</span>
-<span style="flex:1;min-width:220px">Una idea → un guion con estructura → <b>comprobado antes de grabar</b> → grabas con el móvil → se publica en varios sitios. <b>Veinte minutos por pieza.</b></span>
-</div></section><section class="mod" id="m02"><h1>El método V.I.R.A.L.</h1>
-<p>Todo lo que publiques —reel, carrusel o story— sigue estos cinco pasos. Es la columna vertebral
-del sistema y <strong>lo único que tienes que memorizar</strong>.</p>
-<style>
-.vir{display:flex;flex-direction:column;gap:10px;margin:18px 0}
-.vr{display:flex;gap:15px;align-items:flex-start;background:var(--sur);border:1px solid var(--line);
-    border-radius:var(--radius);padding:15px 17px;border-left:4px solid var(--l,var(--gold))}
-.vr .let{flex:0 0 52px;height:52px;border-radius:12px;display:grid;place-items:center;
-    background:var(--l,var(--gold));color:#0b1826;font-weight:800;font-size:1.5rem;font-family:var(--display)}
-.vr .bd{flex:1;min-width:0}
-.vr .ti{font-weight:700;font-size:1.02rem}
-.vr .de{color:var(--soft);font-size:.92rem;margin-top:3px;line-height:1.5}
-.vr .sg{color:var(--gold);font-size:.78rem;font-family:var(--mono);margin-top:5px}
-.falla{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:14px 0}
-.fl{background:var(--sur2);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:.9rem}
-.fl b{color:var(--bad)}
-</style>
+<!-- ═══════════ PASO 0 ═══════════ -->
+<h2 id="p0">Paso 0 · Monta tu proyecto <span style="font-size:1rem;color:var(--soft)">(30 min, una sola vez)</span></h2>
 
-<div class="vir">
-<div class="vr" style="--l:#e8756b"><div class="let">V</div><div class="bd"><div class="ti">Verdad incómoda</div><div class="de">La frase que incomoda y frena el scroll. Nada de “hola a todos”. Su único trabajo es que no pasen de largo.</div><div class="sg">0 – 3 s</div></div></div>
-<div class="vr" style="--l:#e6b34c"><div class="let">I</div><div class="bd"><div class="ti">Impacto</div><div class="de">El dato, la cifra o el ejemplo que demuestra que esa verdad es real. Sin esto, suena a opinión.</div><div class="sg">3 – 15 s</div></div></div>
-<div class="vr" style="--l:#4c9be8"><div class="let">R</div><div class="bd"><div class="ti">Razón</div><div class="de">Por qué pasa. El mecanismo. Aquí es cuando piensan <i>“ah, ahora lo entiendo”</i>.</div><div class="sg">15 – 30 s</div></div></div>
-<div class="vr" style="--l:#3ecf8e"><div class="let">A</div><div class="bd"><div class="ti">Acción</div><div class="de">La solución sencilla. Algo que puedan hacer hoy mismo, sin ser expertos.</div><div class="sg">30 – 45 s</div></div></div>
-<div class="vr" style="--l:#c9a355"><div class="let">L</div><div class="bd"><div class="ti">Llamada</div><div class="de">Qué quieres que hagan. <b>Una sola cosa</b>: comentar una palabra, guardar o seguirte.</div><div class="sg">45 – 60 s</div></div></div>
+<p>Un chat normal se olvida de todo cada vez. Un <b>Proyecto</b> es un chat con la memoria puesta:
+lo configuras hoy y a partir de mañana solo le dices lo que quieres. <b>La versión gratuita de
+Claude permite proyectos</b> (hasta 5).</p>
+
+<div class="box">
+<div class="step"><span class="n">1</span><div class="b">Entra en <code>claude.ai</code> y crea tu cuenta gratis.</div></div>
+<div class="step"><span class="n">2</span><div class="b"><b>Proyectos → Crear proyecto.</b><br>
+<b>Nombre:</b> <code>Mi Fábrica de Contenido</code><br>
+<b>Descripción:</b> es el campo pequeño de debajo del nombre. Copia esto:</div></div>
 </div>
 
-<h2>Qué pasa si falta una letra</h2>
-<blockquote>
-<p><strong>Recuerda:</strong> si te falta una letra, el contenido se cae. Siempre.</p>
-</blockquote>
-<div class="falla">
-<div class="fl"><b>Sin V</b> → nadie para de hacer scroll. Da igual lo bueno que sea el resto.</div>
-<div class="fl"><b>Sin I</b> → suena a opinión de barra de bar. No te creen.</div>
-<div class="fl"><b>Sin R</b> → entretiene, pero no enseña. Y si no enseña, no te guardan.</div>
-<div class="fl"><b>Sin A</b> → frustras: cuentas el problema y no la salida.</div>
-<div class="fl"><b>Sin L</b> → no hay comentarios. Y sin comentarios, la red no te enseña a nadie más.</div>
+<pre><code>Creo contenido de educación financiera para
+redes sociales siguiendo la Guía del Estratega
+Financiero, que está en los archivos de este
+proyecto. Aquí preparo guiones de reels,
+carruseles, historias y todo el texto de cada
+publicación.</code></pre>
+
+<div class="box" style="margin-top:14px">
+<div class="step"><span class="n">3</span><div class="b"><b>Sube las fuentes:</b> arrastra el PDF de la <b>Guía del Estratega Financiero</b> a los archivos del proyecto. Si tienes tu historia escrita o tus mejores publicaciones, súbelas también.</div></div>
+<div class="step"><span class="n">4</span><div class="b"><b>Pega las instrucciones</b> (el bloque grande de abajo) en el apartado de <b>instrucciones</b> del proyecto, y rellena los corchetes con tus datos.</div></div>
+<div class="step"><span class="n">5</span><div class="b">Guarda. <b>Ya no lo tocas más.</b></div></div>
 </div>
 
-<h2>Un ejemplo, letra por letra</h2>
-<p>Tema: el dinero parado en el banco.</p>
-<div class="tw"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>V</strong></td>
-<td><em>“Tú ya has decidido invertir. Aunque jures que no.”</em></td>
-</tr>
-<tr>
-<td><strong>I</strong></td>
-<td><em>“Cada año la inflación se lleva alrededor de un 2% de tu dinero.”</em></td>
-</tr>
-<tr>
-<td><strong>R</strong></td>
-<td><em>“Tu saldo no cambia, pero lo que puedes comprar con él, sí. En veinte años pierde más de un tercio.”</em></td>
-</tr>
-<tr>
-<td><strong>A</strong></td>
-<td><em>“Que tu dinero al menos no se quede quieto: una cuenta remunerada es el primer paso.”</em></td>
-</tr>
-<tr>
-<td><strong>L</strong></td>
-<td><em>“Comenta ORDEN y te cuento por dónde empezar.”</em></td>
-</tr>
-</tbody>
-</table></div>
-<p>Fíjate en que <strong>la V no explica nada</strong>: solo incomoda y obliga a seguir viendo. Ese es su único trabajo.</p>
-<h2>Los dos tests que hay que pasar</h2>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:12px">
-<div style="background:var(--sur);border:1px solid var(--line);border-left:4px solid var(--tech);border-radius:var(--radius);padding:15px 17px">
-<div style="font-weight:700">⏱️ El test de los 3 segundos</div>
-<div style="color:var(--soft);font-size:.92rem;margin-top:5px">Si alguien ve solo el principio, ¿se queda? Si la respuesta es “depende”, es que no.</div></div>
-<div style="background:var(--sur);border:1px solid var(--line);border-left:4px solid var(--ok);border-radius:var(--radius);padding:15px 17px">
-<div style="font-weight:700">🔖 El test del guardado</div>
-<div style="color:var(--soft);font-size:.92rem;margin-top:5px">¿Por qué alguien guardaría esto para volver? Si no hay motivo claro, entretiene pero no construye autoridad.</div></div>
+<div class="box note" style="font-size:.93rem">
+<b>No confundas los dos campos:</b> la <b>descripción</b> es una nota corta para ti, para
+reconocer el proyecto entre los demás. Las <b>instrucciones</b> son las órdenes que sigue la IA
+—ahí va el bloque grande— y es lo que de verdad cambia cómo responde.
 </div>
 
-<p>Más adelante hay un prompt que <strong>audita las dos cosas por ti</strong> y te pone nota.</p></section><section class="mod" id="m03"><h1>Paso 1 · Cárgale tu contexto</h1>
-<p>Antes de pedir nada, hay que decirle <strong>quién eres</strong>. Es lo que separa un guion genérico de uno
-que suena a ti. Se hace una sola vez.</p>
-<h2>A · Cárgale tu material (si ya tienes cuenta y publicaciones)</h2>
-<blockquote>
-<p><strong>Nota:</strong> si empiezas de cero y no tienes nada de esto, sáltate este bloque y ve directo al B.</p>
-</blockquote>
-<pre><code>Antes de empezar, te paso material mío para que conozcas mi estilo y mi público.
-No generes contenido todavía: solo léelo y dime qué has entendido de mí.
+<div class="box good" style="font-size:.94rem">
+✅ Al subir el PDF, la IA conoce los <b>50 guiones</b>, las <b>20 secuencias de historias</b> y los
+<b>12 carruseles</b>. Podrás decirle <i>“usa el guion de la inflación”</i> y sabrá cuál es.
+</div>
 
-[PEGA AQUÍ LO QUE TENGAS:]
+<h4>Copia esto en las instrucciones del proyecto</h4>
+<pre><code>Eres mi Fábrica de Contenido. Trabajas con la
+Guía del Estratega Financiero, que tienes en
+los archivos del proyecto. Es tu única fuente
+de estilo y estructura.
 
-- MIS PUBLICACIONES QUE MEJOR FUNCIONARON: (pega los textos y di por qué crees que funcionaron)
-- MIS PUBLICACIONES QUE PEOR FUNCIONARON: (para saber qué evitar)
-- MI BIO ACTUAL: (pégala tal cual)
-- COMENTARIOS Y PREGUNTAS QUE ME REPITE LA GENTE: (son oro: son ideas de contenido)
-- CÓMO HABLO: (pega un texto tuyo cualquiera, aunque sea un mensaje largo)
-- MI HISTORIA EN 5 LÍNEAS: (de dónde vengo, qué me pasó, por qué hablo de esto)
-- QUÉ QUIERO CONSEGUIR: (vender algo, ganar audiencia, que me conozcan en mi ciudad...)
+════════ QUIÉN SOY ════════
+- Estratega financiero, no influencer. No
+  "creo contenido": comparto una estrategia
+  que a mí ya me funcionó.
+- Mi historia es el argumento: "yo estaba
+  como tú y aprendí".
+- Profesión / situación: [ESCRÍBELA]
+- Me formo desde hace: [TIEMPO]
+- Mi palabra clave de CTA: CLASE
+- Mi enlace de registro: [PEGA TU ENLACE]
+- Hablo a: gente que quiere ordenar su dinero
+  y no sabe por dónde empezar.
 
-Cuando lo hayas leído, dime:
-1. Qué tono has detectado en mí
-2. Qué temas se me dan mejor
-3. Las tres cosas que debería explotar más
-4. Qué estoy haciendo mal (sé honesto)
-</code></pre>
-<blockquote>
-<p><strong>Truco:</strong> guarda la respuesta. Ese resumen es tu <strong>ficha de marca</strong>: pégalo al principio de
-cada conversación nueva y no tendrás que repetir esto nunca más.</p>
-</blockquote>
-<h2>B · El motor (esto sí, siempre)</h2>
-<p>Este texto le da su papel y sus reglas. Se pega una vez al empezar la conversación.</p>
-<pre><code>Actúa como mi estratega y guionista de contenido para redes sociales.
+════════ CÓMO TRABAJAS ════════
+REGLA 1 · NO PREGUNTES. Actúa.
+Nada de entrevistas ni de pedir permiso. Si
+te falta un dato mío, elige la opción más
+razonable, sigue y márcala entre corchetes.
+Como mucho UNA pregunta al final, y solo si
+es imprescindible.
 
-MI CONTEXTO:
-- Nicho / tema: [ESCRIBE TU TEMA]
-- A quién le hablo: [ESCRIBE TU PÚBLICO]
-- Mi tono: cercano, directo, sin humo, como se lo explicaría a un amigo. Español de España.
-- Mi diferencia: [QUÉ TE HACE DISTINTO]
-- Publico en: [Instagram / TikTok / ...]
+REGLA 2 · SIEMPRE TRES PROPUESTAS.
+Tres ángulos numerados, uno contraintuitivo.
+Después desarrolla ENTERA la número 1, sin
+que yo lo pida. Todo en un solo mensaje:
+tengo plan gratuito.
 
-LA ESTRUCTURA QUE SIEMPRE USAMOS — método V.I.R.A.L.:
-V - Verdad incómoda: frase que incomoda y frena el scroll (primeros 3 segundos)
-I - Impacto: el dato o ejemplo que demuestra que es verdad
-R - Razón: por qué pasa, el mecanismo, el &quot;ahora lo entiendo&quot;
-A - Acción: la solución sencilla que puede aplicar hoy
-L - Llamada: una sola llamada a la acción
+REGLA 3 · UNA SOLA PERSONA A CÁMARA.
+Los guiones son para decirlos yo solo,
+mirando al móvil. Nada de diálogos ni
+segundas voces, salvo que escriba
+"a dos voces" o te pase un guion que ya
+las tenga.
 
-REGLAS INNEGOCIABLES:
-1. Nunca inventes datos ni cifras. Si usas un dato, di de dónde sale. Si no lo sabes, dilo.
-2. Nada de promesas de resultados ni de consejo personalizado. Es educación, no asesoría.
-3. Frases cortas. Lenguaje de calle. Cero palabras técnicas sin traducir.
-4. Nada de &quot;hola chicos&quot; ni presentaciones. Se entra a saco.
-5. Escribe como se habla, no como se escribe.
+REGLA 4 · LOS DATOS, PUESTOS Y MARCADOS.
+Nunca dejes un hueco vacío ni me pidas la
+cifra. Pon un dato realista de España (IPC,
+gasto medio, precio medio) y márcalo así:
+   435 € al año [dato medio · verifica]
+Si hablo de rentabilidades, añade siempre:
+"sin garantías: rentabilidades pasadas no
+aseguran futuras".
 
-Cuando te pase una idea, la desarrollas con esta estructura. ¿Entendido? Responde solo &quot;listo&quot;.
-</code></pre>
-<blockquote>
-<p><strong>Aviso:</strong> rellena los corchetes de verdad. Si dejas "[ESCRIBE TU TEMA]" tal cual, tendrás
-contenido de nadie para nadie.</p>
-</blockquote></section><section class="mod" id="m04"><h1>Paso 2 · Guion y auditoría</h1>
-<h2>A · De una idea a un guion</h2>
-<pre><code>Escribe el guion de un reel sobre esta idea:
+════════ LA RECETA (de la guía) ════════
+Toda pieza lleva las 4, en este orden:
+1. GANCHO (0-3 s): frase que frena el scroll.
+   Sin saludos ni presentaciones.
+2. DATO CONCRETO: un número, mejor en euros,
+   con la fuente dicha en voz alta.
+3. REMATE: frase final con giro o humor.
+   Es la que se comparte.
+4. CTA ÚNICO: una vez, al final:
+   "comenta CLASE y te llega la información".
 
-IDEA: [ESCRIBE TU IDEA EN UNA FRASE]
-DURACIÓN: [30 / 45 / 60] segundos
+MEDIDAS QUE FUNCIONAN
+- Reel: 30-45 segundos, 90-130 palabras.
+- Un corte cada 2-3 segundos.
+- Frases cortas: se dice en voz alta, no se lee.
+- Escenario cotidiano: cocina, súper, coche.
+- Autoridad con nombre ("lo dice el INE"),
+  nunca "los expertos".
+- Escenas donde alguien conoce la regla y gana.
+- Subtítulos siempre.
+
+════════ LO QUE NO HACES ════════
+- Lenguaje motivacional vacío ni frases de taza.
+- Prometer resultados o rentabilidades.
+- Consejo financiero personalizado: es divulgación.
+- Inventar fuentes o estudios.
+- Escribir en neutro: español de España.
+
+Cuando te dé una idea, un tema o un guion de
+la guía, aplicas todo esto sin preguntar.
+Responde solo "listo".</code></pre>
+
+<!-- ═══════════ ACCIÓN 1 ═══════════ -->
+<div class="ac" id="a1" style="--c:#c9a355">
+<div class="top"><span class="num">1</span><div><div class="ti">El guion</div></div>
+<div class="su">Qué vas a decir delante de la cámara.</div></div>
+<div class="bd">
+
+<h4>Lo que le dices (versión corta)</h4>
+<span class="say">Idea: lo que te cuesta al año no revisar tus suscripciones.</span>
+<span class="say">Usa el guion de la inflación de la guía y adáptalo a mi historia.</span>
+
+<h4>El prompt completo (si quieres más control)</h4>
+<pre><code>ACCIÓN 1 · GUION
+
+Idea: [TU IDEA EN UNA FRASE]
+   (o: usa el guion [X] de la guía)
+
+Formato: reel de [35] segundos
+Dónde grabo: [la cocina / el coche / la calle]
+Extra: [sale mi hija] · [a dos voces]
 
 Dame:
+1. TRES ÁNGULOS numerados, uno contraintuitivo.
+2. Desarrolla ENTERO el número 1:
+   - Gancho (0-3 s)
+   - Guion hablado, marcando las 4 piezas
+   - Qué se ve y qué rótulo aparece en cada
+     momento
+3. Duración estimada y número de palabras.</code></pre>
 
-1. TRES OPCIONES DE VERDAD INCÓMODA (los primeros 3 segundos). Que sean frases que hagan
-   parar el scroll. Marca cuál recomiendas y por qué.
+<div class="gives"><b>📦 Lo que te devuelve</b>
+<ul>
+<li>3 ángulos para elegir</li>
+<li>El guion completo, escrito para decirlo en voz alta</li>
+<li>Los rótulos: qué texto aparece en pantalla y cuándo</li>
+</ul></div>
+</div></div>
 
-2. EL GUION COMPLETO con la estructura V.I.R.A.L., escrito para DECIRLO EN VOZ ALTA
-   (no para leerlo). Marca los segundos aproximados de cada parte.
+<!-- ═══════════ ACCIÓN 2 ═══════════ -->
+<div class="ac" id="a2" style="--c:#d98cb3">
+<div class="top"><span class="num">2</span><div><div class="ti">El paquete de publicación</div></div>
+<div class="su">Todo lo que se escribe alrededor del vídeo. Esto es lo que separa a un creador de alguien que solo sube vídeos.</div></div>
+<div class="bd">
 
-3. QUÉ SE VE EN PANTALLA en cada momento: qué hago yo, qué gesto, qué muestro.
-   Recuerda que grabo con el móvil y no edito: tiene que ser sencillo de hacer.
+<h4>Lo que le dices (versión corta)</h4>
+<span class="say">Dame el paquete de publicación completo.</span>
 
-4. LA PALABRA CLAVE del CTA (una palabra sencilla que la gente comentará).
+<h4>El prompt completo</h4>
+<pre><code>ACCIÓN 2 · PAQUETE DE PUBLICACIÓN
 
-Después del guion, dime en una línea POR QUÉ este guion funcionaría.
-</code></pre>
-<h2>B · El auditor de viralidad</h2>
-<p>Este es <strong>el prompt más importante de toda la guía</strong>. Es el paso que casi todo el mundo se
-salta y el que más diferencia marca. Úsalo <strong>siempre antes de grabar</strong>.</p>
-<pre><code>Ahora cambia de rol: eres un auditor de contenido MUY EXIGENTE y honesto. No me hagas la pelota.
+De la pieza anterior, dame todo esto listo
+para copiar y pegar:
 
-Audita el guion anterior (o este: [PEGA TU GUION]) y dame:
+1. TEXTO DE LA PORTADA
+   4-6 palabras que irán escritas encima de
+   la miniatura del reel. Que se entiendan
+   solas y den ganas de entrar.
+   Dame 3 opciones.
 
-1. TABLA V.I.R.A.L. — para cada letra: ¿está o no está? ¿en qué frase? nota del 1 al 10.
-   V - Verdad incómoda
-   I - Impacto (dato o ejemplo)
-   R - Razón (el mecanismo)
-   A - Acción (solución concreta)
-   L - Llamada (una sola)
-
-2. TEST DE LOS 3 SEGUNDOS: si alguien ve solo el principio, ¿para de hacer scroll? Sí/No y por qué.
-
-3. TEST DEL GUARDADO: ¿por qué alguien guardaría esto para volver? Si no hay motivo, dilo claro.
-
-4. NOTA GLOBAL del 1 al 10 y VEREDICTO: PUBLICAR / ARREGLAR / TIRAR.
-
-5. LOS 3 ARREGLOS CONCRETOS que más subirían la nota, con la frase ya reescrita.
-
-Si la nota es menor de 7, reescribe el guion entero aplicando tus propios arreglos.
-</code></pre>
-<blockquote>
-<p><strong>Recuerda:</strong> si saca menos de un 7, no lo grabes. Arréglalo y vuelve a auditarlo. Cuesta dos
-minutos y te ahorra publicar algo que no va a funcionar.</p>
-</blockquote>
-<h2>C · El paquete de publicación</h2>
-<pre><code>Con el guion final, prepárame todo lo que necesito para publicar:
-
-1. CAPTION:
-   - Primera línea que enganche (es lo que se ve antes del &quot;ver más&quot;)
-   - 3-4 bloques cortos, con espacios entre ellos
+2. PIE DE FOTO (caption)
+   - Primera línea que enganche (es lo que se
+     ve antes del "ver más")
+   - 3 o 4 bloques cortos, separados
    - Cierre que invite a comentar
-   - Máximo 3-4 emojis
+   - El CTA "comenta CLASE" una sola vez
+   - Máximo 4 emojis en todo el texto
 
-2. PRIMER COMENTARIO (el que fijo yo nada más publicar): amplía algo del vídeo o
-   remata la llamada a la acción.
+3. PRIMER COMENTARIO
+   El que fijo yo nada más publicar: amplía
+   un dato del vídeo o remata el CTA.
 
-3. HASHTAGS: 5 máximo, mezclando uno grande, tres medianos y uno de nicho.
-   Explícame en una línea por qué esos.
+4. HASHTAGS
+   Cinco como mucho: uno grande, tres medianos
+   y uno de nicho. Dime en una línea por qué.
 
-4. TEXTO DE LA PORTADA: 4-6 palabras que resuman la verdad incómoda.
+5. MENSAJE AUTOMÁTICO (ManyChat)
+   Lo que recibe por privado quien comente
+   CLASE. Cercano, corto, con mi enlace.
 
-5. RESPUESTA AUTOMÁTICA: qué le mando por mensaje a quien comente la palabra clave.
+6. TRES HISTORIAS de apoyo
+   Para publicar el mismo día y llevar gente
+   al reel. De cada una: el texto que va
+   encima, qué se ve detrás y qué sticker uso
+   (encuesta / pregunta / cuenta atrás).
 
-6. TRES STORIES para acompañar la publicación: qué digo en cada una y qué sticker uso.
-</code></pre></section><section class="mod" id="m05"><h1>Carruseles, portadas, stories y reciclar virales</h1>
-<h2>A · El carrusel entero, diseñado por la IA</h2>
-<p>El carrusel es el formato que <strong>más guardados</strong> consigue, y el guardado es lo que construye
-autoridad. Y no hace falta ninguna herramienta de diseño: <strong>la propia IA te diseña todas las
-slides de una vez</strong>.</p>
-<blockquote>
-<p><strong>El truco que hay que saber:</strong> si le pides a una IA que <em>genere una imagen</em> con texto, suele
-escribirlo mal (se come tildes, inventa letras). Pero si le pides que <strong>genere el HTML de las
-slides</strong>, el texto es texto de verdad y sale <strong>perfecto</strong>. Además es gratis e ilimitado.</p>
-</blockquote>
-<h3>Paso 1 · El contenido de las slides</h3>
-<pre><code>Convierte esta idea en un carrusel de [8] slides:
+7. LA MEJOR HORA para publicarlo y por qué.</code></pre>
 
-IDEA: [TU IDEA — o &quot;la del guion anterior&quot;]
+<div class="gives"><b>📦 Lo que te devuelve</b>
+<ul>
+<li><b>El texto de la portada</b> (3 opciones)</li>
+<li><b>El pie de foto</b> entero</li>
+<li><b>El primer comentario</b> para fijar</li>
+<li><b>Los hashtags</b></li>
+<li><b>El mensaje automático</b> del privado</li>
+<li><b>3 historias</b> de apoyo con sus stickers</li>
+</ul></div>
 
-Para CADA slide dame:
-- TITULAR: máximo 7 palabras
-- SUBTEXTO: 1-2 frases cortas (o &quot;ninguno&quot;)
+<div class="box warn" style="font-size:.93rem">
+<b>Antes de publicar, repasa dos cosas:</b> que la <b>palabra clave</b> sea la misma en el vídeo,
+en el pie de foto y en tu ManyChat; y que cualquier cifra marcada con <code>[verifica]</code>
+la hayas comprobado o cambiado por la tuya.
+</div>
+</div></div>
 
-Reparte la estructura V.I.R.A.L. así:
-- Slide 1: la VERDAD INCÓMODA (es la portada:
-  tiene que funcionar sola)
-- Slide 2: por qué te afecta a TI
-- Slides 3-4: el IMPACTO (dato o ejemplo)
-- Slides 5-6: la RAZÓN (por qué pasa)
-- Slide 7: la ACCIÓN (qué hacer)
-- Slide 8: la LLAMADA (guárdalo / comenta)
+<!-- ═══════════ ACCIÓN 3 ═══════════ -->
+<div class="ac" id="a3" style="--c:#4c9be8">
+<div class="top"><span class="num">3</span><div><div class="ti">Las imágenes</div></div>
+<div class="su">La portada del reel, las imágenes de apoyo y las diapositivas del carrusel. Con fotos tuyas o generadas con IA.</div></div>
+<div class="bd">
 
-Y dime qué slide hará que lo guarden.
-</code></pre>
-<h3>Paso 2 · Que te lo diseñe (esto sustituye a Canva)</h3>
-<pre><code>Ahora diséñame ese carrusel entero.
+<h3>A · Las imágenes del reel (portada y apoyo)</h3>
+<p>Aunque el reel sea un vídeo tuyo hablando, necesitas <b>la portada</b> —lo que se ve en tu
+perfil— y a veces alguna imagen para insertar mientras hablas.</p>
 
-Genera UN SOLO ARCHIVO HTML con las 8 slides,
-una debajo de otra, listo para abrir en el
-navegador y hacer captura de cada una.
+<h4>Lo que le dices (versión corta)</h4>
+<span class="say">Dame los prompts de imagen de este guion.</span>
 
-REQUISITOS DE DISEÑO:
-- Cada slide: exactamente 1080 x 1350 píxeles
-- Estilo: [DESCRIBE TU ESTÉTICA. Ej: fondo
-  negro, texto blanco y detalles en dorado;
-  elegante y sobrio]
-- Tipografía grande y muy legible en móvil
-- Márgenes amplios: que respire
-- Una palabra clave destacada en color por slide
-- Numeración discreta (1/8, 2/8...) en una esquina
-- La slide 1 tiene que ser la más llamativa
-- La última, con la llamada a la acción destacada
-- Coherencia total entre todas: mismos colores,
-  misma tipografía, misma posición de los textos
+<h4>El prompt completo</h4>
+<pre><code>ACCIÓN 3-A · IMÁGENES DEL REEL
 
-No uses imágenes de internet ni fuentes externas:
-todo con colores, formas y texto, para que
-funcione sin conexión.
-</code></pre>
-<h3>Paso 3 · Convertirlo en imágenes</h3>
-<ol>
-<li>Guarda lo que te dé como un archivo <strong><code>carrusel.html</code></strong> y ábrelo con doble clic.</li>
-<li>Haz una <strong>captura de pantalla de cada slide</strong> (en Windows: <code>Windows + Mayúsculas + S</code>;
-   en Mac: <code>Cmd + Mayúsculas + 4</code>; en el móvil, la captura de siempre).</li>
-<li>Súbelas a Instagram en orden.</li>
-</ol>
-<blockquote>
-<p><strong>Consejo:</strong> pídele cambios las veces que haga falta (“más grande el titular”, “el dorado más
-claro”, “menos texto en la slide 4”). Es gratis y va en segundos. Cuando tengas una estética
-que te guste, <strong>guarda ese HTML como plantilla</strong> y reutilízalo pidiéndole que solo cambie los
-textos.</p>
-</blockquote>
-<h2>B · La portada del reel</h2>
-<p>La portada es lo primero que se ve en tu perfil. Mismo método:</p>
-<pre><code>Diséñame la portada de este reel.
+Del guion anterior, dame:
 
-Genera un HTML con UNA imagen de 1080 x 1350 px:
-- Texto: [LAS 4-6 PALABRAS DE LA VERDAD INCÓMODA]
-- Una palabra destacada en color
-- Estilo: [TU ESTÉTICA]
-- Deja la mitad inferior más despejada, para
-  que se pueda poner una foto mía encima o
-  se vea bien en la cuadrícula del perfil
-- Que el texto se lea aunque se vea pequeñito
-</code></pre>
-<blockquote>
-<p><strong>Si la quieres con tu cara:</strong> haz la captura del HTML y luego, en la propia app de Instagram
-o en el editor de fotos del móvil, pon la imagen de fondo y tu foto encima. O pídele a la IA
-que deje un hueco reservado.</p>
-</blockquote>
-<h2>C · Stories</h2>
-<pre><code>Prepárame una secuencia de [3-5] stories
-sobre: [TEMA]
+1. LA PORTADA
+   - Opción A: qué FOTO MÍA usar (qué
+     fotograma del vídeo o qué foto aparte)
+     y qué texto va encima.
+   - Opción B: el prompt EN INGLÉS para
+     generar la imagen de fondo con IA.
+     Vertical 1080x1350, con la mitad
+     inferior despejada para poner mi foto
+     o el texto encima.
 
-Para cada story:
-- TEXTO exacto que va escrito encima
-  (máximo 8 palabras por línea)
-- QUÉ SE VE detrás: yo hablando, una foto,
-  un fondo de color, una captura...
-- STICKER que uso (encuesta / pregunta /
-  cuenta atrás / enlace) y con qué texto
-- OBJETIVO en una palabra (enganchar /
-  enseñar / preguntar / llevar al perfil)
+2. TRES IMÁGENES DE APOYO
+   Para insertar mientras hablo, una por
+   cada idea fuerte del guion.
+   De cada una dame:
+   - En qué segundo del guion entra
+   - El prompt EN INGLÉS para generarla
+   - Y qué foto mía o qué objeto real podría
+     usar en su lugar si no quiero generarla
 
-La secuencia entera sigue el método V.I.R.A.L.
-y acaba llevando la gente a [MI PUBLICACIÓN /
-MI PERFIL / QUE ME ESCRIBAN].
-</code></pre>
-<h2>D · De un contenido viral a una idea tuya</h2>
-<p>Cuando veas algo que funciona muy bien, lo que se aprovecha es <strong>el molde</strong>, nunca el contenido.</p>
-<blockquote>
-<p><strong>Aviso legal y práctico:</strong> las ideas y los formatos son libres; el guion, las imágenes, la voz
-y el vídeo de otra persona <strong>no se copian nunca</strong>. Además, copiar se nota — y hunde tu marca.</p>
-</blockquote>
-<pre><code>Te paso un contenido de otra persona que ha
-funcionado bien. NO quiero copiarlo: quiero
-entender su ESTRUCTURA y hacer mi versión.
+ESTILO para todos los prompts de imagen:
+[DESCRIBE TU ESTILO. Ej: fotografía real,
+luz natural, tonos cálidos, gente española
+de a pie, nada de gente de catálogo]
+Sin texto dentro de la imagen: el texto lo
+pongo yo encima.</code></pre>
 
-EL CONTENIDO: [PÉGALO O DESCRÍBELO]
+<div class="gives"><b>📦 Lo que te devuelve</b>
+<ul>
+<li><b>El prompt de la portada</b>, listo para pegar en ChatGPT</li>
+<li><b>3 prompts de imágenes de apoyo</b>, con el segundo en que entra cada una</li>
+<li>La alternativa con fotos tuyas, por si no quieres generar nada</li>
+</ul></div>
+
+<div class="box warn" style="font-size:.93rem">
+<b>Ojo:</b> pide siempre <b>“sin texto dentro de la imagen”</b>. Las IA de imagen escriben fatal
+en español (se comen tildes e inventan letras). El texto lo pones tú encima, en la propia
+Instagram o en CapCut, y sale perfecto.
+</div>
+
+<h3>B · El carrusel</h3>
+
+<h4>Lo que le dices (versión corta)</h4>
+<span class="say">Móntame el carrusel de esta pieza.</span>
+
+<h4>El prompt completo</h4>
+<pre><code>ACCIÓN 3 · CARRUSEL
+
+Convierte la pieza anterior en un carrusel
+de [8] diapositivas.
+
+Para CADA diapositiva dame las tres cosas:
+
+1. EL TEXTO
+   Titular corto (máximo 7 palabras) y, si
+   hace falta, una frase de apoyo.
+
+2. FOTO PROPIA
+   Qué foto normal mía encajaría (un café,
+   un paseo, el súper) y cómo hacerla con
+   el móvil.
+
+3. IMAGEN CON IA
+   El texto exacto para generarla, EN INGLÉS,
+   con el mismo estilo visual en todas las
+   diapositivas para que parezcan una serie.
+
+La portada tiene que funcionar sola.
+La última lleva "Comenta CLASE".</code></pre>
+
+<div class="gives"><b>📦 Lo que te devuelve</b>
+<ul>
+<li>El texto de cada diapositiva</li>
+<li>Qué foto tuya usar en cada una</li>
+<li><b>El prompt de imagen de cada una</b>, listo para pegar en ChatGPT</li>
+</ul></div>
+
+<div class="box note" style="font-size:.93rem">
+<b>Para tu equipo:</b> los prompts del punto 3 se pegan tal cual en ChatGPT (o en cualquier
+generador de imágenes). Como todos piden <b>el mismo estilo</b>, salen de la misma familia visual
+aunque las genere otra persona.
+</div>
+
+<h4>Si prefieres montarlo tú, sin imágenes generadas</h4>
+<pre><code>Diséñame ese carrusel en HTML.
+
+Un solo archivo con todas las diapositivas,
+una debajo de otra, de 1080 x 1350 píxeles.
+Estilo: [TUS DOS COLORES], una sola tipografía
+gorda y legible, mucho aire.
+Solo colores y texto, sin imágenes de internet.
+
+Lo abro en el navegador y capturo cada una.</code></pre>
+<p style="color:var(--soft);font-size:.92rem">Si le pides una <i>imagen</i> con texto, se come
+tildes e inventa letras. Pidiéndole el <b>HTML</b>, el texto sale perfecto — y te queda de
+plantilla para reutilizar cambiando solo las palabras.</p>
+</div></div>
+
+<!-- ═══════════ ACCIÓN 4 ═══════════ -->
+<div class="ac" id="a4" style="--c:#e6b34c">
+<div class="top"><span class="num">4</span><div><div class="ti">Grabar y montar el vídeo</div></div>
+<div class="su">Aquí la IA ya no hace nada: esto es tuyo, y es más fácil de lo que parece.</div></div>
+<div class="bd">
+<div class="box" style="margin-top:12px">
+<div class="step"><span class="n">1</span><div class="b"><b>Graba en vertical</b>, móvil apoyado y a la altura de los ojos. Luz de frente (una ventana vale), sitio silencioso. <b>Escenario cotidiano</b>: se identifican más contigo en la cocina que en un despacho.</div></div>
+<div class="step"><span class="n">2</span><div class="b"><b>Un corte por frase.</b> Si dudas, corta. Y no te comas el remate: dilo con calma, que es lo que se comparte.</div></div>
+<div class="step"><span class="n">3</span><div class="b"><b>Subtítulos, siempre.</b> Dos caminos gratis:<br>
+· <b>CapCut</b> — Texto → Subtítulos automáticos → español → exporta en 1080p.<br>
+· <b>La propia Instagram</b> — al subir el reel, actívalos en la pantalla de edición. Más rápido si no quieres instalar nada.</div></div>
+<div class="step"><span class="n">4</span><div class="b"><b>Repásalos antes de publicar.</b> Sobre todo <b>las cifras</b> y los nombres propios: es donde fallan.</div></div>
+<div class="step"><span class="n">5</span><div class="b"><b>Los rótulos:</b> el gancho escrito desde el segundo cero, y el dato en grande justo cuando lo dices.</div></div>
+<div class="step"><span class="n">6</span><div class="b"><b>La portada:</b> elige un fotograma donde se te vea bien la cara y ponle encima el texto que te dio la Acción 2.</div></div>
+</div>
+<div class="box good" style="font-size:.93rem">
+⏱️ <b>El truco del lote:</b> una hora al mes. Eliges 4 piezas, te cambias de camiseta entre una y
+otra y las grabas seguidas. La segunda edición cuesta la mitad que la primera. Con el lote hecho,
+publicar es darle a un botón.
+</div>
+</div></div>
+
+<!-- ═══════════ ACCIÓN 5 ═══════════ -->
+<div class="ac" id="a5" style="--c:#3ecf8e">
+<div class="top"><span class="num">5</span><div><div class="ti">Crear eco</div></div>
+<div class="su">La guía se llama “Crea contenido. Crea eco” por algo. El trabajo ya está hecho.</div></div>
+<div class="bd">
+
+<h4>Lo que le dices (versión corta)</h4>
+<span class="say">Adáptalo para crear eco.</span>
+
+<h4>El prompt completo</h4>
+<pre><code>ACCIÓN 5 · ECO
+
+Adapta la pieza anterior a estos sitios.
+No la copies igual en todos.
+
+1. ESTADO DE WHATSAPP: una frase corta que
+   invite a escribirme por privado.
+2. FACEBOOK: lo mismo algo más explicado,
+   con menos jerga.
+3. TIKTOK: descripción corta y 3 hashtags.
+   ¿Hay que acortar el gancho?
+4. YOUTUBE SHORTS: un título pensado para
+   que alguien lo BUSQUE, y 2 líneas de
+   descripción.
+5. LINKEDIN: versión en texto, más sobria,
+   acabando con una pregunta abierta.
+
+Mantén CLASE solo donde tenga sentido.</code></pre>
+
+<div class="box good" style="font-size:.93rem">
+✅ <b>Lo más rentable y casi nadie lo hace:</b> al subir el reel a Instagram, marca la casilla de
+<b>Facebook</b> y compártelo a tu <b>estado de WhatsApp</b>. Dos toques, sin volver a subir nada.
+</div>
+</div></div>
+
+<!-- ═══════════ OPCIONAL ═══════════ -->
+<h2>Opcional · Tu perfil</h2>
+<div class="ac" style="--c:#9db1c8">
+<div class="top"><span class="num">+</span><div><div class="ti">Que se entienda en tres segundos</div></div>
+<div class="su">Puedes hacer el mejor reel del mundo: si quien entra no entiende quién eres, se va.</div></div>
+<div class="bd">
+<pre><code>Quiero mejorar mi perfil de Instagram.
+Sé honesto y concreto, no me hagas la pelota.
+
+Te paso capturas de mi perfil, mi foto y mi
+bio: [ADJÚNTALAS]
+
+Quiero atraer a [A QUIÉN] y que cuando entren
+[me escriban CLASE / me sigan].
 
 Dame:
+1. ¿Se entiende en 3 segundos quién soy?
+2. Tres opciones para el campo del NOMBRE
+   (ese sí se busca en Instagram).
+3. Tres versiones de BIO listas para copiar.
+4. Mi FOTO: ¿se me ve la cara en un círculo
+   pequeño? ¿la cambio? Si sí, cómo hacerla.
+5. Las tres cosas que más me ayudarían.</code></pre>
+</div></div>
 
-1. RADIOGRAFÍA: ¿qué estructura usa? ¿cuál es
-   su gancho? ¿por qué funciona? ¿qué emoción
-   activa (miedo, curiosidad, indignación)?
+<!-- ═══════════ CIERRE ═══════════ -->
+<h2>Lo que conviene saber</h2>
 
-2. EL MOLDE: la estructura en abstracto, como
-   una plantilla vacía.
+<h3>Todo lo que lleva una publicación</h3>
+<p>Para que no se te olvide nada. Todo esto te lo da la <b>Acción 2</b>:</p>
+<div class="tw"><table>
+<tr><th>Pieza</th><th>Dónde va</th></tr>
+<tr><td>Guion + rótulos</td><td>En el vídeo</td></tr>
+<tr><td><b>Texto de portada</b></td><td>Encima de la miniatura del reel</td></tr>
+<tr><td><b>Pie de foto</b></td><td>Debajo de la publicación</td></tr>
+<tr><td><b>Primer comentario</b></td><td>Lo escribes y lo fijas al publicar</td></tr>
+<tr><td>Hashtags</td><td>Al final del pie de foto</td></tr>
+<tr><td><b>Mensaje automático</b></td><td>En ManyChat, para quien comente la palabra</td></tr>
+<tr><td>3 historias</td><td>El mismo día, para llevar gente al reel</td></tr>
+<tr><td>Versiones para otras redes</td><td>Acción 5</td></tr>
+</table></div>
 
-3. MI VERSIÓN: ese molde aplicado a MI tema y
-   MI experiencia, con mis palabras. Que no se
-   parezca en el contenido, solo en la estructura.
-
-4. AVISO: dime si algo se parece demasiado al
-   original y hay que cambiarlo.
-</code></pre>
-<h2>E · El plan de la semana</h2>
-<pre><code>Prepárame el plan de esta semana:
-[3] publicaciones.
-
-Mis pilares: [PILAR 1], [PILAR 2], [PILAR 3]
-Quiero centrarme en: [TEMA, o &quot;lo que veas&quot;]
-
-Para cada publicación:
-- Día
-- Pilar
-- La VERDAD INCÓMODA (el gancho, en una frase)
-- Formato (reel o carrusel) y POR QUÉ ese
-- La palabra clave del CTA
-
-Y al final, 10 IDEAS DE RESERVA para las
-próximas semanas, en una lista de ganchos.
-</code></pre></section><section class="mod" id="m06"><h1>Multiplica el eco: una pieza, siete sitios</h1>
-<p>Esto es lo que separa a quien publica de quien crece.</p>
-<p>Ya has hecho el trabajo difícil: la idea, el guion, la estructura. Publicarlo <strong>en un solo sitio
-es tirar el 80% del esfuerzo</strong>.</p>
-<div style="background:linear-gradient(135deg,rgba(62,207,142,.12),transparent);border:1px solid var(--line);border-left:4px solid var(--ok);border-radius:var(--radius);padding:18px 20px;margin:18px 0">
-<div style="font-weight:800;font-size:1.05rem">💰 El único coste es registrarte</div>
-<div style="color:var(--soft);margin-top:6px">Todas son <b>gratuitas</b> y crear la cuenta lleva <b>menos de un minuto</b>. No hay suscripciones ni letra pequeña. Es multiplicar tu alcance por cinco o por siete <b>sin trabajo extra</b>.</div>
-</div>
-
-<style>
-.pf{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:16px 0}
-.pc{background:var(--sur);border:1px solid var(--line);border-radius:var(--radius);padding:15px 16px;border-top:3px solid var(--c,var(--tech))}
-.pc .h{display:flex;align-items:center;gap:9px;font-weight:700}
-.pc .h .e{font-size:1.25rem}
-.pc .w{color:var(--soft);font-size:.88rem;margin-top:6px;line-height:1.45}
-.pc .tag{display:inline-block;margin-top:9px;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:99px;background:var(--sur2);border:1px solid var(--line);color:var(--soft)}
-</style>
-
-<h2>Dónde publicar y qué manda en cada sitio</h2>
-<div class="pf">
-<div class="pc" style="--c:#d6249f"><div class="h"><span class="e">📸</span>Instagram</div><div class="w">Tu base. Aquí manda la <b>portada</b> y que te <b>guarden</b>.</div><span class="tag">El original</span></div>
-<div class="pc" style="--c:#25D366"><div class="h"><span class="e">💬</span>WhatsApp</div><div class="w">Estados. Se comparte <b>directo desde Instagram</b> en dos toques. Lo ve tu gente cercana, que es la que más comparte.</div><span class="tag">Desde Instagram</span></div>
-<div class="pc" style="--c:#4267B2"><div class="h"><span class="e">👥</span>Facebook</div><div class="w">Se publica <b>directo desde Instagram</b> al subir (o desde su propia app). Público algo mayor: más contexto y menos jerga.</div><span class="tag">Desde Instagram</span></div>
-<div class="pc" style="--c:#69C9D0"><div class="h"><span class="e">🎵</span>TikTok</div><div class="w">El mismo vídeo. Allí se decide en <b>1 segundo</b>: el gancho va aún más rápido.</div><span class="tag">Mismo vídeo</span></div>
-<div class="pc" style="--c:#FF0000"><div class="h"><span class="e">▶️</span>YouTube Shorts</div><div class="w">Aquí manda el <b>título</b>: la gente <b>busca</b>, no solo desliza.</div><span class="tag">Mismo vídeo</span></div>
-<div class="pc" style="--c:#0A66C2"><div class="h"><span class="e">💼</span>LinkedIn</div><div class="w">Manda el <b>texto</b>, no el vídeo. Se comenta opinando: cierra con pregunta abierta.</div><span class="tag">Versión texto</span></div>
-<div class="pc" style="--c:#8fa3bb"><div class="h"><span class="e">🧵</span>Threads y X</div><div class="w">Conversación y hilos. El primer mensaje tiene que funcionar solo.</div><span class="tag">Versión texto</span></div>
-<div class="pc" style="--c:#E60023"><div class="h"><span class="e">📌</span>Pinterest <span style="color:var(--soft);font-weight:400;font-size:.85rem">(opcional)</span></div><div class="w">Solo si ya lo tienes o haces carruseles. Se busca por palabras y el contenido <b>dura meses</b>.</div><span class="tag">Extra</span></div>
-</div>
-
-<blockquote>
-<p><strong>Nota:</strong> WhatsApp y Facebook salen <strong>directamente desde Instagram</strong> al publicar: no tienes que
-volver a subir nada. Es lo más rentable que puedes hacer y casi nadie lo aprovecha.</p>
-</blockquote>
-<h2>El prompt</h2>
-<pre><code>Coge el contenido que acabamos de crear
-y adáptalo a cada sitio.
-NO lo copies igual en todos: cada uno
-tiene su público y su forma de hablar.
-
-Dame el texto ya listo para copiar y pegar:
-
-1. INSTAGRAM
-   - Caption y primer comentario (si no los tengo ya)
-
-2. ESTADO DE WHATSAPP
-   - Una frase corta que acompañe al vídeo
-   - Que invite a responderme por privado
-
-3. FACEBOOK
-   - Texto algo más largo y explicado
-   - Menos jerga, más contexto
-   - (se publica desde Instagram o en su app)
-
-4. TIKTOK
-   - ¿Hay que acortar el gancho? Allí se
-     decide en 1 segundo
-   - Descripción corta + 3-5 hashtags
-   - Qué sonido en tendencia le pondría
-
-5. YOUTUBE SHORTS
-   - TÍTULO optimizado para búsqueda
-   - Descripción de 2-3 líneas con las
-     palabras que buscaría alguien
-   - 3 hashtags
-
-6. LINKEDIN
-   - Versión en TEXTO (allí manda el texto)
-   - Tono profesional pero sin corbata
-   - Primera línea que enganche
-   - Cierre con PREGUNTA abierta
-
-7. X (TWITTER)
-   - Un HILO de 5-7 mensajes
-   - El primero tiene que funcionar solo
-
-8. THREADS
-   - Versión conversacional y corta
-   - Que invite a responder
-
-9. PINTEREST (solo si te lo pido)
-   - Título y descripción con palabras
-     de búsqueda
-
-Al final dime: ¿en cuál funcionaría mejor
-ESTE contenido concreto, y por qué?
-</code></pre>
-<h2>Cómo se hace en diez minutos</h2>
-<div style="display:flex;flex-direction:column;gap:9px;margin:14px 0">
-<div style="display:flex;gap:13px;align-items:center;background:var(--sur);border:1px solid var(--line);border-radius:10px;padding:13px 15px"><span style="flex:0 0 30px;height:30px;border-radius:8px;background:var(--gold);color:#0b1826;font-weight:800;display:grid;place-items:center">1</span><span><b>Grabas una vez.</b></span></div>
-<div style="display:flex;gap:13px;align-items:center;background:var(--sur);border:1px solid var(--line);border-radius:10px;padding:13px 15px"><span style="flex:0 0 30px;height:30px;border-radius:8px;background:var(--gold);color:#0b1826;font-weight:800;display:grid;place-items:center">2</span><span>Subes a <b>Instagram</b> y marcas las casillas de <b>Facebook</b> y <b>WhatsApp</b>. Dos toques.</span></div>
-<div style="display:flex;gap:13px;align-items:center;background:var(--sur);border:1px solid var(--line);border-radius:10px;padding:13px 15px"><span style="flex:0 0 30px;height:30px;border-radius:8px;background:var(--gold);color:#0b1826;font-weight:800;display:grid;place-items:center">3</span><span>Subes <b>el mismo vídeo</b> a TikTok y a Shorts, cambiando solo el texto.</span></div>
-<div style="display:flex;gap:13px;align-items:center;background:var(--sur);border:1px solid var(--line);border-radius:10px;padding:13px 15px"><span style="flex:0 0 30px;height:30px;border-radius:8px;background:var(--gold);color:#0b1826;font-weight:800;display:grid;place-items:center">4</span><span>Pegas las versiones escritas en <b>LinkedIn, X y Threads</b>.</span></div>
-</div>
-
-<blockquote>
-<p><strong>Aviso honesto:</strong> no te registres en todas de golpe. Empieza por <strong>dos o tres</strong> y hazlas bien.
-Estar en todas y no cuidar ninguna no sirve de nada.</p>
-</blockquote></section><section class="mod" id="m07"><h1>Extra · Audita tu perfil y tu bio</h1>
-<blockquote>
-<p><strong>Nota:</strong> este apartado es <strong>opcional</strong>. Úsalo solo si quieres. Pero si tu objetivo es ganar
-seguidores de verdad, es probablemente lo que más impacto tenga por minuto invertido.</p>
-</blockquote>
-<h2>Por qué importa tanto</h2>
-<p>Puedes hacer el mejor reel del mundo. Si alguien entra a tu perfil y <strong>no entiende en tres
-segundos</strong> quién eres y por qué debería seguirte, se va. La bio y la foto son el embudo por el
-que pasa <strong>todo</strong> tu contenido: si el embudo está roto, da igual cuánta gente llegue.</p>
-<blockquote>
-<p><strong>Aviso:</strong> pídele que sea <strong>honesto y crítico</strong>. Si le pides una opinión amable, te dirá que
-todo está genial y no te habrá servido de nada. Aquí interesa que duela un poco.</p>
-</blockquote>
-<h2>El prompt</h2>
-<p>Le adjuntas <strong>capturas</strong> de tu perfil (se pueden subir imágenes en el plan gratuito).</p>
-<pre><code>Quiero que audites mi perfil de Instagram. Sé BRUTALMENTE HONESTO y realista:
-prefiero que me digas la verdad incómoda a que me hagas la pelota. Si algo está mal, dilo.
-
-TE PASO:
-- Captura de mi perfil (bio, nombre, foto) → [ADJUNTA LA CAPTURA]
-- Mi foto de perfil → [ADJÚNTALA]
-- La cuadrícula de mis publicaciones → [ADJUNTA CAPTURA]
-- A quién quiero atraer: [DESCRÍBELO]
-- Qué quiero que hagan cuando entren: [seguirme / escribirme / comprar / apuntarse]
-
-DAME:
-
-1. VEREDICTO EN UNA FRASE: si entro por primera vez, ¿entiendo en 3 segundos quién eres
-   y por qué seguirte? Sí o no, y por qué.
-
-2. EL NOMBRE (el campo que SÍ se busca en Instagram):
-   - ¿Lo estás desaprovechando? Debería llevar tu nombre + lo que haces.
-   - Dame 3 opciones mejores.
-
-3. LA BIO, línea a línea:
-   - Qué falla en la que tienes ahora (sé concreto)
-   - 3 VERSIONES NUEVAS completas, listas para copiar, cada una con un enfoque distinto:
-     (a) directa y clara  (b) con gancho y curiosidad  (c) con prueba o autoridad
-   - Cada versión: quién eres + qué gana quien te sigue + una llamada a la acción
-
-4. LA FOTO DE PERFIL — sé exigente:
-   - ¿Se te ve la CARA con claridad en un círculo diminuto? (así se ve de verdad)
-   - ¿Contrasta con el fondo o se pierde entre las demás?
-   - ¿Transmite lo que quieres transmitir?
-   - VEREDICTO: ¿la cambio o la mantengo?
-   - Si hay que cambiarla: dime EXACTAMENTE cómo hacer la nueva (encuadre, fondo, ropa,
-     expresión, luz) para que llame la atención y se te reconozca al instante.
-
-5. LA CUADRÍCULA (las 9 primeras publicaciones):
-   - ¿Se ve coherente o parece un cajón desastre?
-   - ¿Se entiende de qué va la cuenta solo mirándola?
-   - Qué cambiarías
-
-6. LAS TRES COSAS que más seguidores me harían ganar, por orden de impacto.
-   Solo tres. Las más importantes.
-</code></pre>
-<h2>Lo que suele fallar (por si te suena)</h2>
+<h3>Dónde se equivoca la IA</h3>
+<div class="box warn">
 <ul>
-<li><strong>El campo "nombre" desaprovechado.</strong> Mucha gente pone solo su nombre. Ese campo <strong>se busca</strong>
-  en Instagram: debería decir también qué haces.</li>
-<li><strong>Bios que hablan de ti y no de quien lee.</strong> "Apasionado de…" no le da nada a nadie.</li>
-<li><strong>Fotos de perfil que no se ven.</strong> Se muestran en un círculo minúsculo: si sales de cuerpo
-  entero o con poca luz, no se te reconoce.</li>
-<li><strong>Sin llamada a la acción.</strong> Ni un enlace, ni un "escríbeme", ni nada.</li>
+<li><b>Se inventa cifras con total seguridad.</b> Por eso las instrucciones la obligan a marcarlas con <code>[verifica]</code>. <b>Ningún número marcado se publica sin comprobarlo.</b></li>
+<li><b>Tira al lenguaje motivacional vacío.</b> Si suena a frase de taza, bórralo.</li>
+<li><b>No sabe tu historia.</b> Lo que emociona es lo tuyo; ella solo lo ordena.</li>
+<li><b>Nadie puede prometer que algo se haga viral.</b> Un buen gancho y una buena estructura <b>suben las probabilidades</b>. Nada más — y quien te prometa otra cosa, te vende humo.</li>
 </ul>
-<blockquote>
-<p><strong>Recuerda:</strong> haz esta auditoría una vez cada tres meses, y cambia <strong>una cosa cada vez</strong> para
-saber qué ha funcionado de verdad.</p>
-</blockquote></section><section class="mod" id="m08"><h1>El flujo completo y las reglas de oro</h1>
-<h2>El recorrido, de principio a fin</h2>
-<pre><code>0. CONTEXTO      → Cárgale tu material + el motor (una sola vez)
-1. IDEA          → El plan de la semana, o se te ocurre
-2. GUION         → El prompt del guion
-3. ¿FUNCIONARÁ?  → El AUDITOR  ← si saca menos de 7, se arregla y se vuelve a auditar
-4. GRABAR        → móvil, una sola toma, mirando a cámara
-5. SUBIR         → la red pone los subtítulos sola; tú eliges la música
-6. PUBLICAR      → caption, primer comentario, hashtags y portada (ya los tienes)
-7. STORIES       → la secuencia que te preparó
-8. MULTIPLICAR   → el mismo contenido en TikTok, Shorts, LinkedIn, X, Threads...
-</code></pre>
-<p><strong>Y una vez cada tres meses:</strong> audita tu perfil y tu bio.</p>
-<p>Con práctica, todo esto son <strong>unos 20 minutos por pieza</strong>.</p>
-<h2>Cómo grabar bien con el móvil (sin editar nada)</h2>
-<ul>
-<li><strong>En vertical</strong>, el móvil apoyado en algo (que no tiemble) y a la <strong>altura de los ojos</strong>.</li>
-<li><strong>La luz, de frente.</strong> Una ventana vale. Nunca la ventana a tu espalda.</li>
-<li><strong>Sitio silencioso.</strong> El sonido importa más que la imagen: si se oye mal, se van.</li>
-<li><strong>Una sola toma.</strong> Si te equivocas, empieza otra vez: sale más natural que cortar.</li>
-<li><strong>Los tres primeros segundos</strong> son el 80% del resultado. Dilos con energía, aunque te sientas
-  raro. Lo que en tu salón parece exagerado, en el móvil parece normal.</li>
-</ul>
-<h2>Las reglas de oro</h2>
-<ol>
-<li><strong>La estructura antes que la producción.</strong> Un vídeo feo con buen guion funciona. Un vídeo
-   bonito sin estructura, no.</li>
-<li><strong>Audita siempre antes de grabar.</strong> Es el paso que la gente se salta y el que más diferencia marca.</li>
-<li><strong>Una idea por pieza.</strong> Si tienes dos, son dos publicaciones.</li>
-<li><strong>Constancia por encima de perfección.</strong> Mejor tres piezas sencillas a la semana que una
-   perfecta al mes.</li>
-<li><strong>Nunca inventes datos.</strong> Si la IA te da una cifra, compruébala o no la uses.</li>
-<li><strong>Copia el molde, nunca el contenido</strong> de otra persona.</li>
-<li><strong>Habla de lo que sabes o de lo que estás aprendiendo.</strong> Lo segundo también vale, y conecta
-   más de lo que crees.</li>
-<li><strong>Publica una vez, difunde siete.</strong> El trabajo duro es el guion; repartirlo cuesta minutos y
-   <strong>solo requiere registrarse</strong>, que es gratis.</li>
-<li><strong>Tu perfil es el embudo.</strong> De nada sirve un buen reel si quien entra no entiende quién eres.</li>
-</ol>
-<h2>Y si algún día quieres dar el salto</h2>
-<p>Este sistema es <strong>enteramente gratuito</strong> y da para muchísimo. Si más adelante quieres subir de
-nivel, lo primero que compensa es un <strong>avatar de inteligencia artificial</strong> (para no tener que
-grabarte) y una <strong>edición con imágenes de apoyo y subtítulos propios</strong>.</p>
-<blockquote>
-<p><strong>Nota importante:</strong> eso mejora <strong>la producción, no el mensaje</strong>. El mensaje —que es el 90% de
-que algo funcione— ya lo tienes resuelto aquí.</p>
-</blockquote></section>
-<footer>Guía de uso libre. Puedes copiarla, adaptarla y enseñarla.<br>
-Si te sirve, compártela con quien esté empezando.</footer>
+</div>
+
+<h3>Si te responde flojo</h3>
+<div class="tw"><table>
+<tr><th>Lo que pasa</th><th>Qué le dices</th></tr>
+<tr><td>Suena genérico, no a ti</td><td><i>“Mete mi historia: [cuéntala en dos líneas]”</i></td></tr>
+<tr><td>Demasiado largo</td><td><i>“Recórtalo a 35 segundos sin perder el dato ni el remate”</i></td></tr>
+<tr><td>El gancho es flojo</td><td><i>“Dame 5 ganchos más, todos de menos de 10 palabras”</i></td></tr>
+<tr><td>Te hace preguntas</td><td><i>“No preguntes: decide tú y márcalo entre corchetes”</i></td></tr>
+<tr><td>El pie de foto suena a anuncio</td><td><i>“Reescríbelo como si se lo contara a un amigo”</i></td></tr>
+<tr><td>Se te acabó el cupo</td><td>Espera unas horas. Por eso cada acción es un solo mensaje.</td></tr>
+</table></div>
+
+<h3>Tu semana</h3>
+<div class="tw"><table>
+<tr><th>Cuándo</th><th>Qué haces</th></tr>
+<tr><td><b>Una vez</b></td><td>Paso 0: montas el proyecto con la guía dentro</td></tr>
+<tr><td><b>Una hora al mes</b></td><td>Cuatro ideas → Acción 1 → las grabas seguidas</td></tr>
+<tr><td><b>Una vez por semana</b></td><td>Acción 2 (el paquete), publicas, y Acción 5 (el eco)</td></tr>
+<tr><td><b>El primer día</b></td><td>Respondes comentarios, sobre todo a quien escribe la palabra clave</td></tr>
+</table></div>
+
+<div class="box good" style="text-align:center;font-size:1.12rem;margin-top:26px">
+<b>HECHO &gt; PERFECTO.</b><br>
+<span style="color:var(--soft);font-size:.95rem">Tu contenido “regulero” publicado invita a más gente que tu contenido perfecto sin publicar.</span>
+</div>
+
+<footer>
+Complemento práctico de la <b>Guía del Estratega Financiero</b>.<br>
+No sustituye a la guía: solo explica cómo apoyarte en una IA gratuita para aplicarla.
+</footer>
+
 </div></body></html>
