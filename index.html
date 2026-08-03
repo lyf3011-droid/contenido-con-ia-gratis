@@ -98,6 +98,22 @@ footer{color:var(--soft);font-size:.85rem;padding:28px 0 0;text-align:center;
   .side .tit{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--soft);
     margin:14px 6px 5px;font-weight:700}
 }
+/* ── etiquetas y modo sencillo ── */
+.eti{margin-left:auto;font-size:.68rem;font-weight:800;text-transform:uppercase;
+  letter-spacing:.06em;border-radius:99px;padding:4px 11px;white-space:nowrap}
+.eti.ese{background:rgba(62,207,142,.16);color:var(--ok);border:1px solid rgba(62,207,142,.4)}
+.eti.rec{background:rgba(76,155,232,.16);color:var(--tech);border:1px solid rgba(76,155,232,.4)}
+.eti.opc{background:rgba(157,177,200,.14);color:var(--soft);border:1px solid rgba(157,177,200,.35)}
+.modo{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;
+  background:var(--sur);border:1px solid var(--line);border-radius:99px;
+  padding:9px 10px 9px 18px;margin:20px auto;width:fit-content}
+.modo .lbl{font-size:.88rem;color:var(--soft)}
+.modo button{background:var(--sur2);border:1px solid var(--line);color:var(--soft);
+  border-radius:99px;padding:7px 16px;font:inherit;font-size:.86rem;font-weight:700;cursor:pointer}
+.modo button.on{background:var(--gold);color:#121a26;border-color:transparent}
+body.simple .adv{display:none!important}
+.avisosimple{display:none}
+body.simple .avisosimple{display:block}
 /* ── plegables ── */
 details.plg{background:var(--sur2);border:1px solid var(--line);border-radius:11px;margin:12px 0}
 details.plg > summary{cursor:pointer;padding:13px 16px;font-weight:700;list-style:none}
@@ -374,6 +390,15 @@ te ahorra tiempo en todas las publicaciones siguientes.</p>
 seguida —y no solo este vídeo— merece la pena montar el proyecto. Media hora una vez, y después
 cada publicación te cuesta minutos.</p>
 
+<div class="modo">
+  <span class="lbl">Cómo quieres verla:</span>
+  <button id="m-simple" class="on">🌱 Lo esencial</button>
+  <button id="m-todo">🔧 Todo</button>
+</div>
+<p class="avisosimple" style="text-align:center;color:var(--soft);font-size:.86rem;margin:-8px 0 18px">
+Estás viendo <b>solo lo imprescindible</b>. Lo avanzado está escondido para que no agobie —
+dale a <b>Todo</b> cuando quieras verlo.</p>
+
 <div style="text-align:center;margin:22px 0">
 <button class="btn" onclick="window.print()">⬇ Descargar en PDF</button>
 <p style="color:var(--soft);font-size:.82rem;margin:8px 0 0">Elige <b>“Guardar como PDF”</b> como destino.</p>
@@ -645,7 +670,7 @@ Responde solo "listo".</code></pre>
 
 <!-- ═══════════ PASO 1 · TEMAS ═══════════ -->
 <div class="ac" id="pt" style="--c:#c9a355">
-<div class="top"><span class="num">1</span><div><div class="ti">Elegir los temas</div></div>
+<div class="top"><span class="num">1</span><div><div class="ti">Elegir los temas</div><span class="eti ese">Esencial</span></div>
 <div class="su">De aquí salen tus 7 publicaciones. Se hace en tres ratos y no hay que inventar nada.</div></div>
 <div class="bd">
 
@@ -793,7 +818,7 @@ respuesta automática. Tiene que ser siempre la misma.
 
 <!-- ═══════════ PASO 2 · CALENDARIO ═══════════ -->
 <div class="ac" id="pc" style="--c:#d98cb3">
-<div class="top"><span class="num">2</span><div><div class="ti">El calendario</div></div>
+<div class="top"><span class="num">2</span><div><div class="ti">El calendario</div><span class="eti ese">Esencial</span></div>
 <div class="su">Tus 7 publicaciones con fecha y formato. Lo guardas en PDF y lo tienes delante todo el mes.</div></div>
 <div class="bd">
 
@@ -848,7 +873,7 @@ el mismo día, para hacerlo en una sola sesión.</code></pre>
 
 <!-- ═══════════ PASO 1 ═══════════ -->
 <div class="ac" id="p1" style="--c:#c9a355">
-<div class="top"><span class="num sm">3·A</span><div><div class="ti">El contenido: guion o diapositivas</div></div>
+<div class="top"><span class="num sm">3·A</span><div><div class="ti">El contenido: guion o diapositivas</div><span class="eti ese">Esencial</span></div>
 <div class="su">Primera parte del paquete. Si es vídeo, el guion entero para decirlo. Si es carrusel, cuántas diapositivas y qué pone en cada una.</div></div>
 <div class="bd">
 
@@ -902,8 +927,7 @@ La última lleva "Comenta CLASE".</code></pre>
 <li>Los textos que van en pantalla y en qué momento</li>
 </ul></div>
 
-<h4>Para varias piezas de golpe (lo más rentable)</h4>
-<pre><code>Dame CUATRO piezas para publicar este mes,
+<details class="plg adv"><summary>Ver el prompt para varias piezas de golpe <span>· avanzado</span></summary><div class="cnt"><pre><code>Dame CUATRO piezas para publicar este mes,
 una por semana, sobre estos temas:
 [TEMA 1] · [TEMA 2] · [TEMA 3] · [TEMA 4]
    (o: elige tú cuatro de la guía que se
@@ -918,20 +942,19 @@ De cada una, en corto:
 Y al final, el ORDEN en que las publicaría
 y qué grabo todo seguido el mismo día.</code></pre>
 <p style="color:var(--soft);font-size:.92rem">Con un mensaje tienes el mes resuelto. Después vas
-pidiendo el paquete (paso 2) de cada una según te toque publicarla.</p>
+pidiendo el paquete (paso 2) de cada una según te toque publicarla.</p></div></details>
 </div></div>
 
 <!-- ═══════════ PASO 2 ═══════════ -->
 <div class="ac" id="p2" style="--c:#d98cb3">
-<div class="top"><span class="num sm">3·B</span><div><div class="ti">Los textos de la publicación</div></div>
+<div class="top"><span class="num sm">3·B</span><div><div class="ti">Los textos de la publicación</div><span class="eti ese">Esencial</span></div>
 <div class="su">Segunda parte del paquete: todo lo que se escribe alrededor. Esto es lo que separa a un creador de alguien que solo sube cosas.</div></div>
 <div class="bd">
 
 <h4>Lo que le escribes</h4>
 <span class="say">Dame el paquete de publicación completo.</span>
 
-<h4>Si quieres afinar más</h4>
-<pre><code>PASO 2 · PAQUETE DE PUBLICACIÓN
+<details class="plg adv"><summary>Ver el prompt completo <span>· si quieres afinar más</span></summary><div class="cnt"><pre><code>PASO 2 · PAQUETE DE PUBLICACIÓN
 
 De la pieza anterior, dame todo esto listo
 para copiar y pegar:
@@ -967,7 +990,7 @@ para copiar y pegar:
    encima, qué se ve detrás y qué sticker uso
    (encuesta / pregunta / cuenta atrás).
 
-7. LA MEJOR HORA para publicarlo y por qué.</code></pre>
+7. LA MEJOR HORA para publicarlo y por qué.</code></pre></div></details>
 
 <div class="gives"><b>📦 Lo que te devuelve</b>
 <ul>
@@ -992,8 +1015,8 @@ queda arriba del todo y lo ve todo el mundo.
 </div></div>
 
 <!-- ═══════════ 3·C · EL ENTREGABLE ═══════════ -->
-<div class="ac" id="pe" style="--c:#b48ad6">
-<div class="top"><span class="num sm">3·C</span><div><div class="ti">Lo que reciben cuando comentan</div></div>
+<div class="ac adv" id="pe" style="--c:#b48ad6">
+<div class="top"><span class="num sm">3·C</span><div><div class="ti">Lo que reciben cuando comentan</div><span class="eti opc">Opcional</span></div>
 <div class="su">🔓 Opcional y suena avanzado, pero se hace en diez minutos. Es lo que convierte un comentario en una persona apuntada.</div></div>
 <div class="bd">
 
@@ -1083,7 +1106,7 @@ añade esto cuando te empiecen a llegar comentarios.</p>
 
 <!-- ═══════════ PASO 3 ═══════════ -->
 <div class="ac" id="p3" style="--c:#4c9be8">
-<div class="top"><span class="num">4</span><div><div class="ti">Las imágenes y el montaje</div></div>
+<div class="top"><span class="num">4</span><div><div class="ti">Las imágenes y el montaje</div><span class="eti ese">Esencial</span></div>
 <div class="su">La portada siempre. Y después eliges: carrusel (B) o vídeo (C).</div></div>
 <div class="bd">
 
@@ -1101,8 +1124,7 @@ carrusel.</p>
 <h4>Lo que le escribes</h4>
 <span class="say">Dame las opciones de portada de esta pieza.</span>
 
-<h4>Si quieres afinar más</h4>
-<pre><code>PASO 3-A · PORTADA
+<details class="plg adv"><summary>Ver el prompt completo <span>· si quieres afinar más</span></summary><div class="cnt"><pre><code>PASO 3-A · PORTADA
 
 De la pieza anterior, dame la portada
 (vertical, 1080 x 1350 píxeles):
@@ -1124,7 +1146,7 @@ Estilo: [DESCRÍBELO. Ej: fotografía real,
 luz natural, tonos cálidos, gente normal,
 nada de gente de catálogo]
 
-Y recuérdame el texto que va encima.</code></pre>
+Y recuérdame el texto que va encima.</code></pre></div></details>
 
 <div class="gives"><b>📦 Lo que te devuelve</b>
 <ul>
@@ -1137,8 +1159,7 @@ Y recuérdame el texto que va encima.</code></pre>
 <h4>Lo que le escribes</h4>
 <span class="say">Móntame el carrusel de esta pieza.</span>
 
-<h4>Si quieres afinar más</h4>
-<pre><code>PASO 3-B · CARRUSEL
+<details class="plg adv"><summary>Ver el prompt completo <span>· si quieres afinar más</span></summary><div class="cnt"><pre><code>PASO 3-B · CARRUSEL
 
 Convierte la pieza anterior en un carrusel
 de [8] diapositivas.
@@ -1161,7 +1182,7 @@ Para CADA diapositiva dame las tres cosas:
    la imagen.
 
 La portada tiene que funcionar sola.
-La última lleva "Comenta CLASE".</code></pre>
+La última lleva "Comenta CLASE".</code></pre></div></details>
 
 <div class="gives"><b>📦 Lo que te devuelve</b>
 <ul>
@@ -1271,15 +1292,14 @@ publicar es darle a un botón.
 
 <!-- ═══════════ PASO 4 ═══════════ -->
 <div class="ac" id="p4" style="--c:#3ecf8e">
-<div class="top"><span class="num">5</span><div><div class="ti">Crear eco</div></div>
+<div class="top"><span class="num">5</span><div><div class="ti">Crear eco</div><span class="eti rec">Recomendado</span></div>
 <div class="su">La guía se llama “Crea contenido. Crea eco” por algo. El trabajo ya está hecho.</div></div>
 <div class="bd">
 
 <h4>Lo que le escribes</h4>
 <span class="say">Adáptalo para crear eco.</span>
 
-<h4>Si quieres afinar más</h4>
-<pre><code>PASO 4 · ECO
+<details class="plg adv"><summary>Ver el prompt completo <span>· si quieres afinar más</span></summary><div class="cnt"><pre><code>PASO 4 · ECO
 
 Adapta la pieza anterior a estos sitios.
 No la copies igual en todos.
@@ -1299,7 +1319,7 @@ No la copies igual en todos.
 Si la pieza es un CARRUSEL, dime además qué
 imagen usar en cada sitio y qué cambia.
 
-Mantén CLASE solo donde tenga sentido.</code></pre>
+Mantén CLASE solo donde tenga sentido.</code></pre></div></details>
 
 <div class="box good" style="font-size:.93rem">
 ✅ <b>Lo más rentable y casi nadie lo hace:</b> al subir la publicación a Instagram, marca la
@@ -1322,9 +1342,9 @@ Facebook ya multiplicas mucho, y son los tres que salen del mismo sitio.</p>
 </div></div>
 
 <!-- ═══════════ OPCIONAL ═══════════ -->
-<h2 id="s-perfil">Paso 6 · Tu bio <span style="font-size:1rem;color:var(--soft)">(opcional)</span></h2>
-<div class="ac" style="--c:#9db1c8">
-<div class="top"><span class="num">6</span><div><div class="ti">Tu bio: que se entienda en tres segundos</div></div>
+<h2 id="s-perfil" class="adv">Paso 6 · Tu bio <span style="font-size:1rem;color:var(--soft)">(opcional)</span></h2>
+<div class="ac adv" id="pb" style="--c:#9db1c8">
+<div class="top"><span class="num">6</span><div><div class="ti">Tu bio: que se entienda en tres segundos</div></div><span class="eti opc">Opcional</span>
 <div class="su">Puedes hacer el mejor reel del mundo: si quien entra no entiende quién eres, se va.</div></div>
 <div class="bd">
 <pre><code>Quiero mejorar mi perfil de Instagram.
@@ -1578,6 +1598,22 @@ document.addEventListener('keydown', function(e){
 /* si se abre con ?auto=1, arranca solo */
 if (location.search.indexOf('auto=1') > -1) setTimeout(function(){ TOUR.arrancar(); }, 900);
 
+/* ── modo sencillo / todo ── */
+(function(){
+  var bs = document.getElementById('m-simple'), bt = document.getElementById('m-todo');
+  function set(simple){
+    document.body.classList.toggle('simple', simple);
+    bs.classList.toggle('on', simple);
+    bt.classList.toggle('on', !simple);
+    try { localStorage.setItem('modo', simple ? 's' : 't'); } catch(e){}
+  }
+  bs.addEventListener('click', function(){ set(true); });
+  bt.addEventListener('click', function(){ set(false); });
+  var g = 's';
+  try { g = localStorage.getItem('modo') || 's'; } catch(e){}
+  set(g === 's');
+})();
+
 /* ── índice lateral: marca dónde estás ── */
 (function(){
   var links = Array.prototype.slice.call(document.querySelectorAll('.side a'));
@@ -1617,6 +1653,7 @@ document.querySelectorAll('pre').forEach(function(p){
 });
 </script>
 </body></html>
+
 
 
 
