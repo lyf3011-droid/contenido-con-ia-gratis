@@ -127,9 +127,14 @@ de una IA</b> para que trabaje con ella. La guía manda; la IA solo ahorra tiemp
 <a class="fl" href="#p0" style="--c:#9db1c8"><div class="t">PASO 0 · El proyecto</div><div class="d">Se monta una vez</div></a>
 <a class="fl" href="#p1" style="--c:#c9a355"><div class="t">1 · El guion</div><div class="d">Qué vas a decir</div></a>
 <a class="fl" href="#p2" style="--c:#d98cb3"><div class="t">2 · El paquete</div><div class="d">Todos los textos</div></a>
-<a class="fl" href="#p3" style="--c:#4c9be8"><div class="t">3 · Las imágenes</div><div class="d">Portada y carrusel</div></a>
-<a class="fl" href="#p4" style="--c:#e6b34c"><div class="t">4 · El vídeo</div><div class="d">Grabar y subtitular</div></a>
-<a class="fl" href="#p5" style="--c:#3ecf8e"><div class="t">5 · El eco</div><div class="d">Más sitios</div></a>
+<a class="fl" href="#p3" style="--c:#4c9be8"><div class="t">3 · Montar la pieza</div><div class="d">Portada + carrusel <b>o</b> vídeo</div></a>
+<a class="fl" href="#p4" style="--c:#3ecf8e"><div class="t">4 · El eco</div><div class="d">Más sitios</div></a>
+</div>
+
+<div class="box note" style="font-size:.94rem">
+🔀 <b>En el paso 3 se bifurca el camino:</b> primero la <b>portada</b> (que hace falta siempre) y
+después eliges <b>una de las dos</b> — o montas un <b>carrusel</b>, o grabas un <b>vídeo</b>.
+Nunca las dos cosas para la misma pieza.
 </div>
 
 <!-- ═══════════ PASO 0 ═══════════ -->
@@ -354,11 +359,18 @@ la hayas comprobado o cambiado por la tuya.
 
 <!-- ═══════════ PASO 3 ═══════════ -->
 <div class="ac" id="p3" style="--c:#4c9be8">
-<div class="top"><span class="num">3</span><div><div class="ti">Las imágenes</div></div>
-<div class="su">Dos cosas, y solo dos: la portada, y las diapositivas si haces carrusel.</div></div>
+<div class="top"><span class="num">3</span><div><div class="ti">Montar la pieza</div></div>
+<div class="su">La portada siempre. Y después eliges: carrusel (B) o vídeo (C).</div></div>
 <div class="bd">
 
-<h3>A · La portada</h3>
+<div class="box note" style="font-size:.93rem;margin-top:14px">
+<b>A</b> · La portada — <b>siempre</b><br>
+<b>B</b> · Las diapositivas — <b>si es carrusel</b><br>
+<b>C</b> · Grabar y subtitular — <b>si es vídeo</b>
+<div style="color:var(--soft);margin-top:6px">Haz A y luego <b>una</b> de las otras dos.</div>
+</div>
+
+<h3>A · La portada <span style="font-size:.85rem;color:var(--soft);font-weight:400">· siempre</span></h3>
 <p>Es la foto que se ve en tu perfil antes de darle al play. Vale tanto para un reel como para un
 carrusel.</p>
 
@@ -396,8 +408,7 @@ Y recuérdame el texto que va encima.</code></pre>
 <li><b>El prompt de imagen</b>, listo para pegar en ChatGPT</li>
 </ul></div>
 
-<h3>B · Las diapositivas del carrusel</h3>
-<p>Solo si la pieza es un carrusel.</p>
+<h3>B · Las diapositivas del carrusel <span style="font-size:.85rem;color:var(--soft);font-weight:400">· solo si es carrusel</span></h3>
 
 <h4>Lo que le escribes</h4>
 <span class="say">Móntame el carrusel de esta pieza.</span>
@@ -446,26 +457,39 @@ encima —en Canva, en CapCut o en la propia Instagram— y sale perfecto.
 piden <b>el mismo estilo</b>, salen de la misma familia visual aunque los genere otra persona.
 </div>
 
-<h4>Y si prefieres montar el carrusel sin generar imágenes</h4>
-<pre><code>Diséñame ese carrusel en HTML.
+<h4>⭐ El atajo: que te lo monte Claude entero</h4>
+<p>Cuando ya tengas la respuesta anterior, <b>no hace falta que montes nada</b>. Pídeselo
+directamente y te devuelve el carrusel <b>ya diseñado</b>:</p>
 
-Un solo archivo con todas las diapositivas,
-una debajo de otra, de 1080 x 1350 píxeles.
-Estilo: [TUS DOS COLORES], una sola tipografía
-gorda y legible, mucho aire.
+<pre><code>Móntame tú el carrusel entero, ya diseñado.
+
+Un solo archivo HTML con todas las
+diapositivas, una debajo de otra, de
+1080 x 1350 píxeles cada una.
+
+Estilo: [TUS DOS COLORES] y una sola
+tipografía, gorda y muy legible. Mucho aire.
+La portada, con la frase grande.
+La última, con "Comenta CLASE".
 Solo colores y texto, sin imágenes.
 
-Lo abro en el navegador y capturo cada una.</code></pre>
-<p style="color:var(--soft);font-size:.92rem">Ahí el texto sale perfecto, porque es texto de
-verdad y no una imagen. Y te queda de plantilla para reutilizar cambiando solo las palabras.</p>
-</div></div>
+Lo abro en el navegador y hago una captura
+de cada diapositiva.</code></pre>
 
-<!-- ═══════════ PASO 4 ═══════════ -->
-<div class="ac" id="p4" style="--c:#e6b34c">
-<div class="top"><span class="num">4</span><div><div class="ti">Grabar y subtitular</div></div>
-<div class="su">Aquí la IA ya no hace nada: esto es tuyo, y es más fácil de lo que parece.</div></div>
-<div class="bd">
-<div class="box" style="margin-top:12px">
+<div class="box good" style="font-size:.93rem">
+✅ <b>Por qué este atajo es el más práctico:</b> el texto lo escribe Claude como <b>texto de
+verdad</b>, así que sale perfecto (sin tildes comidas). Lo abres, capturas cada diapositiva y a
+publicar. Y <b>te queda de plantilla</b>: el siguiente carrusel es solo cambiar las palabras.
+</div>
+
+<p style="color:var(--soft);font-size:.93rem">Los <b>prompts de imagen</b> del punto 3 los
+conservas de todos modos, por si quieres sacar ilustraciones en ChatGPT y combinarlas con las
+diapositivas.</p>
+
+<h3>C · Grabar y subtitular <span style="font-size:.85rem;color:var(--soft);font-weight:400">· solo si es vídeo</span></h3>
+<p>Aquí la IA ya no hace nada: esto es tuyo, y es más fácil de lo que parece.</p>
+
+<div class="box">
 <div class="step"><span class="n">1</span><div class="b"><b>Graba en vertical</b>, con el móvil apoyado y a la altura de los ojos. Luz de frente (una ventana vale), sitio silencioso. <b>Escenario cotidiano</b>: se identifican más contigo en la cocina que en un despacho.</div></div>
 <div class="step"><span class="n">2</span><div class="b"><b>Un corte por frase.</b> Si dudas, corta. Y no te comas el remate: dilo con calma, que es lo que la gente comparte.</div></div>
 <div class="step"><span class="n">3</span><div class="b"><b>Subtítulos, siempre.</b> Dos caminos, los dos gratis:<br>
@@ -473,8 +497,9 @@ verdad y no una imagen. Y te queda de plantilla para reutilizar cambiando solo l
 · <b>La propia Instagram</b> — al subir el reel, actívalos en la pantalla de edición. Más rápido si no quieres instalar nada.</div></div>
 <div class="step"><span class="n">4</span><div class="b"><b>Repásalos antes de publicar.</b> Sobre todo <b>las cifras</b> y los nombres propios: es donde fallan.</div></div>
 <div class="step"><span class="n">5</span><div class="b"><b>Los textos en pantalla:</b> el gancho escrito desde el segundo cero, y el dato en grande justo cuando lo dices.</div></div>
-<div class="step"><span class="n">6</span><div class="b"><b>La portada:</b> elige el fotograma (o la imagen del paso 3) y ponle encima el texto que te dio el paso 2.</div></div>
+<div class="step"><span class="n">6</span><div class="b"><b>La portada:</b> elige el fotograma (o la imagen del apartado A) y ponle encima el texto que te dio el paso 2.</div></div>
 </div>
+
 <div class="box good" style="font-size:.93rem">
 ⏱️ <b>El truco del lote:</b> una hora al mes. Eliges 4 piezas, te cambias de camiseta entre una y
 otra y las grabas seguidas. La segunda edición cuesta la mitad que la primera. Con el lote hecho,
@@ -482,9 +507,9 @@ publicar es darle a un botón.
 </div>
 </div></div>
 
-<!-- ═══════════ PASO 5 ═══════════ -->
-<div class="ac" id="p5" style="--c:#3ecf8e">
-<div class="top"><span class="num">5</span><div><div class="ti">Crear eco</div></div>
+<!-- ═══════════ PASO 4 ═══════════ -->
+<div class="ac" id="p4" style="--c:#3ecf8e">
+<div class="top"><span class="num">4</span><div><div class="ti">Crear eco</div></div>
 <div class="su">La guía se llama “Crea contenido. Crea eco” por algo. El trabajo ya está hecho.</div></div>
 <div class="bd">
 
@@ -492,7 +517,7 @@ publicar es darle a un botón.
 <span class="say">Adáptalo para crear eco.</span>
 
 <h4>Si quieres afinar más</h4>
-<pre><code>PASO 5 · ECO
+<pre><code>PASO 4 · ECO
 
 Adapta la pieza anterior a estos sitios.
 No la copies igual en todos.
@@ -564,8 +589,8 @@ de apoyo — todo escrito y listo para copiar.</div>
 Una foto tuya en el sofá con el móvil, y el texto grande encima. O el prompt para generar el
 fondo si prefieres no salir tú.</div>
 
-<div class="ej"><b>Pasos 4 y 5</b><br>
-Lo grabas de una toma en la cocina, subtítulos automáticos, subes… y con dos toques va también
+<div class="ej"><b>Pasos 3-C y 4</b><br>
+Paso 3-C: lo grabas de una toma en la cocina, subtítulos automáticos, subes… y con dos toques va también
 a Facebook y a tu estado de WhatsApp.</div>
 
 <p style="color:var(--soft)">Tiempo real: unos <b>20 minutos</b>, casi todos grabando.</p>
@@ -584,8 +609,8 @@ a Facebook y a tu estado de WhatsApp.</div>
 <tr><td>Hashtags</td><td>Al final del pie de foto</td><td>Paso 2</td></tr>
 <tr><td><b>Mensaje automático</b></td><td>En ManyChat, para quien comente la palabra</td><td>Paso 2</td></tr>
 <tr><td>3 historias</td><td>El mismo día, para llevar gente al reel</td><td>Paso 2</td></tr>
-<tr><td>La imagen de portada</td><td>Al subir el vídeo</td><td>Paso 3</td></tr>
-<tr><td>Versiones para otras redes</td><td>WhatsApp, Facebook, TikTok…</td><td>Paso 5</td></tr>
+<tr><td>La imagen de portada</td><td>Al subir la publicación</td><td>Paso 3-A</td></tr>
+<tr><td>Versiones para otras redes</td><td>WhatsApp, Facebook, TikTok…</td><td>Paso 4</td></tr>
 </table></div>
 
 <h3>Dónde se equivoca la IA</h3>
@@ -614,7 +639,7 @@ a Facebook y a tu estado de WhatsApp.</div>
 <tr><th>Cuándo</th><th>Qué haces</th></tr>
 <tr><td><b>Una vez</b></td><td>Paso 0: montas el proyecto con la guía dentro</td></tr>
 <tr><td><b>Una hora al mes</b></td><td>Cuatro ideas → paso 1 → las grabas seguidas</td></tr>
-<tr><td><b>Una vez por semana</b></td><td>Paso 2 (el paquete), publicas, y paso 5 (el eco)</td></tr>
+<tr><td><b>Una vez por semana</b></td><td>Paso 2 (el paquete), publicas, y paso 4 (el eco)</td></tr>
 <tr><td><b>El primer día</b></td><td>Respondes comentarios, sobre todo a quien escribe la palabra clave</td></tr>
 </table></div>
 
@@ -629,3 +654,4 @@ No sustituye a la guía: solo explica cómo apoyarte en una IA gratuita para apl
 </footer>
 
 </div></body></html>
+
