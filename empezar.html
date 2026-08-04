@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Empieza aquí · 4 pasos para tu publicación</title>
+<meta name="description" content="Cuatro pasos para crear tu publicación con Claude gratis: la idea, el guion, el paquete completo y elegir si lo haces en vídeo o en carrusel.">
+<style>
+:root{--bg:#0e1520;--sur:#16202e;--sur2:#1c2836;--ink:#eef2f7;--soft:#9db1c8;--line:#27394f;
+--gold:#c9a355;--tech:#4c9be8;--ok:#3ecf8e;--warn:#e6b34c;--vio:#b48ad6;
+--font:ui-sans-serif,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+--display:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,ui-serif,serif;
+--mono:ui-monospace,"Cascadia Code",Consolas,Menlo,monospace;--r:13px}
+@media (prefers-color-scheme:light){:root{--bg:#f4f6f9;--sur:#fff;--sur2:#eef3f8;--ink:#152131;
+--soft:#54677e;--line:#dae3ec;--gold:#8a6a1f;--tech:#1f6fc2}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.7;font-size:17.5px;
+-webkit-font-smoothing:antialiased;padding:0 18px 70px}
+.w{max-width:820px;margin:0 auto}
+a{color:var(--tech)}
+header{text-align:center;padding:38px 0 6px}
+.eb{font-family:var(--mono);color:var(--gold);letter-spacing:.22em;font-size:11px;
+text-transform:uppercase;font-weight:700}
+h1{font-family:var(--display);font-size:3rem;line-height:1.1;margin:12px 0 8px}
+h1 em{font-style:normal;color:var(--gold)}
+.lead{color:var(--soft);font-size:1.18rem;max-width:600px;margin:0 auto;line-height:1.55}
+h2{font-family:var(--display);font-size:2rem;margin:42px 0 8px}
+h3{font-size:1.22rem;margin:24px 0 7px}
+p{margin:10px 0}
+.box{background:var(--sur);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;margin:18px 0}
+.note{border-left:4px solid var(--tech)}.warn{border-left:4px solid var(--warn)}
+.good{border-left:4px solid var(--ok)}
+pre{background:var(--sur2);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;
+margin:11px 0;white-space:pre-wrap;word-break:break-word;position:relative}
+pre code{font-family:var(--mono);font-size:.86rem;line-height:1.6;color:var(--ink)}
+code{background:var(--sur2);border:1px solid var(--line);border-radius:5px;padding:1px 6px;
+font-family:var(--mono);font-size:.87em}
+.cpy{position:absolute;top:8px;right:8px;background:var(--gold);color:#121a26;border:0;
+border-radius:8px;padding:6px 13px;font:inherit;font-size:.78rem;font-weight:800;cursor:pointer}
+ul,ol{padding-left:20px}li{margin:6px 0}
+/* esquema */
+.esq{margin:22px 0}
+.ep{display:flex;gap:20px;align-items:flex-start;position:relative;padding-bottom:26px}
+.ep::before{content:"";position:absolute;left:31px;top:70px;bottom:0;width:3px;background:var(--line)}
+.ep:last-child::before{display:none}
+.ep .b{flex:0 0 64px;height:64px;border-radius:18px;background:var(--c,var(--gold));color:#121a26;
+font-weight:800;font-size:1.7rem;display:grid;place-items:center;z-index:1;box-shadow:0 8px 22px rgba(0,0,0,.28)}
+.ep .c{flex:1;min-width:0;padding-top:4px}
+.ep .t{font-weight:800;font-size:1.35rem}
+.ep .d{color:var(--soft);font-size:1.02rem;line-height:1.5;margin-top:3px}
+.bif{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0 0 0}
+@media(max-width:520px){.bif{grid-template-columns:1fr}}
+.bif>div{background:var(--sur2);border:1px solid var(--line);border-radius:13px;padding:15px 17px;font-size:1rem;line-height:1.45}
+/* pasos */
+.paso{background:var(--sur);border:1px solid var(--line);border-radius:var(--r);
+margin:20px 0;overflow:hidden;border-top:4px solid var(--c,var(--gold))}
+.paso .top{display:flex;align-items:center;gap:16px;padding:19px 22px;background:var(--sur2)}
+.paso .n{flex:0 0 54px;height:54px;border-radius:15px;background:var(--c,var(--gold));color:#121a26;
+font-weight:800;font-size:1.5rem;display:grid;place-items:center}
+.paso .t{font-weight:800;font-size:1.3rem}
+.paso .s{color:var(--soft);font-size:.98rem;margin-top:2px}
+.paso .bd{padding:8px 22px 22px}
+.mini{display:flex;gap:15px;align-items:flex-start;margin:15px 0}
+.mini .b{flex:0 0 36px;height:36px;border-radius:11px;background:var(--sur2);border:1px solid var(--line);
+color:var(--gold);font-weight:800;font-size:1rem;display:grid;place-items:center}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);margin:12px 0}
+table{width:100%;border-collapse:collapse;font-size:1rem}
+th,td{text-align:left;padding:13px 15px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--gold);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em}
+tr:last-child td{border-bottom:0}
+details.plg{background:var(--sur2);border:1px solid var(--line);border-radius:11px;margin:11px 0}
+details.plg>summary{cursor:pointer;padding:12px 15px;font-weight:700;list-style:none}
+details.plg>summary::-webkit-details-marker{display:none}
+details.plg>summary::before{content:"▸ ";color:var(--gold)}
+details.plg[open]>summary::before{content:"▾ "}
+details.plg>summary span{color:var(--soft);font-weight:400;font-size:.86rem}
+details.plg .cnt{padding:0 15px 13px}
+.fam{margin:8px 0;font-size:.87rem;line-height:1.5}
+.fam b{color:var(--gold)}
+.btn{background:var(--gold);color:#121a26;border:0;border-radius:11px;padding:13px 24px;
+font:inherit;font-weight:800;cursor:pointer}
+.tourbtn{background:var(--sur);color:var(--ink);border:1px solid var(--gold);border-radius:99px;
+padding:9px 20px;font:inherit;font-weight:700;font-size:.88rem;cursor:pointer;margin-top:14px}
+.tourbtn:hover{background:var(--gold);color:#121a26}
+.w.leyendo>*:not(.mirando){opacity:.28;transition:opacity .4s}
+.mirando{position:relative}
+.mirando::after{content:"";position:absolute;inset:-12px -14px;border:2px solid var(--gold);
+border-radius:14px;pointer-events:none;box-shadow:0 0 0 6px rgba(201,163,85,.10)}
+.nar{position:fixed;left:50%;bottom:20px;transform:translateX(-50%) translateY(150%);
+width:min(540px,calc(100% - 30px));background:var(--sur);border:1px solid var(--gold);
+border-radius:16px;padding:17px 19px;z-index:99;opacity:0;box-shadow:0 18px 50px rgba(0,0,0,.45);
+transition:transform .45s ease,opacity .35s}
+.nar.on{transform:translateX(-50%) translateY(0);opacity:1}
+.nar .barra{display:flex;align-items:center;gap:10px;margin-bottom:7px}
+.nar .chip{font-size:10px;text-transform:uppercase;letter-spacing:.09em;font-weight:800;
+color:#121a26;background:var(--gold);border-radius:99px;padding:3px 10px}
+.nar .paso2{margin-left:auto;color:var(--soft);font-size:12px;font-family:var(--mono)}
+.nar .x{background:none;border:0;color:var(--soft);cursor:pointer;font-size:20px;line-height:1}
+.nar h3{margin:0 0 4px;font-size:1.02rem}
+.nar p{margin:0;color:var(--soft);font-size:.92rem;line-height:1.5}
+.nar .nav{display:flex;gap:8px;margin-top:12px}
+.nar .nav button{flex:1;background:var(--sur2);color:var(--soft);border:1px solid var(--line);
+border-radius:9px;padding:9px;font:inherit;font-size:.85rem;font-weight:600;cursor:pointer}
+.nar .nav button.pri{background:var(--gold);color:#121a26;border-color:transparent;font-weight:800}
+footer{color:var(--soft);font-size:.84rem;padding:26px 0 0;text-align:center;
+border-top:1px solid var(--line);margin-top:34px}
+@media print{button,.cpy,.nar,.tourbtn{display:none!important}
+body{background:#fff!important;color:#111!important;padding:0}
+.box,.paso,pre,table{break-inside:avoid;background:#fafafa!important}
+pre code,code{color:#111!important}
+.w.leyendo>*{opacity:1!important}.mirando::after{display:none}
+details.plg>summary{display:none}details.plg .cnt{padding:0}}
+</style></head><body><div class="w">
+
+<header>
+  <div class="eb">Empieza aquí</div>
+  <h1>Tu publicación en <em>4 pasos</em></h1>
+  <p class="lead">Una idea, un guion, todos los textos y decidir si lo grabas o lo montas en
+  carrusel. Con Claude gratis y sin saber nada de esto.</p>
+  <button class="tourbtn" id="tour-go">▶ Ver el recorrido guiado</button>
+</header>
+
+<!-- ── ESQUEMA ── -->
+<h2 id="esq">El camino</h2>
+<div class="esq">
+
+<div class="ep" style="--c:#c9a355"><span class="b">1</span><div class="c">
+<div class="t">💡 La idea</div>
+<div class="d">Tuya, o una de las que ya trae la guía de Celia.</div></div></div>
+
+<div class="ep" style="--c:#d98cb3"><span class="b">2</span><div class="c">
+<div class="t">✍️ El guion</div>
+<div class="d">Lo que se cuenta, con gancho, dato, remate y la llamada a la acción.</div></div></div>
+
+<div class="ep" style="--c:#4c9be8"><span class="b">3</span><div class="c">
+<div class="t">📦 El paquete completo</div>
+<div class="d">Pie de foto, primer comentario, hashtags, mensaje privado e historias de apoyo.</div></div></div>
+
+<div class="ep" style="--c:#3ecf8e"><span class="b">4</span><div class="c">
+<div class="t">🎬 ¿Vídeo o carrusel?</div>
+<div class="d">Ahora, y no antes, decides cómo lo enseñas.</div>
+<div class="bif">
+<div>🎥 <b>Vídeo</b><br><span style="color:var(--soft)">Lo grabas tú con el móvil, de una toma</span></div>
+<div>🖼️ <b>Carrusel</b><br><span style="color:var(--soft)">Claude te lo genera entero, ya diseñado</span></div>
+</div>
+</div></div>
+
+</div>
+
+<div class="box good">
+<b>Lo importante:</b> los pasos 1, 2 y 3 son <b>iguales</b> hagas lo que hagas después. Por eso la
+decisión de vídeo o carrusel se deja para el final: así, si un día no te apetece grabarte, ya
+tienes el trabajo hecho y lo conviertes en carrusel.
+</div>
+
+<div style="text-align:center;margin:20px 0">
+<button class="btn" onclick="window.print()">⬇ Descargar en PDF</button>
+</div>
+
+<!-- ── 0 ── -->
+<div class="paso" id="p0" style="--c:#9db1c8">
+<div class="top"><span class="n">0</span><div><div class="t">⚙️ Antes de nada: tu proyecto</div><div class="s">Media hora y solo la primera vez.</div></div></div>
+<div class="bd">
+<p>Un chat normal se olvida de todo. Un <b>proyecto</b> se acuerda de quién eres. <b>La versión
+gratuita de Claude los permite</b> (hasta cinco).</p>
+
+<div class="mini"><span class="b">1</span><div>Entra en <code>claude.ai</code>, cuenta gratis. <b>En el ordenador</b>: hay que subir un archivo.</div></div>
+<div class="mini"><span class="b">2</span><div>Menú izquierdo → <b>Proyectos</b> → <b>Crear proyecto</b>. Nombre: <code>Mi Fábrica de Contenido</code>.</div></div>
+<div class="mini"><span class="b">3</span><div><b>Sube el PDF</b> de la Guía del Estratega Financiero a los archivos del proyecto.</div></div>
+<div class="mini"><span class="b">4</span><div><b>Pega el recuadro de abajo</b> en el apartado de <b>instrucciones</b> y cambia lo que va en MAYÚSCULAS.</div></div>
+<div class="mini"><span class="b">5</span><div>Guarda. Escribe <code>hola</code> dentro del proyecto: si contesta <b>“listo”</b>, ya está.</div></div>
+
+<pre><code>Eres mi Fábrica de Contenido. Trabajas con la
+Guía del Estratega Financiero, que tienes en
+los archivos de este proyecto. Es tu única
+fuente de estilo y estructura.
+
+QUIÉN SOY
+- Estratega financiero, no influencer. No
+  "creo contenido": comparto una estrategia
+  que a mí ya me funcionó.
+- Profesión o situación: [ESCRÍBELA]
+- Me formo desde hace: [TIEMPO]
+- Mi palabra clave: CLASE
+- Mi enlace: [PEGA TU ENLACE]
+- Hablo a gente que quiere ordenar su dinero
+  y no sabe por dónde empezar.
+
+CÓMO TRABAJAS
+1. NO PREGUNTES. Actúa. Si te falta un dato
+   mío, elige lo más razonable, sigue y
+   márcalo entre corchetes.
+2. Dame siempre TRES propuestas y desarrolla
+   entera la primera sin que te lo pida.
+   Todo en un mensaje: tengo plan gratuito.
+3. Los guiones son para decirlos YO SOLO a
+   cámara. Nada de diálogos.
+4. Nunca dejes una cifra vacía ni me la
+   pidas: pon un dato realista de España y
+   márcalo así: 435 € al año [comprobar].
+
+LA RECETA (de la guía), siempre las 4:
+1. GANCHO (0-3 s): frase que frena el scroll,
+   sin saludos.
+2. DATO CONCRETO, mejor en euros, con fuente.
+3. REMATE con giro o humor.
+4. CTA ÚNICO: "comenta CLASE y te llega la
+   información" sobre La Semana de la
+   Inversión Sí es para Ti, de Academia de
+   Inversión.
+
+MEDIDAS
+- Vídeo: 30-45 s, 90-130 palabras.
+- Carrusel: 7-9 diapositivas, una idea cada una.
+- Frases cortas: se dice en voz alta.
+- Escenario cotidiano. Autoridad con nombre
+  ("lo dice el INE"), nunca "los expertos".
+
+LO QUE NO HACES
+- Frases motivacionales vacías.
+- Prometer rentabilidades ni dar consejo
+  personalizado: es divulgación.
+- Inventar fuentes o estudios.
+- Escribir en neutro: español de España.
+
+Responde solo "listo".</code></pre>
+
+<div class="box note" style="font-size:.92rem">
+<b>A partir de aquí, escribe siempre dentro del proyecto.</b> Si abres un chat normal, no se
+acuerda de nada.
+</div>
+</div></div>
+
+<!-- ── 1 ── -->
+<div class="paso" id="p1" style="--c:#c9a355">
+<div class="top"><span class="n">1</span><div><div class="t">💡 La idea</div><div class="s">Tuya o de la guía. Con una de las dos basta.</div></div></div>
+<div class="bd">
+
+<h3>🅰️ Si es tuya</h3>
+<p>Lo que te ha pasado, lo que te preguntan, lo que te indigna. <b>Es lo que más conecta</b>,
+porque nadie más lo tiene.</p>
+<pre><code>Quiero hacer una publicación sobre esto:
+
+[CUÉNTALO EN DOS O TRES LÍNEAS, COMO TE SALGA]
+
+Dame TRES ángulos distintos para contarlo,
+con su gancho de menos de 10 palabras.
+Dime cuál recomiendas y por qué.</code></pre>
+
+<h3>🅱️ Si la coges de la guía</h3>
+<p>La guía trae <b>82 piezas ya escritas</b>. Elige la que te suene a algo tuyo:</p>
+<pre><code>Quiero hacer la pieza [NÚMERO O NOMBRE]
+de la guía.
+
+Adáptala a mi historia y a mi forma de
+hablar. Dame TRES ángulos con su gancho y
+dime cuál recomiendas.</code></pre>
+
+<details class="plg">
+<summary>Ver los temas de la guía <span>· para elegir</span></summary>
+<div class="cnt">
+<div class="fam"><b>Tu historia:</b> ¿Y a ti quién te enseñó esto? · La amiga que cambió · Un año de diferencia · Nadie me enseñó esto en el colegio · La semana que me cambió la vida · Tu historia de origen · Tu peor error con el dinero · Tu historia familiar · Antes vs después</div>
+<div class="fam"><b>La inflación:</b> El dinero parado se encoge · La libreta de la abuela · El menú del día · El billete de 50 de 2015 · Black Friday todo el año · Rebajas: ahorras 40, pierdes más</div>
+<div class="fam"><b>El día a día:</b> La suscripción fantasma · Día 25, cuenta a cero · El banco no te va a llamar · El imprevisto que no avisa · Siempre en números rojos · “No me llega ni para ahorrar” · Gastos termita vs hormiga · El extracto de fin de año</div>
+<div class="fam"><b>Empezar a invertir:</b> La bola de nieve · El regalo de los 30 · El primer sueldo · Tu dinero también trabaja en vacaciones · Heredé y no sé qué hacer · Las 4 etapas del estratega</div>
+<div class="fam"><b>Excusas y mitos:</b> “Invertir es de ricos” · “Ya lo miraré” · “Yo es que soy de letras” · “Ya es tarde para mí” · “Cuando gane más, ya invertiré” · “Mi plan es la lotería” · El consejo del cuñado · Las 4 mentiras del sistema · Esto sí / esto no</div>
+<div class="fam"><b>Familia:</b> Discutir por dinero · Ahorrar para el bebé · La hucha del niño · Mi dinero, mis decisiones</div>
+<div class="fam"><b>Mentalidad:</b> ¿Habrá pensión? · Miedo a mirar la cuenta · Enero en el gimnasio · La reducción de jornada · ¿Cuánto necesitas para ser libre? · Las dos versiones de ti · ¿Esto es para ti?</div>
+<p style="font-size:.88rem;color:var(--soft)">Están todos en el PDF de la guía, con el guion ya escrito. Aquí solo van los títulos, para elegir.</p>
+</div>
+</details>
+
+<div class="box good" style="font-size:.92rem">
+👉 <b>Lo mejor de todo:</b> coger un tema de la guía y contarlo <b>con algo tuyo</b>. Lo dices en
+el prompt: <i>“adáptalo a mi historia”</i>.
+</div>
+</div></div>
+
+<!-- ── 2 ── -->
+<div class="paso" id="p2" style="--c:#d98cb3">
+<div class="top"><span class="n">2</span><div><div class="t">✍️ El guion</div><div class="s">Lo que se cuenta. Vale igual para vídeo que para carrusel.</div></div></div>
+<div class="bd">
+<p>Elige uno de los tres ángulos y pide el guion:</p>
+<pre><code>Me quedo con el ángulo número [1 / 2 / 3].
+
+Escríbeme el guion entero:
+- Para DECIRLO en voz alta, no para leerlo.
+- Frases cortas, como hablo yo.
+- Marca las cuatro partes: gancho, dato,
+  remate y la llamada con la palabra CLASE.
+- Unos 40 segundos si lo digo hablando.
+
+Y dime qué frase es la más potente de todas,
+la que tiene que ir sí o sí al principio.</code></pre>
+
+<div class="box note" style="font-size:.92rem">
+<b>Léelo en voz alta.</b> Si hay una frase que tú nunca dirías, cámbiala: <i>“esta frase no la
+diría yo, dame otra más de andar por casa”</i>. Se nota muchísimo.
+</div>
+</div></div>
+
+<!-- ── 3 ── -->
+<div class="paso" id="p3" style="--c:#4c9be8">
+<div class="top"><span class="n">3</span><div><div class="t">📦 El paquete completo</div><div class="s">Todo lo que se escribe alrededor. Un solo mensaje.</div></div></div>
+<div class="bd">
+<pre><code>Ahora dame el paquete completo para publicar
+esto. Listo para copiar y pegar:
+
+1. TEXTO DE LA PORTADA
+   Tres opciones de 4 a 6 palabras, para
+   poner encima de la imagen de portada.
+
+2. PIE DE FOTO
+   - Primera línea que enganche (es lo que se
+     ve antes del "ver más")
+   - Tres o cuatro bloques cortos, separados
+   - Cierre que invite a comentar
+   - "Comenta CLASE" una sola vez
+   - Máximo cuatro emojis
+
+3. PRIMER COMENTARIO
+   El que fijo yo al publicar: que amplíe
+   algo o remate la llamada a la acción.
+
+4. HASHTAGS
+   Cinco como mucho: uno grande, tres
+   medianos y uno muy específico de mi tema.
+
+5. MENSAJE PRIVADO
+   Lo que le contesto a quien comente CLASE.
+   Corto y cercano, con mi enlace:
+   [PEGA TU ENLACE]
+
+6. TRES HISTORIAS de apoyo
+   Para el mismo día. De cada una: el texto
+   que va encima, qué se ve detrás y qué
+   pegatina uso (encuesta, pregunta o
+   cuenta atrás).
+
+7. LA MEJOR HORA para publicarlo y por qué.</code></pre>
+
+<div class="box good" style="font-size:.92rem">
+✅ <b>Guarda esta respuesta.</b> Es lo que vas a ir copiando y pegando cuando publiques. Con esto
+ya tienes la publicación entera resuelta: solo falta la imagen o el vídeo.
+</div>
+</div></div>
+
+<!-- ── 4 ── -->
+<div class="paso" id="p4" style="--c:#3ecf8e">
+<div class="top"><span class="n">4</span><div><div class="t">🎬 ¿Vídeo o carrusel?</div><div class="s">Ahora sí. Elige uno y sigue solo esa parte.</div></div></div>
+<div class="bd">
+
+<div class="tw"><table>
+<tr><th>&nbsp;</th><th>🎥 Vídeo</th><th>🖼️ Carrusel</th></tr>
+<tr><td><b>Sirve para</b></td><td>Que te <b>conozcan</b></td><td>Que te <b>guarden</b></td></tr>
+<tr><td><b>Te toca</b></td><td>Grabarte de una toma</td><td>Nada: lo genera Claude</td></tr>
+<tr><td><b>Tiempo</b></td><td>~15 min</td><td>~10 min</td></tr>
+</table></div>
+<p style="color:var(--soft);font-size:.92rem">Si dudas, empieza por el <b>carrusel</b>: no tienes
+que salir en cámara. Y lo ideal a la larga es alternar.</p>
+
+<h3>🎥 Si eliges vídeo</h3>
+<div class="mini"><span class="b">1</span><div><b>Grábalo en vertical</b>, móvil apoyado a la altura de los ojos, luz de frente, sitio silencioso.</div></div>
+<div class="mini"><span class="b">2</span><div><b>De una toma.</b> Mira a la cámara y no leas: ten el guion cerca, pero cuéntalo. Si te equivocas, empieza otra vez.</div></div>
+<div class="mini"><span class="b">3</span><div><b>Subtítulos:</b> al subir el reel, actívalos en la pantalla de edición de Instagram. O con <b>CapCut</b> si quieres más control.</div></div>
+<div class="mini"><span class="b">4</span><div><b>La portada:</b> elige un momento del vídeo donde se te vea bien la cara y ponle encima el texto del paso 3 (con Canva o el editor del móvil).</div></div>
+
+<div class="box good" style="font-size:.92rem">
+🎬 <b>Los tres primeros segundos son el 80% del resultado.</b> Dilos con energía. Lo que en tu
+salón parece exagerado, en el móvil parece normal.
+</div>
+
+<h3>🖼️ Si eliges carrusel</h3>
+<p>Un solo mensaje y Claude te lo <b>genera entero, ya diseñado</b>:</p>
+
+<pre><code>Convierte el guion en un carrusel y
+diséñamelo entero.
+
+PRIMERO dime cuántas diapositivas necesita
+(entre 7 y 9) y qué pone en cada una:
+- Titular de 7 palabras como mucho
+- Una frase de apoyo, si hace falta
+- La primera es la portada: tiene que
+  funcionar sola
+- La última lleva "Comenta CLASE"
+
+Y DESPUÉS, en el mismo mensaje, genera UN
+SOLO archivo HTML con todas las diapositivas,
+una debajo de otra, de 1080 x 1350 píxeles
+cada una:
+- Fondo [COLOR] y texto en [OTRO COLOR].
+  Solo dos colores.
+- Una sola tipografía, gorda y muy legible
+  en móvil.
+- Mucho aire alrededor del texto.
+- Número de página pequeño en una esquina.
+- Solo colores y texto: sin imágenes de
+  internet ni fuentes externas.
+- Añade estilos de impresión para que al
+  imprimir salga UNA diapositiva por página,
+  sin márgenes ni cabeceras.</code></pre>
+
+<div class="box">
+<b>Y para convertirlo en imágenes:</b>
+<div class="mini" style="margin-top:8px"><span class="b">1</span><div>Claude te lo enseña en una <b>vista previa</b>. Arriba hay un botón para <b>descargarlo</b>.</div></div>
+<div class="mini"><span class="b">2</span><div><b>Doble clic</b> en el archivo → se abre en el navegador → <b>Ctrl + P</b>.</div></div>
+<div class="mini"><span class="b">3</span><div>Destino: <b>Guardar como PDF</b>. Márgenes: <b>Ninguno</b>. Marca <b>Gráficos de fondo</b>.</div></div>
+<div class="mini"><span class="b">4</span><div>Abre el PDF en el móvil y <b>captura cada página</b>. Ponles nombre por orden y súbelas a Instagram <b>en ese orden</b>.</div></div>
+</div>
+
+<div class="box good" style="font-size:.92rem">
+💼 <b>Extra:</b> ese mismo PDF se sube <b>tal cual a LinkedIn</b> como documento y allí se pasa
+como un carrusel, sin hacer nada más.
+</div>
+</div></div>
+
+<!-- ── PUBLICAR ── -->
+<h2 id="pub">Y a publicar</h2>
+<div class="box">
+<div class="mini"><span class="b">1</span><div>Sube el vídeo o las imágenes (el carrusel, <b>en orden</b>).</div></div>
+<div class="mini"><span class="b">2</span><div>Pega el <b>pie de foto</b> del paso 3 y publica.</div></div>
+<div class="mini"><span class="b">3</span><div>Escribe tu <b>primer comentario</b>, mantén el dedo pulsado encima y elige <b>Fijar</b>.</div></div>
+<div class="mini"><span class="b">4</span><div>Publica las <b>tres historias</b> de apoyo.</div></div>
+<div class="mini"><span class="b">5</span><div><b>Contesta a todo el mundo el primer día.</b> A quien comente <code>CLASE</code>, mándale el mensaje privado con tu enlace.</div></div>
+</div>
+
+<div class="box warn" style="font-size:.92rem">
+<b>Antes de darle a publicar:</b> comprueba las cifras marcadas con <code>[comprobar]</code> y que
+la palabra clave sea <b>la misma</b> en la pieza, en el pie de foto y en tu respuesta.
+</div>
+
+<div class="box good" style="text-align:center;font-size:1.05rem">
+<b>Ya está. Y el proyecto se queda montado:</b><br>
+<span style="color:var(--soft);font-size:.93rem">la siguiente publicación son cuatro mensajes y
+veinte minutos.</span>
+</div>
+
+<h2>Si quieres más</h2>
+<div class="box">
+<ul style="margin:0">
+<li><b>Detalle del carrusel</b> (incluido cómo generar dibujos con ChatGPT): <a href="carrusel.html">receta completa</a></li>
+<li><b>Detalle del vídeo</b> (cómo sacar tu historia, grabar en lote): <a href="video.html">receta completa</a></li>
+<li><b>Planificar 7 publicaciones</b>, los ecos en otras redes y tu bio: <a href="index.html">la guía completa</a></li>
+</ul>
+</div>
+
+<footer>
+Basado en la <b>Guía del Estratega Financiero</b>.<br>
+No sustituye a la guía: solo explica cómo apoyarte en una IA gratuita para aplicarla.
+</footer>
+
+</div>
+
+<div class="nar" id="nar" role="status" aria-live="polite">
+  <div class="barra"><span class="chip" id="nar-chip">Recorrido</span>
+  <span class="paso2" id="nar-paso">1 / 1</span>
+  <button class="x" id="nar-x" aria-label="Salir">×</button></div>
+  <h3 id="nar-tit"></h3><p id="nar-txt"></p>
+  <div class="nav">
+    <button id="nar-ant">← Anterior</button>
+    <button id="nar-pausa">⏸ Pausa</button>
+    <button id="nar-sig" class="pri">Siguiente →</button>
+  </div>
+</div>
+
+<script>
+var TOUR={paradas:[
+{sel:'header',chip:'Bienvenida',tit:'Tu publicación en 4 pasos',txt:'Una idea, un guion, todos los textos, y al final decides si lo grabas o lo montas en carrusel. Con Claude gratis.'},
+{sel:'#esq',chip:'El camino',tit:'Cuatro pasos y una bifurcación',txt:'Lo importante: los tres primeros pasos son iguales hagas lo que hagas después. Por eso la decisión de vídeo o carrusel se deja para el final.'},
+{sel:'#p0',chip:'Paso 0',tit:'Tu proyecto',txt:'Media hora y solo la primera vez: creas el proyecto en Claude, subes el PDF de la guía y pegas las instrucciones. A partir de ahí ya sabe quién eres.'},
+{sel:'#p1',chip:'Paso 1',tit:'La idea',txt:'O es tuya (lo que te ha pasado, lo que te preguntan) o la coges de las 82 piezas de la guía. Y lo mejor: coger una de la guía y contarla con algo tuyo.'},
+{sel:'#p2',chip:'Paso 2',tit:'El guion',txt:'Eliges uno de los tres ángulos y te escribe el guion entero, para decirlo en voz alta. Sirve igual para vídeo que para carrusel.'},
+{sel:'#p3',chip:'Paso 3',tit:'El paquete completo',txt:'Un solo mensaje y tienes todo lo que se escribe alrededor: texto de portada, pie de foto, primer comentario, hashtags, el mensaje privado y tres historias.'},
+{sel:'#p4',chip:'Paso 4',tit:'¿Vídeo o carrusel?',txt:'Ahora sí. Si eliges vídeo, lo grabas de una toma con el móvil. Si eliges carrusel, un mensaje y Claude te lo genera entero, ya diseñado, listo para guardar en PDF.'},
+{sel:'#pub',chip:'Final',tit:'A publicar',txt:'Subir, pegar el pie de foto, fijar el primer comentario, las historias, y lo más importante: contestar a todo el mundo el primer día.'}
+],i:-1,auto:true,t:null,wrap:null,
+arrancar:function(){this.wrap=document.querySelector('.w');this.i=-1;this.auto=true;
+document.getElementById('nar').classList.add('on');this.ir(0);},
+ir:function(n){if(n<0)n=0;if(n>=this.paradas.length){this.terminar();return;}
+this.i=n;var p=this.paradas[n],el=document.querySelector(p.sel);if(!el){this.ir(n+1);return;}
+this.wrap.classList.add('leyendo');
+document.querySelectorAll('.mirando').forEach(function(e){e.classList.remove('mirando');});
+el.classList.add('mirando');el.scrollIntoView({behavior:'smooth',block:'center'});
+document.getElementById('nar-chip').textContent=p.chip;
+document.getElementById('nar-tit').textContent=p.tit;
+document.getElementById('nar-txt').textContent=p.txt;
+document.getElementById('nar-paso').textContent=(n+1)+' / '+this.paradas.length;
+document.getElementById('nar-ant').style.visibility=n===0?'hidden':'';
+document.getElementById('nar-sig').textContent=n===this.paradas.length-1?'Terminar ✓':'Siguiente →';
+this.programar(p);},
+programar:function(p){clearTimeout(this.t);if(!this.auto)return;var s=this;
+this.t=setTimeout(function(){s.ir(s.i+1);},Math.max(5000,1800+p.txt.length*42));},
+pausa:function(){this.auto=!this.auto;var b=document.getElementById('nar-pausa');
+if(this.auto){b.textContent='⏸ Pausa';this.programar(this.paradas[this.i]);}
+else{b.textContent='▶ Seguir';clearTimeout(this.t);}},
+terminar:function(){clearTimeout(this.t);document.getElementById('nar').classList.remove('on');
+if(this.wrap)this.wrap.classList.remove('leyendo');
+document.querySelectorAll('.mirando').forEach(function(e){e.classList.remove('mirando');});
+window.scrollTo({top:0,behavior:'smooth'});}};
+document.getElementById('tour-go').addEventListener('click',function(){TOUR.arrancar();});
+document.getElementById('nar-sig').addEventListener('click',function(){TOUR.ir(TOUR.i+1);});
+document.getElementById('nar-ant').addEventListener('click',function(){TOUR.ir(TOUR.i-1);});
+document.getElementById('nar-pausa').addEventListener('click',function(){TOUR.pausa();});
+document.getElementById('nar-x').addEventListener('click',function(){TOUR.terminar();});
+document.addEventListener('keydown',function(e){
+if(!document.getElementById('nar').classList.contains('on'))return;
+if(e.key==='Escape')TOUR.terminar();if(e.key==='ArrowRight')TOUR.ir(TOUR.i+1);
+if(e.key==='ArrowLeft')TOUR.ir(TOUR.i-1);if(e.key===' '){e.preventDefault();TOUR.pausa();}});
+if(location.search.indexOf('auto=1')>-1)setTimeout(function(){TOUR.arrancar();},900);
+
+document.querySelectorAll('pre').forEach(function(p){var c=p.querySelector('code');if(!c)return;
+var b=document.createElement('button');b.className='cpy';b.type='button';b.textContent='Copiar';
+b.addEventListener('click',function(){var t=c.innerText;
+var ok=function(){b.textContent='¡Copiado!';setTimeout(function(){b.textContent='Copiar';},1800);};
+if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(ok);}
+else{var a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity='0';
+document.body.appendChild(a);a.select();try{document.execCommand('copy');ok();}catch(e){}
+document.body.removeChild(a);}});p.appendChild(b);});
+</script>
+</body></html>
+
+
