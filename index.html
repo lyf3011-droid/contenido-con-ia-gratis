@@ -184,6 +184,15 @@ details.plg .cnt{padding:0 16px 14px}
   h2{page-break-after:avoid}
 }
 @media print{.side{display:none!important}body{padding-left:0!important}}
+
+.pest{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;padding:14px 0 4px;
+  border-bottom:1px solid var(--line);margin-bottom:6px}
+.pest a{flex:0 0 auto;background:var(--sur);border:1px solid var(--line);color:var(--soft);
+  border-radius:99px;padding:8px 16px;font-size:.86rem;font-weight:700;text-decoration:none;
+  white-space:nowrap;line-height:1.2}
+.pest a:hover{color:var(--ink);border-color:var(--gold)}
+.pest a.act{background:var(--gold);color:#121a26;border-color:transparent}
+@media print{.pest{display:none!important}}
 </style></head><body>
 
 <nav class="side" id="side">
